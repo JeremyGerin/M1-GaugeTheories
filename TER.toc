@@ -1,0 +1,5 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont I}}Variétés différentielles}{4}{}%
+\contentsline {subsubsection}{Définitions:}{4}{}%
+\contentsline {subsubsection}{Fibré tangent:}{5}{}%
+\contentsfinish 

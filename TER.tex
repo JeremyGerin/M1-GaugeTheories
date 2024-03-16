@@ -1,0 +1,74 @@
+\documentclass[12pt, a4paper]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage[greek, french]{babel}
+\usepackage{enumitem}
+\usepackage[style, maths]{mon_package}
+\usepackage{multicol}
+
+\title{Travail encadré de recherche - Théories de jauges}
+\author{Jérémy \textsc{Gerin}}
+\date{2023}
+
+\begin{document}
+	\frontmatter
+	\mainmatter
+		\maketitle
+
+		\sommaire
+		\newpage 
+
+		\section{Variétés différentielles}
+		\subsubsection{Définitions:}
+
+		Soit $\mathcal{M}$ un espace topologique séparé, soit $n\in \N$ et soit $r\in \N \cup \{\infty\}$.
+
+		\begin{defi}[Carte]
+		Une carte sur $\mathcal{M}$ à valeur dans $\R ^n$ est la donnée d'un couple $(U, \phi)$ où $U$ est un ouvert de $\mathcal{M}$ et $\phi : U \to \phi(U) \in \R^n$ est un homéomorphisme de $U$ sur son image avec $\phi(U)$ ouvert dans $\R^n$.
+		\end{defi}
+
+		\begin{defi}[Atlas]
+		Un $\mathscr{C}^r$-atlas de $\mathcal{M}$ dans $\R^n$ est un ensemble $\mathscr{A}$ de cartes $(U, \phi)$ à valeur dans $\R^n$ dont les domaines de cartes $U$ recouvrent $\mathcal{M}$ et qui sont $\mathscr{C}^r$-compatibles, c'est à dire telles que:
+		$$\forall (U, \phi), (V, \psi) \in \mathscr{A}, \quad 
+		\psi \circ \phi ^{-1} : \phi(U\cap V) \to \psi(U \cap V) \quad \text{est un }\mathscr{C}^r\text{-difféomorphisme}$$
+		Deux $\mathscr{C}^r$-atlas sont $\mathscr{C}^r$-compatibles si leur réunion est un $\mathscr{C}^r$-atlas. Cela définit une relation d'équivalence et la réunion de la classe d'équivalence d'un $\mathscr{C}^r$-atlas est l'unique $\mathscr{C}^r$-atlas maximal qui le contient.
+		\end{defi}
+
+		\begin{defi}[Variété différentielle]
+		Une variété différentielle de classe $\mathscr{C}^r$ (ou lisse si $r = \infty$) de dimension $n$ est un espace topologique séparé et à base dénombrable d'ouverts muni d'un $\mathscr{C}^r$-atlas maximal à valeur dans $\R^n$.
+		\end{defi}
+
+		\begin{defi}
+		Soient $\mathcal{M}$, $\mathcal{N}$ deux variétés de classe $\mathscr{C}^r$ et $f: \mathcal{M} \to \mathcal{N}$. On dira que $f$ est $\mathscr{C}^r$ (ou lisse si $r = \infty$) si $\forall x\in \mathcal{M}$ il existe une carte $(U, \phi)$ de $\mathcal{M}$ telle que $x\in U$ et une carte $(V, \psi)$ de $\mathcal{N}$ telle que $f(x) \in V$ et telles que $f(U)\subset V$ et si l'application $f$ lue dans les cartes locales 
+		$$\psi \circ f \circ \phi^{-1}:\phi(U)\to \psi(V)$$
+		est $\mathscr{C}^r$ en $\phi(x)$. \\
+		Par composition des applications différentiables, cette définition ne dépend pas du choix des cartes.
+		\end{defi}
+
+		\begin{pro}
+		Soient $\mathcal{M}$, $\mathcal{N}$ et $\mathcal{P}$ des variétés $\mathscr{C}^r$ et $f:\mathcal{M}\to \mathcal{N}$ et $g:\mathcal{N}\to\mathcal{P}$ des applications $\mathscr{C}^r$. Alors $g \circ f: \mathcal{M} \to \mathcal{P}$ est $\mathscr{C}^r$.
+		\end{pro}
+
+		\subsubsection{Fibré tangent:}
+		Soit $U\subset \R^m$ un ouvert, on pose $TU = U\times\R^m$ et on note 
+		$$\tau_U : TU \to U, (x, v) \mapsto x$$
+		Aussi, pour $x\in U$ on note $T_xU = \tau_U^{-1}({x})$ la fibre au dessus de $x$ qu'on muni d'une structure d'espace vectoriel via
+		$$(x,v)+(x,v')=(x, v+v')$$
+		$$\lambda(x, v) = (x, \lambda v)$$
+		Ainsi $T_xU$ est canoniquement isomorphe à $\R^m$ via $(x, v) \mapsto v$. \\
+
+		Soit $U\subset \R^m$, $V\subset \R^n$ des ouverts et $f:U\to V$ lisse, on définit l'application tangente de $f$ comme
+		$$Tf: TU \to TV, (x,v) \mapsto (f(x), df_x.v)$$
+		Alors, $T_xf = Tf|_{T_xU} : T_xU \to T_{f(x)}V$ est une application linéaire.\\
+
+		Soit $\mathcal{M}$ une variété lisse de dimension $m$ et soit $\mathscr{A} = \{(U_\alpha, \phi_\alpha), \alpha \in A\}$ son atlas, notons $V_\alpha = \phi_\alpha(U_\alpha)$, $V_{\beta\alpha} = \phi_\alpha(U_\alpha \cap U_\beta)$ et $\varphi_{\beta\alpha} = \phi_\beta \circ \phi_\alpha^{-1} : V_{\beta\alpha} \to V_{\alpha\beta}$ les fonctions de transitions. Comme $V_\alpha$ et $V_{\beta\alpha}$ sont des ouverts de $\R^m$ notons $W_\alpha = TV_\alpha = V_\alpha \times \R^m$ et $W_{\beta\alpha} = TV_{\beta\alpha} = V_{\beta\alpha} \times \R^m$. Soit alors $\psi_{\beta\alpha} = T\varphi_{\beta\alpha}: W_{\beta\alpha}\to W_{\alpha\beta}$. \\
+
+		On définit alors une relation binaire sur $X = \DUnion _{\alpha \in A} W_\alpha$ pour $(x, u)\in W_{\beta\alpha} \subset W_\alpha$ et  $(y, v) \in W_{\alpha\beta} \subset W_\beta$,
+		$$(x,u) \sim (y,v) \iff (y,v) = \psi_{\beta\alpha}(x,u)$$ 
+		C'est une relation d'équivalence: elle est reflexive car $\psi_{\alpha\alpha} = id_{W_\alpha}$, symétrique car $\psi_{\beta\alpha}^{-1} = \psi_{\alpha\beta}$ et transitive car $W_{\beta\alpha} \cap \psi_{\beta\alpha}^{-1}(W_{\gamma\beta}) \subset W_{\gamma\alpha}$ et $\psi_{\gamma\beta} \circ \psi_{\beta\alpha} = \psi_{\gamma\alpha}$ sur $W_{\beta\alpha} \cap \psi_{\beta\alpha}^{-1}(W_{\gamma\beta})$. \\
+
+		On pose alors $T\mathcal{M}$ l'ensemble quotient de $X$ par la relation d'équivalence $\sim$. On munie $X$ de la topologie union disjointe et $T\mathcal{M}$ de la topologie quotient. \\
+
+		
+	\backmatter
+\end{document}

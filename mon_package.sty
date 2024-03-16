@@ -1,0 +1,202 @@
+\NeedsTeXFormat{LaTeX2e}[1999/01/01]
+\ProvidesPackage{mon_package}[2020/06/10]
+
+\newif\if@style     \@stylefalse
+\newif\if@maths     \@mathsfalse
+
+\DeclareOption{style}{\@styletrue}
+\DeclareOption{maths}{\@mathstrue}
+\ProcessOptions
+
+\if@style
+	\RequirePackage{graphicx}
+
+	\RequirePackage{titletoc}
+	\titlecontents{part}[0cm]{\scshape \addvspace{2em}}{\contentslabel{1.5em}}{\hspace{-1.5em}}{\hfill \contentspage}[\addvspace{0.5em}]
+	\titlecontents{chapter}[1cm]{}{\contentslabel{1.5em}}{\hspace{-1.5em}}{\dotfill \contentspage}[\addvspace{0.5em}]
+	\titlecontents{section}[2cm]{}{\contentslabel{1.5em}}{\hspace{-1.5em}}{\dotfill \contentspage}[\addvspace{0.25em}]
+	\titlecontents{subsection}[3cm]{}{\contentslabel{2.5em}}{\hspace{-2.5em}}{\dotfill \contentspage}[\addvspace{0.25em}]
+	
+	\RequirePackage{geometry}
+	\geometry{left=3cm, right=3cm, bottom=3cm, top=4cm, headsep=1.5cm}
+	
+	\RequirePackage{titlesec}
+	\titleformat{\chapter}[block]{\centering\huge\bfseries}{\chaptertitlename\ \thechapter :}{10pt}{\Huge}
+	\titlespacing{\chapter}{0pt}{0em}{1em}	
+	\titleformat{\part}[display]{\centering\huge\scshape\bfseries}{Livre \Roman{part}:}{10pt}{\Huge}
+	
+	\RequirePackage{fancyhdr}
+	\pagestyle{fancy}
+
+	\fancyhead[L]{\includegraphics[scale=0.4]{logo_univ.png}}
+	\fancyhead[RE]{}
+	\fancyfoot[C]{\thepage}
+	
+	\RequirePackage[tight, french]{minitoc}
+	\mtcselectlanguage{francais}
+	
+	\renewcommand{\thesection}{\Roman{section}}
+	
+	\newcommand\sommaire{\renewcommand{\contentsname}{Sommaire} \setcounter{tocdepth}{3} \tableofcontents}
+	\newcommand\minisommairech{\renewcommand{\mtctitle}{Sommaire}\minitoc \newpage}
+
+	\newcommand\be{\begin{enumerate}[label=(\roman*)]}
+	\newcommand\ee{\end{enumerate}}
+
+
+	\renewcommand{\thefootnote}{}
+\fi
+
+\if@maths
+	\RequirePackage{amsmath}
+	\RequirePackage{amssymb}
+	\RequirePackage{mathrsfs}
+	\RequirePackage{nicefrac}
+	\RequirePackage[thmmarks, amsthm, amsmath]{ntheorem}
+	
+	{
+	\theoremstyle{break}
+	\theoremheaderfont{\scshape}
+	\theoremprework{\pagebreak[2]} 
+	\theorempostwork{\pagebreak[2] } 
+	\theorembodyfont{\normalfont}
+	\theoremseparator{: \\ }
+	\newtheorem*{defi}{Définition}
+	}
+	
+	{
+	\theoremstyle{break}
+	\theoremprework{\pagebreak[2]} 
+	\theorempostwork{\pagebreak[2]} 
+	\theoremheaderfont{\scshape}
+	\theorembodyfont{\normalfont}
+	\theoremseparator{: \\ }
+	\newtheorem*{pro}{Proposition}
+	}
+	
+	{
+	\theoremstyle{break}
+	\theoremprework{\vspace{1em} \pagebreak[2] \rule{0.7\linewidth}{0.5pt}} 
+	\theorempostwork{\hfill \rule{0.7\linewidth}{0.5pt}\pagebreak[2] \newline} 
+	\theoremheaderfont{\scshape}
+	\theorembodyfont{\normalfont}
+	\theoremseparator{: \\ }
+	\newtheorem*{thm}{Théorème}
+	}
+
+	{
+	\theoremstyle{break}
+	\theoremprework{\vspace{1em} \pagebreak[2] \rule{0.7\linewidth}{0.5pt}} 
+	\theorempostwork{\hfill \rule{0.7\linewidth}{0.5pt}\pagebreak[2] \newline} 
+	\theoremheaderfont{\scshape}
+	\theorembodyfont{\normalfont}
+	\theoremseparator{: \\ }
+	\newtheorem*{pcp}{Principe}
+	}
+	
+	{
+	\theoremstyle{break}
+	\theoremprework{\vspace{1em} \pagebreak[2] \rule{0.7\linewidth}{0.5pt}}
+	\theorempostwork{\hfill \rule{0.7\linewidth}{0.5pt}\pagebreak[2] \newline} 
+	\theoremheaderfont{\scshape}
+	\theorembodyfont{\normalfont}
+	\theoremseparator{: \\ }
+	\newtheorem*{coro}{Corollaire}
+	}
+	
+	{
+	\theoremstyle{break}
+	\theorembodyfont{\normalfont}
+	\theoremheaderfont{\itshape}
+	\theoremseparator{: \\ }
+	\newtheorem*{rem}{Remarque}
+	}
+
+	{
+	\theoremstyle{break}
+	\theorembodyfont{\normalfont}
+	\theoremheaderfont{\itshape}
+	\theoremseparator{: \\ }
+	\newtheorem*{nota}{Notation}
+	}
+	
+	{
+	\theoremstyle{break}
+	\theorembodyfont{\normalfont}
+	\theoremheaderfont{\itshape}
+	\theoremseparator{: \\ }
+	\newtheorem*{exe}{Exemple}
+	}
+	
+	{
+	\theoremstyle{break}
+	\theorembodyfont{\normalfont}
+	\theoremheaderfont{\itshape}
+	\theoremseparator{: \\ }
+	\newtheorem*{exo}{Exercice}
+	}
+	
+	{
+	\theoremstyle{break}
+	\theorembodyfont{\normalfont}
+	\theoremheaderfont{\itshape}
+	\theoremseparator{ ! \\ }
+	\newtheorem*{att}{Attention}
+	}
+	
+	{
+	\theoremstyle{break}
+	\theorembodyfont{\normalfont}
+	\theoremheaderfont{\itshape}
+	\theoremsymbol{\\ \begin{flushright} $\square$\end{flushright}}
+	\theoremseparator{: \\ }
+	\newtheorem*{preu}{preuve}
+	}
+	
+	\RequirePackage{xspace}
+	\newcommand\ssi{si et seulement si\xspace}
+	\newcommand\asse{assertions suivantes sont équivalentes\xspace}
+	\newcommand\cad{c'est à dire\xspace}
+	
+	\newcommand\scr[1]{\mathscr{#1}}
+	\newcommand\mcal[1]{\mathcal{#1}}
+
+	\newcommand\Sum{\displaystyle \sum}
+	\newcommand\Frac[2]{\displaystyle \frac{#1}{#2}}
+	\newcommand\Int{\displaystyle \int}
+	\newcommand\Sumd{\displaystyle \bigoplus}
+	\newcommand\Union{\displaystyle \bigcup}
+	\newcommand\DUnion{\displaystyle \bigsqcup}
+	\newcommand\Inter{\displaystyle \bigcap}
+	\newcommand\Prod{\displaystyle \prod}
+	\newcommand\privede{\backslash}
+	\newcommand\ieff[2]{[\![#1 \,; #2]\!]}
+	\newcommand\bino[2]{\begin{pmatrix} #2 \\ #1 \end{pmatrix}}
+	
+	\newcommand\N{\mathbb{N}}
+	\newcommand\Z{\mathbb{Z}}
+	\newcommand\Q{\mathbb{Q}}
+	\newcommand\R{\mathbb{R}}
+	\newcommand\C{\mathbb{C}}
+	\newcommand\K{\mathbb{K}}
+	\newcommand\Lin{\mathscr{L}}
+	\newcommand\B{\mathscr{B}}
+	\newcommand\D{\mathscr{D}}
+	\newcommand\F{\mathscr{F}}
+	\newcommand\Co[1]{\mathscr{C}^{#1}}
+	\newcommand\Perm{\mathfrak{S}}
+	\newcommand\Part{\mathscr{P}}
+	\DeclareMathOperator{\Vect}{Vect}
+	\DeclareMathOperator{\Ker}{Ker}
+	\DeclareMathOperator{\Ima}{Im}
+	\DeclareMathOperator{\Card}{card}
+	\DeclareMathOperator{\id}{id}
+	\DeclareMathOperator{\GL}{GL}
+	\DeclareMathOperator{\IGL}{IGL}
+	\DeclareMathOperator{\ISO}{ISO}
+	\DeclareMathOperator{\SO}{SO}
+	\DeclareMathOperator{\Mink}{Mink}
+	\DeclareMathOperator{\Diff}{Diff}
+\fi
+
+\endinput
