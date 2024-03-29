@@ -18,8 +18,7 @@
 		\sommaire
 		\newpage 
 
-		\section{Variétés différentielles}
-		\subsubsection{Définitions:}
+		\subsubsection{Variétés différentielles:}
 
 		Soit $\mathcal{M}$ un espace topologique séparé, soit $n\in \N$ et soit $r\in \N \cup \{\infty\}$.
 
@@ -48,6 +47,9 @@
 		\begin{pro}
 		Soient $\mathcal{M}$, $\mathcal{N}$ et $\mathcal{P}$ des variétés $\mathscr{C}^r$ et $f:\mathcal{M}\to \mathcal{N}$ et $g:\mathcal{N}\to\mathcal{P}$ des applications $\mathscr{C}^r$. Alors $g \circ f: \mathcal{M} \to \mathcal{P}$ est $\mathscr{C}^r$.
 		\end{pro}
+		\begin{preu}
+		Par composition des applications différentiables
+		\end{preu}
 
 		\subsubsection{Fibré tangent:}
 		Soit $U\subset \R^m$ un ouvert, on pose $TU = U\times\R^m$ et on note 
@@ -61,14 +63,21 @@
 		$$Tf: TU \to TV, (x,v) \mapsto (f(x), df_x.v)$$
 		Alors, $T_xf = Tf|_{T_xU} : T_xU \to T_{f(x)}V$ est une application linéaire.\\
 
-		Soit $\mathcal{M}$ une variété lisse de dimension $m$ et soit $\mathscr{A} = \{(U_\alpha, \phi_\alpha), \alpha \in A\}$ son atlas, notons $V_\alpha = \phi_\alpha(U_\alpha)$, $V_{\beta\alpha} = \phi_\alpha(U_\alpha \cap U_\beta)$ et $\varphi_{\beta\alpha} = \phi_\beta \circ \phi_\alpha^{-1} : V_{\beta\alpha} \to V_{\alpha\beta}$ les fonctions de transitions. Comme $V_\alpha$ et $V_{\beta\alpha}$ sont des ouverts de $\R^m$ notons $W_\alpha = TV_\alpha = V_\alpha \times \R^m$ et $W_{\beta\alpha} = TV_{\beta\alpha} = V_{\beta\alpha} \times \R^m$. Soit alors $\psi_{\beta\alpha} = T\varphi_{\beta\alpha}: W_{\beta\alpha}\to W_{\alpha\beta}$. \\
+		Soit $\mathcal{M}$ une variété lisse de dimension $n$ et soit $\mathscr{A} = \{(U_\alpha, \phi_\alpha), \alpha \in A\}$ son atlas, notons $V_\alpha = \phi_\alpha(U_\alpha) \subset \R^n$, $V_{\beta\alpha} = \phi_\alpha(U_\alpha \cap U_\beta) \subset \R^n$ et $\varphi_{\beta\alpha} = \phi_\beta \circ \phi_\alpha^{-1} : V_{\beta\alpha} \to V_{\alpha\beta}$ les fonctions de transitions. Notons $W_\alpha = TV_\alpha = V_\alpha \times \R^n \subset \R^{2n}$ et $W_{\beta\alpha} = TV_{\beta\alpha} = V_{\beta\alpha} \times \R^n \subset \R^{2n}$. Soit alors $\psi_{\beta\alpha} = T\varphi_{\beta\alpha}: W_{\beta\alpha}\to W_{\alpha\beta}$. \\
 
 		On définit alors une relation binaire sur $X = \DUnion _{\alpha \in A} W_\alpha$ pour $(x, u)\in W_{\beta\alpha} \subset W_\alpha$ et  $(y, v) \in W_{\alpha\beta} \subset W_\beta$,
 		$$(x,u) \sim (y,v) \iff (y,v) = \psi_{\beta\alpha}(x,u)$$ 
 		C'est une relation d'équivalence: elle est reflexive car $\psi_{\alpha\alpha} = id_{W_\alpha}$, symétrique car $\psi_{\beta\alpha}^{-1} = \psi_{\alpha\beta}$ et transitive car $W_{\beta\alpha} \cap \psi_{\beta\alpha}^{-1}(W_{\gamma\beta}) \subset W_{\gamma\alpha}$ et $\psi_{\gamma\beta} \circ \psi_{\beta\alpha} = \psi_{\gamma\alpha}$ sur $W_{\beta\alpha} \cap \psi_{\beta\alpha}^{-1}(W_{\gamma\beta})$. \\
 
-		On pose alors $T\mathcal{M}$ l'ensemble quotient de $X$ par la relation d'équivalence $\sim$. On munie $X$ de la topologie union disjointe et $T\mathcal{M}$ de la topologie quotient. \\
+		On définit alors $T\mathcal{M}$ comme l'ensemble quotient $X / \sim$. On munie $X$ de la topologie union disjointe et $T\mathcal{M}$ de la topologie quotient. \\
 
-		
-	\backmatter
+		Considérons les applications $f_\alpha : W_\alpha \to T\mathcal{M}$ qui envoie les éléments de $W_\alpha$ dans leur classe d'équivalence dans $T\mathcal{M}$. Alors ce sont des homéomorphismes sur leur image. En effet, par définitions de la topologie union disjointe les applications $W_\alpha \to X$ sont des homéomorphismes sur leur image. Ensuite si $x,y\in W_\alpha$ tels que $x\sim y$ alors $x = y$. Donc ces applications descendent au quotient en les applications $f_\alpha$ qui sont donc des homéomorphismes sur leur image. Ainsi, notons $\tilde{W_\alpha}$ l'image de $f_\alpha$ et posons $\tilde{\phi_\alpha} = f_\alpha^{-1} : \tilde{W_\alpha} \to W_\alpha$. \\
+
+		Alors l'ensemble $\{(\tilde{W_\alpha}, \tilde{\phi_\alpha}), \alpha \in A\}$ est un atlas lisse sur $T\mathcal{M}$. En effet, par construction on a $\tilde{\phi_\beta} \circ \tilde{\phi_\alpha}^{-1} = \psi_{\beta\alpha} = T\varphi_{\beta\alpha}$ qui sont lisses. \\
+
+		De plus, $T\mathcal{M}$ est séparé. En effet, considérons les applications continues $\tau_\alpha : W_\alpha \to \mathcal{M}, (x, v) \mapsto \phi_\alpha^{-1}(x)$. Elles induisent une application continue $\tau : X \to \mathcal{M}$. Alors pour $(x, u) \in W_\alpha$ et $(y, v) \in W_\beta$ tels que $(x,u)\sim (y, v)$ alors en particulier $y = \varphi_{\beta\alpha}(x) = \phi_\beta \circ \phi_\alpha^{-1} (x)$, donc $\tau(x,u) = \tau(y, v)$. Ainsi, comme $\mathcal{M}$ est séparé, $T\mathcal{M}$ l'est aussi. \\
+
+		Finalement, $T\mathcal{M}$ muni de l'atlas lisse $\{(\tilde{W_\alpha}, \tilde{\phi_\alpha}), \alpha \in A\}$ est une variété lisse de dimension $2n$. \\
+
+		Notons $\tau_\mathcal{M} : T\mathcal{M} \to \mathcal{M}$, l'application $\tau$ descendue au quotient qui est clairement lisse par construction. Notons $T_x\mathcal{M} = \tau_\mathcal{M}^{-1}(x)$ la fibre au dessus de $x$. Soit $(U\alpha, \phi_\alpha)$ une carte autour de $x$ dans $\mathcal{M}$ et soit $(\tilde{W_\alpha}, \tilde{\phi_\alpha})$ la carte associée dans $T\mathcal{M}$ 
 \end{document}
