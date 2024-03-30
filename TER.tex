@@ -20,21 +20,21 @@
 
 		\subsubsection{Variétés différentielles:}
 
-		Soit $\mathcal{M}$ un espace topologique séparé, soit $n\in \N$ et soit $r\in \N \cup \{\infty\}$.
+		Soit $\mathcal{M}$ un espace topologique séparé, soit $m\in \N$ et soit $r\in \N \cup \{\infty\}$.
 
 		\begin{defi}[Carte]
-		Une carte sur $\mathcal{M}$ à valeur dans $\R ^n$ est la donnée d'un couple $(U, \phi)$ où $U$ est un ouvert de $\mathcal{M}$ et $\phi : U \to \phi(U) \in \R^n$ est un homéomorphisme de $U$ sur son image avec $\phi(U)$ ouvert dans $\R^n$.
+		Une carte sur $\mathcal{M}$ à valeur dans $\R ^m$ est la donnée d'un couple $(U, \phi)$ où $U$ est un ouvert de $\mathcal{M}$ et $\phi : U \to \phi(U) \in \R^m$ est un homéomorphisme de $U$ sur son image avec $\phi(U)$ ouvert dans $\R^m$.
 		\end{defi}
 
 		\begin{defi}[Atlas]
-		Un $\mathscr{C}^r$-atlas de $\mathcal{M}$ dans $\R^n$ est un ensemble $\mathscr{A}$ de cartes $(U, \phi)$ à valeur dans $\R^n$ dont les domaines de cartes $U$ recouvrent $\mathcal{M}$ et qui sont $\mathscr{C}^r$-compatibles, c'est à dire telles que:
+		Un $\mathscr{C}^r$-atlas de $\mathcal{M}$ dans $\R^m$ est un ensemble $\mathscr{A}$ de cartes $(U, \phi)$ à valeur dans $\R^m$ dont les domaines de cartes $U$ recouvrent $\mathcal{M}$ et qui sont $\mathscr{C}^r$-compatibles, c'est à dire telles que:
 		$$\forall (U, \phi), (V, \psi) \in \mathscr{A}, \quad 
 		\psi \circ \phi ^{-1} : \phi(U\cap V) \to \psi(U \cap V) \quad \text{est un }\mathscr{C}^r\text{-difféomorphisme}$$
 		Deux $\mathscr{C}^r$-atlas sont $\mathscr{C}^r$-compatibles si leur réunion est un $\mathscr{C}^r$-atlas. Cela définit une relation d'équivalence et la réunion de la classe d'équivalence d'un $\mathscr{C}^r$-atlas est l'unique $\mathscr{C}^r$-atlas maximal qui le contient.
 		\end{defi}
 
 		\begin{defi}[Variété différentielle]
-		Une variété différentielle de classe $\mathscr{C}^r$ (ou lisse si $r = \infty$) de dimension $n$ est un espace topologique séparé et à base dénombrable d'ouverts muni d'un $\mathscr{C}^r$-atlas maximal à valeur dans $\R^n$.
+		Une variété différentielle de classe $\mathscr{C}^r$ (ou lisse si $r = \infty$) de dimension $m$ est un espace topologique séparé et à base dénombrable d'ouverts muni d'un $\mathscr{C}^r$-atlas maximal à valeur dans $\R^m$.
 		\end{defi}
 
 		\begin{defi}
@@ -51,6 +51,18 @@
 		Par composition des applications différentiables
 		\end{preu}
 
+		\begin{defi}[Sous-variété]
+		Soit $\mathcal{M}$ une variété lisse de dimension $m$ et soit $\mathcal{N}$ une partie de $\mathcal{M}$ telle qu'il existe $n\leq m$ tel que pour toute carte $(U, \phi)$ de $\mathcal{M}$ telle que $U \cap \mathcal{N} \neq \emptyset$ on ait
+		$$\phi : U\cap \mathcal{N} \to \phi(U)\cap \R^n$$
+		est un homéomorphisme.\\
+		Dans ce cas on dit que $\mathcal{N}$ est une sous-variété lisse de $\mathcal{M}$ de dimension $n$ et de codimension $m-n$ dans $\mathcal{M}$.
+		\end{defi}
+
+		\begin{pro}
+		Soit $\mathcal{N}$ une sous variété lisse de $\mathcal{M}$ alors si on note $\{(U_\alpha, \phi_\alpha), \alpha \in A\}$ l'atlas lisse de $\mathcal{M}$ alors l'ensemble $\{(U_\alpha \cap \mathcal{N}, \phi_\alpha), \alpha \in A\}$ est un atlas lisse sur $\mathcal{N}$ qui fait de $\mathcal{N}$ une variété lisse de dimension $n$. \\
+		De plus, l'inclusion $\mathcal{N} \to \mathcal{M}$ est lisse.
+		\end{pro}
+
 		\subsubsection{Fibré tangent:}
 		Soit $U\subset \R^m$ un ouvert, on pose $TU = U\times\R^m$ et on note 
 		$$\tau_U : TU \to U, (x, v) \mapsto x$$
@@ -63,7 +75,7 @@
 		$$Tf: TU \to TV, (x,v) \mapsto (f(x), df_x.v)$$
 		Alors, $T_xf = Tf|_{T_xU} : T_xU \to T_{f(x)}V$ est une application linéaire.\\
 
-		Soit $\mathcal{M}$ une variété lisse de dimension $n$ et soit $\mathscr{A} = \{(U_\alpha, \phi_\alpha), \alpha \in A\}$ son atlas, notons $V_\alpha = \phi_\alpha(U_\alpha) \subset \R^n$, $V_{\beta\alpha} = \phi_\alpha(U_\alpha \cap U_\beta) \subset \R^n$ et $\varphi_{\beta\alpha} = \phi_\beta \circ \phi_\alpha^{-1} : V_{\beta\alpha} \to V_{\alpha\beta}$ les fonctions de transitions. Notons $W_\alpha = TV_\alpha = V_\alpha \times \R^n \subset \R^{2n}$ et $W_{\beta\alpha} = TV_{\beta\alpha} = V_{\beta\alpha} \times \R^n \subset \R^{2n}$. Soit alors $\psi_{\beta\alpha} = T\varphi_{\beta\alpha}: W_{\beta\alpha}\to W_{\alpha\beta}$. \\
+		Soit $\mathcal{M}$ une variété lisse de dimension $n$ et soit $\mathscr{A} = \{(U_\alpha, \phi_\alpha), \alpha \in A\}$ son atlas, notons $V_\alpha = \phi_\alpha(U_\alpha) \subset \R^m$, $V_{\beta\alpha} = \phi_\alpha(U_\alpha \cap U_\beta) \subset \R^m$ et $\varphi_{\beta\alpha} = \phi_\beta \circ \phi_\alpha^{-1} : V_{\beta\alpha} \to V_{\alpha\beta}$ les fonctions de transitions. Notons $W_\alpha = TV_\alpha = V_\alpha \times \R^m \subset \R^{2m}$ et $W_{\beta\alpha} = TV_{\beta\alpha} = V_{\beta\alpha} \times \R^m \subset \R^{2m}$. Soit alors $\psi_{\beta\alpha} = T\varphi_{\beta\alpha}: W_{\beta\alpha}\to W_{\alpha\beta}$. \\
 
 		On définit alors une relation binaire sur $X = \DUnion _{\alpha \in A} W_\alpha$ pour $(x, u)\in W_{\beta\alpha} \subset W_\alpha$ et  $(y, v) \in W_{\alpha\beta} \subset W_\beta$,
 		$$(x,u) \sim (y,v) \iff (y,v) = \psi_{\beta\alpha}(x,u)$$ 
@@ -77,7 +89,66 @@
 
 		De plus, $T\mathcal{M}$ est séparé. En effet, considérons les applications continues $\tau_\alpha : W_\alpha \to \mathcal{M}, (x, v) \mapsto \phi_\alpha^{-1}(x)$. Elles induisent une application continue $\tau : X \to \mathcal{M}$. Alors pour $(x, u) \in W_\alpha$ et $(y, v) \in W_\beta$ tels que $(x,u)\sim (y, v)$ alors en particulier $y = \varphi_{\beta\alpha}(x) = \phi_\beta \circ \phi_\alpha^{-1} (x)$, donc $\tau(x,u) = \tau(y, v)$. Ainsi, comme $\mathcal{M}$ est séparé, $T\mathcal{M}$ l'est aussi. \\
 
-		Finalement, $T\mathcal{M}$ muni de l'atlas lisse $\{(\tilde{W_\alpha}, \tilde{\phi_\alpha}), \alpha \in A\}$ est une variété lisse de dimension $2n$. \\
+		Finalement, $T\mathcal{M}$ muni de l'atlas lisse $\{(\tilde{W_\alpha}, \tilde{\phi_\alpha}), \alpha \in A\}$ est une variété lisse de dimension $2m$. \\
 
-		Notons $\tau_\mathcal{M} : T\mathcal{M} \to \mathcal{M}$, l'application $\tau$ descendue au quotient qui est clairement lisse par construction. Notons $T_x\mathcal{M} = \tau_\mathcal{M}^{-1}(x)$ la fibre au dessus de $x$. Soit $(U\alpha, \phi_\alpha)$ une carte autour de $x$ dans $\mathcal{M}$ et soit $(\tilde{W_\alpha}, \tilde{\phi_\alpha})$ la carte associée dans $T\mathcal{M}$ 
+		Notons $\tau_\mathcal{M} : T\mathcal{M} \to \mathcal{M}$, l'application $\tau$ descendue au quotient qui est clairement lisse par construction. Notons $T_x\mathcal{M} = \tau_\mathcal{M}^{-1}(x)$ la fibre au dessus de $x$. Soit $(U\alpha, \phi_\alpha)$ une carte autour de $x$ dans $\mathcal{M}$ et soit $(\tilde{W_\alpha}, \tilde{\phi_\alpha})$ la carte associée dans $T\mathcal{M}$, alors $\tilde{\phi_\alpha} : \{x\}\times T_x\mathcal{M} \to \{\phi_\alpha(x)\}\times \R^n$ est une bijection. On muni $T_x\mathcal{M}$ d'une structure d'espace vectoriel tel que cette bijection devienne une application linéaire. Cette définition ne dépend pas du choix des cartes puisque les fonctions de transitions de $T\mathcal{M}$ sont des applications tangentes donc sont linéaires. \\
+
+		\begin{defi}[Fibré tangent]
+		Soit $\mathcal{M}$ une variété lisse de dimension $m$. Alors $\tau_\mathcal{M} : T\mathcal{M} \to \mathcal{M}$ s'appelle le fibré tangent de $\mathcal{M}$. \\
+		La variété $T\mathcal{M}$ de dimension $2m$ s'appelle l'espace total et $\mathcal{M}$ la base du fibré tangent. \\
+		De plus pour $x\in \mathcal{M}$, la fibre au dessus de $x$, $T_x\mathcal{M}$ est appelé l'espace tangent à $\mathcal{M}$ en $x$. C'est un espace vectoriel de dimension $m$.
+		\end{defi}
+
+		\subsubsection{Fibrés vectoriels:}
+		Pour $x\in U_\alpha \cap U_\beta$ et $v\in \R^m$, on a
+		$$T\varphi_{\beta\alpha}(\phi_\alpha(x), v) = (\phi_\beta(x), d\varphi_{\beta\alpha}(\phi_\alpha(x)).v)$$
+		Comme $\varphi_{\beta\alpha}$ est une fonction de transition, c'est une bijection dont l'inverse est lisse donc $d\varphi_{\beta\alpha}(\phi_\alpha(x))$ est une application linéaire inversible. Ainsi, posons
+		$$t_{\beta\alpha} = d\varphi_{\beta\alpha}\circ\phi_\alpha : U_\alpha \cap U_\beta \to \GL(\R^m)$$
+		On peut alors réecrire 
+		$$T\varphi_{\beta\alpha}(\phi_\alpha(x), v) = (\phi_\beta(x), t_{\beta\alpha}(x)v)$$
+
+		\begin{pro}
+		Les fonctions $g_{\beta\alpha}$ verifient les propriétés suivantes:
+		\be
+			\item $t_{\alpha\alpha}(x) = \id, \quad \forall x\in U_\alpha$
+			\item $t_{\beta\alpha}(x)^{-1} = t_{\alpha\beta}(x), \quad \forall x\in U_\alpha \cap U_\beta$
+			\item $t_{\gamma\alpha}(x) = t_{\gamma\beta}(x)t_{\beta\alpha}(x), \quad \forall x \in U_\alpha \cap U_\beta \cap U_\gamma$
+		\ee
+		\end{pro}
+		\begin{preu}
+		On obtient (iii) par composition des applications différentiables, puis (i) en prenant $\alpha = \beta = \gamma$ et (ii) en prenant $\alpha = \gamma$. 
+		\end{preu}
+
+		\begin{defi}[Cocycle]
+		Soit $\mathcal{M}$ une variété lisse, soit $\{(U_\alpha, \phi_\alpha), \alpha \in A\}$ sont atlas lisse et soit $G$ un groupe de Lie. Un cocycle sur $\mathcal{M}$ à valeur dans $G$ est une famille de fonctions lisses $g_{\beta\alpha} : U_\alpha \cap U_\beta \to G$ telle que $\forall \alpha, \beta \in A$,
+		$$g_{\gamma\alpha}(x) = g_{\gamma\beta}(x)g_{\beta\alpha}(x), \quad \forall x \in U_\alpha \cap U_\beta \cap U_\gamma$$ \\
+		\end{defi}
+
+		Soit $\mathcal{M}$ une variété lisse de dimension $m$ munie d'un cocycle $g_{\beta\alpha}$ (relatif à l'atlas $\{(U_\alpha, \phi_\alpha), \alpha \in A\}$ de $\mathcal{M}$) à valeur dans un groupe de Lie $G$ et soit $\rho : G \to \GL(\R^k)$ une représentation de $G$. Et définissons $\tilde{g_{\beta\alpha}} : V_{\beta\alpha}\times \R^k \to V_{\alpha\beta} \times \R^k$ par
+		$$\tilde{g_{\beta\alpha}}(\phi_\alpha(x), v) = (\phi_\beta(x), \rho(g_{\beta\alpha})v), \quad \forall x\in U_\alpha \cap U_\beta, \quad \forall v\in \R^k$$
+
+		Ainsi de la même façon que pour le fibré tangent, on construit une variété lisse $E$ de dimension $m+k$, une application $\pi : E\to \mathcal{M}$ qui localement correspond à la projection sur la première composante et une structure naturelle d'espace vectoriel sur les fibres $E_x = \pi^{-1}(x)$ au dessus de chaque point $x$ de $\mathcal{M}$. \\
+
+		\begin{defi}[Fibré vectoriel]
+		Soit $\mathcal{M}$ une variété lisse muni d'un atlas $\{(U_\alpha, \phi_\alpha), \alpha \in A\}$, d'un cocycle $g_{\beta\alpha}$ à valeur dans un groupe de Lie $G$ et d'une représentation $\rho: G \to \GL(\R^k)$ de $G$. ALors $\pi : E \to \mathcal{M}$ est un fibré vectoriel lisse au dessus de $\mathcal{M}$ avec comme fibre modèle $\R^k$.
+		\end{defi}
+
+		\begin{pro}
+		Soit $\rho : \GL(R^m) \to \GL(R^k)$ une représentation du groupe de Lie $\GL(\R^m)$, alors $\rho \circ t_{\beta\alpha}$ est un cocycle sur $\mathcal{M}$.
+		\end{pro}
+
+		\begin{defi}[Fibré cotangent]
+		Le fibré cotangent de $\mathcal{M}$ noté $T^*\mathcal{M}$ est donné par le cocycle ${}^tt_{\beta\alpha}^{-1}$ à valeur dans $\GL((\R^m)^*)$. 
+		\end{defi}
+
+		\begin{defi}[Fibré tensoriel]
+		Soient $r,s\in \N$, alors le fibré tensoriel d'ordre $(r,s)$ ($r$ contravariant et $s$ covariant) de $\mathcal{M}$, noté $T^{(r,s)}\mathcal{M}$ est donné par le cocycle $\otimes^r (t_{\beta\alpha}) \otimes^s ({}^tt_{\beta\alpha}^{-1})$.
+		\end{defi}
+
+		\begin{defi}[Section]
+		Soit $\pi: E \to \mathcal{M}$ un fibré vectoriel lisse sur $\mathcal{M}$. Une section est une application $s:\mathcal{M} \to E$ telle que $\pi \circ s = \id_\mathcal{M}$ ou de façon équivalente telle que $\forall x\in \mathcal{M}, s(x) \in E_x$. \\
+		L'ensemble des sections de $\pi: E \to \mathcal{M}$, noté $\Gamma(E)$ ou $\Gamma(\pi)$ est un espace vetoriel. \\
+
+		On appelle champs de vecteurs les sections du fibré tangent et champs tensoriels les sections des fibrés tensoriels.
+		\end{defi}
 \end{document}

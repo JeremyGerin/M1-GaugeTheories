@@ -1,4 +1,5 @@
 \babel@toc {french}{}\relax 
 \contentsline {subsubsection}{Variétés différentielles:}{4}{}%
 \contentsline {subsubsection}{Fibré tangent:}{5}{}%
+\contentsline {subsubsection}{Fibrés vectoriels:}{7}{}%
 \contentsfinish 
