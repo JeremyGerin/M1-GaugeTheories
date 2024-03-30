@@ -129,7 +129,7 @@
 		Ainsi de la même façon que pour le fibré tangent, on construit une variété lisse $E$ de dimension $m+k$, une application $\pi : E\to \mathcal{M}$ qui localement correspond à la projection sur la première composante et une structure naturelle d'espace vectoriel sur les fibres $E_x = \pi^{-1}(x)$ au dessus de chaque point $x$ de $\mathcal{M}$. \\
 
 		\begin{defi}[Fibré vectoriel]
-		Soit $\mathcal{M}$ une variété lisse muni d'un atlas $\{(U_\alpha, \phi_\alpha), \alpha \in A\}$, d'un cocycle $g_{\beta\alpha}$ à valeur dans un groupe de Lie $G$ et d'une représentation $\rho: G \to \GL(\R^k)$ de $G$. ALors $\pi : E \to \mathcal{M}$ est un fibré vectoriel lisse au dessus de $\mathcal{M}$ avec comme fibre modèle $\R^k$.
+		Soit $\mathcal{M}$ une variété lisse muni d'un atlas $\{(U_\alpha, \phi_\alpha), \alpha \in A\}$, d'un cocycle $g_{\beta\alpha}$ à valeur dans un groupe de Lie $G$ et d'une représentation $\rho: G \to \GL(\R^k)$ de $G$. Alors $\pi : E \to \mathcal{M}$ est un fibré vectoriel lisse au dessus de $\mathcal{M}$ avec comme fibre modèle $\R^k$.
 		\end{defi}
 
 		\begin{pro}
@@ -275,6 +275,57 @@
 		$$\Div(\rot f) = 0$$
 		\end{exe}
 
+		\subsubsection{Flot local d'un champs de vecteurs:}
+
+		\begin{defi}[Flot local d'un champs de vecteurs]
+		Soit $X$ un champs de vecteurs sur $\mathcal{M}$. Un flot local de $X$ est une application $\phi : \Omega \to \mathcal{M}$ lisse notée $(t,x) \to \phi_t(x)$ où $\Omega$ est un voisinage ouvert de $\{0\}\times \mathcal{M}$ dans $\R \times \mathcal{M}$ tel que pour tout $x\in \mathcal{M}$, $\Omega \cap \R \times \{x\}$ soit connexe, et qui vérifie les deux propriétés suivantes: 
+		$$\frac{d\phi_t(x)}{dt}_{|t=s} = X(\phi_s(x)) \quad \forall (s, x)\in \Omega$$
+		$$\phi_0(x) = x \quad \forall x\in \mathcal{M}$$
+		Il est dit complet si $\Omega = \R \times \mathcal{M}$. \\
+		Il est dit maximal s'il n'existe pas de prolongement strict. Autrement dit tel que s'il existe $\phi' : \Omega' \to \mathcal{M}$ un flot local de $X$ tel que $\Omega \subset \Omega'$ et $\phi'|_{\Omega} = \phi$ alors $\Omega = \Omega'$ et $\phi = \phi'$. Dans ce cas il est alors unique.
+		\end{defi}
+
+		\begin{defi}[Courbe integrale]
+		Soit $X$ un champs de vecteurs sur $\mathcal{M}$. Une courbe integrale de $X$ est une application $\gamma : I \to \mathcal{M}$ telle que $\dot\gamma = X \circ \gamma$ sur $I$. \\
+		Elle est dite maximale s'il n'existe pas de prolongement strict. Autrement dit tel que s'il existe une autre courbe integrale $c: J \to \mathcal{M}$ tel que $I \subset J$ et $c|_I = \gamma$ alors $I = J$ et $c = \gamma$.
+		\end{defi}
+
+		\begin{pro}
+		Notons $\supp(X) = \overline{\{x\in \mathcal{M} | X(x) \neq 0\}}$. Alors 
+		\be
+			\item S'il existe $\varepsilon > 0$ tel que $]-2\varepsilon; 2\varepsilon[\times \mathcal{M} \subset \Omega$ alors $\phi_t^X$ est complet.
+			\item Si $\supp(X)$ est compact alors $\phi_t^X$ est complet.
+		\ee
+		\end{pro}
+
+		\begin{pro}
+		Un champs de vecteurs $X$ sur $\mathcal{M}$ admet un unique flot maximal $\phi_t^X : \Omega \to \mathcal{M}$ qui vérifie de plus les propriétés suivantes:
+		\be
+			\item $\forall x_0\in \mathcal{M}$, l'unique courbe integrale maximale de $X$ passant par $x_0$ au temps $t=0$ est la courbe $I_{x_0} = \{t\in \R | (t, x_0) \in \Omega\} \to \mathcal{M}$ définie par
+			$$t \mapsto \phi_t^X(x_0)$$
+
+			\item $\forall (s, x)\in \Omega$, on a $(t, \phi_s^X(x)) \in \Omega \iff (t+s, x) \in \Omega$ et dans ce cas
+			$$\phi_t^X \circ \phi_s^X(x) = \phi_{t+s}^X(x)$$
+
+			\item $\forall t\in \R$ l'application $\phi_t^X : U_t = \{x\in \mathcal{M} | (t, x) \in \Omega \} \to \mathcal{M}$ est un $\mathscr{C}^\infty$-difféomorphisme local. Si de plus $X$ est complet alors $(\phi_t^X)_{t\in\R}$ est un groupe à un paramètre de $\mathscr{C}^\infty$-difféomorphismes de $\mathcal{M}$. 
+
+			\item $\forall (t,x) \in \Omega$, le flot local préserve le champs de vecteurs, c'est à dire 
+			$$T_x\phi_t^X(X(x)) = X(\phi_t^X(x))$$
+		\ee
+		\end{pro}
+
 		\subsubsection{Dérivation de Lie:}
 
+		\begin{defi}[Dérivation]
+		Une dérivation de $\mathcal{M}$ est une application $\R$-linéaire $\delta : \mathscr{C}^\infty(\mathcal{M}) \to \mathscr{C}^\infty(\mathcal{M})$ telle que pour tout $f, g \in \mathscr{C}^\infty(\mathcal{M})$ on ait
+		$$\delta(fg) = f\delta(g) + g\delta(f)$$
+		On note $\mathscr{D}(\mathcal{M})$ l'ensemble des dérivations sur $\mathcal{M}$. C'est un $\R$-espace vectoriel et c'est aussi un $\mathscr{C}^\infty(\mathcal{M})$-module.
+		\end{defi}
+
+		\begin{defi}[Dérivation de Lie]
+		Soit $X$ un champs de vecteurs sur $\mathcal{M}$ alors l'application $\mathscr{L}_X: \mathscr{C}^\infty(\mathcal{M}) \to \mathscr{C}^\infty(\mathcal{M})$, appelée la dérivation de Lie associée à $X$ et notée parfois $X(f) = \mathscr{L}_X(f)$, est définie par 
+		$$\mathscr{L}_X(f): x\to T_xf(X(x))$$
+		Le théorème de dérivation des fonctions composées montre que si $\phi$ est un flot local sur $X$ alors
+		$$\mathscr{L}_X(f) = \frac{d}{dt}_{|t = 0}f\circ\phi_t$$
+		\end{defi}
 \end{document}

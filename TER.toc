@@ -4,5 +4,6 @@
 \contentsline {subsubsection}{Fibrés vectoriels:}{4}{}%
 \contentsline {subsubsection}{Algèbre exterieure:}{5}{}%
 \contentsline {subsubsection}{Formes différentielles:}{7}{}%
-\contentsline {subsubsection}{Dérivation de Lie:}{9}{}%
+\contentsline {subsubsection}{Flot local d'un champs de vecteurs:}{9}{}%
+\contentsline {subsubsection}{Dérivation de Lie:}{10}{}%
 \contentsfinish 
