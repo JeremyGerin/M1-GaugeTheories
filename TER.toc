@@ -1,5 +1,8 @@
 \babel@toc {french}{}\relax 
-\contentsline {subsubsection}{Variétés différentielles:}{4}{}%
-\contentsline {subsubsection}{Fibré tangent:}{5}{}%
-\contentsline {subsubsection}{Fibrés vectoriels:}{7}{}%
+\contentsline {subsubsection}{Variétés différentielles:}{1}{}%
+\contentsline {subsubsection}{Fibré tangent:}{2}{}%
+\contentsline {subsubsection}{Fibrés vectoriels:}{4}{}%
+\contentsline {subsubsection}{Algèbre exterieure:}{5}{}%
+\contentsline {subsubsection}{Formes différentielles:}{7}{}%
+\contentsline {subsubsection}{Dérivation de Lie:}{9}{}%
 \contentsfinish 

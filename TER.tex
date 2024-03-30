@@ -12,11 +12,10 @@
 
 \begin{document}
 	\frontmatter
-	\mainmatter
 		\maketitle
-
 		\sommaire
-		\newpage 
+	\mainmatter
+		\newpage
 
 		\subsubsection{Variétés différentielles:}
 
@@ -138,11 +137,11 @@
 		\end{pro}
 
 		\begin{defi}[Fibré cotangent]
-		Le fibré cotangent de $\mathcal{M}$ noté $T^*\mathcal{M}$ est donné par le cocycle ${}^tt_{\beta\alpha}^{-1}$ à valeur dans $\GL((\R^m)^*)$. 
+		Le fibré cotangent de $\mathcal{M}$ noté $\tau^*_\mathcal{M} : T^*\mathcal{M} \to \mathcal{M}$ est donné par le cocycle ${}^tt_{\beta\alpha}^{-1}$ à valeur dans $\GL((\R^m)^*)$. 
 		\end{defi}
 
 		\begin{defi}[Fibré tensoriel]
-		Soient $r,s\in \N$, alors le fibré tensoriel d'ordre $(r,s)$ ($r$ contravariant et $s$ covariant) de $\mathcal{M}$, noté $T^{(r,s)}\mathcal{M}$ est donné par le cocycle $\otimes^r (t_{\beta\alpha}) \otimes^s ({}^tt_{\beta\alpha}^{-1})$.
+		Soient $r,s\in \N$, alors le fibré tensoriel d'ordre $(r,s)$ ($r$ contravariant et $s$ covariant) de $\mathcal{M}$, noté $T^{(r,s)}\mathcal{M}$ est donné par le cocycle $\otimes^r (t_{\beta\alpha}) \otimes^s ({}^tt_{\beta\alpha}^{-1})$ à valeur dans $\GL(\otimes^r (\R^m) \otimes^s (\R^m)^*)$.
 		\end{defi}
 
 		\begin{defi}[Section]
@@ -151,4 +150,131 @@
 
 		On appelle champs de vecteurs les sections du fibré tangent et champs tensoriels les sections des fibrés tensoriels.
 		\end{defi}
+
+		\subsubsection{Algèbre exterieure:}
+
+		Soit $V$ un $\R$-espace vectoriel de dimension $n$. Alors l'ensemble $\Sumd_{k\geq 0} \otimes^k V$ munie de l'application 
+		$$\begin{array}{ccccc}
+			\otimes & : & \otimes^p V\times \otimes^q V & \to & \otimes^{p+q} V \\
+ 			& & (u_1\otimes ...\otimes u_p, v_1 \otimes ... \otimes v_q) & \mapsto & u_1 \otimes u_p \otimes v_1 \otimes ... \otimes v_q \\
+		\end{array}$$
+		Est une algèbre dont le produit est $\otimes$. 
+
+		\begin{defi}[Algèbre exterieure]
+		Soit $V$ un $\R$-espace vectoriel et soit $k\in \N^*$, on appelle $k$-ème puissance exterieure de $V$, notée $\Lambda^k V$ le quotient de $\otimes^k V$ par l'espace vectoriel engendré par les éléments $v_1 \otimes ... \otimes v_k$ où il existe $i\neq j$ tels que $v_i = v_j$. Aussi on note $\Lambda^0 V = \R$.\\
+		On note $v_1 \wedge ... \wedge v_k$ la classe dans ce quotient de l'élément $v_1 \otimes ... \otimes v_k$. \\
+
+		Si $(e_1, ..., e_n)$ est une base de $V$ alors $e_{i_1} \wedge ... \wedge e_{i_k}$ pour $1 \leq i_1 < ... < i_k \leq n$ est une base de $\Lambda^k V$ qui est donc un espace vectoriel de dimension $\bino{k}{n}$. \\
+		On note $\Lambda^*V = \Sumd_{k\geq 0} \Lambda^k V$. Le produit $\otimes : \otimes^p V\times \otimes^q V \to \otimes^{p+q} V$ passe au quotient en une application $\wedge : \Lambda^p V \times \Lambda^q V \to \Lambda^{p+q} V$ qui munit $\Lambda^* V$ d'une structure d'algèbre qu'on appelle algèbre exterieure de $V$.
+		\end{defi}
+
+		\begin{pro}
+		On a les propriétés suivantes:
+		\be
+			\item L'application $V^k \to \Lambda^k V, (v_1, ..., v_k) \mapsto v_1 \wedge ... \wedge v_k$ est $k$-linéaire alternée.
+			\item Si $u \in \Lambda^p V$ et $v \in \Lambda^q V$ alors $u\wedge v = (-1)^{pq} v\wedge u$
+		\ee
+		\end{pro}
+
+		\begin{pro}
+		$\Lambda^k V$ vérifie la proprété universelle suivante: pour toute application $k$-linéaire alternée $f: V^k \to F$ il existe une unique application linéaire $g : \Lambda^k V \to F$ telle que $f(v_1, ..., v_k) = g(v_1\wedge ...\wedge v_k)$.
+		\end{pro}
+		\begin{preu}
+		Comme $f$ est $k$-linéaire par propriété universelle du produit tensoriel, il existe une unique $h: \otimes^k V \to F$ linéaire telle que $f(v_1, ..., v_k) = h(v_1 \otimes ... \otimes v_k)$. Puis comme $f$ est alternée, $h$ descend au quotient en une unique application $g: \Lambda^k V \to F$ linéaire telle que $f(v_1, ..., v_k) = g(v_1\wedge ...\wedge v_k)$.   
+		\end{preu}
+
+		\begin{pro}
+		Si $V$ est un $\R$-espace vectoriel de dimension fini $n$, alors on a
+		$$\otimes^k V^* \simeq (\otimes^k V)^*$$
+		et 
+		$$\Lambda^k V^* \simeq (\Lambda^k V)^*$$ 
+		\end{pro}
+		\begin{preu}
+		Soit $(e_1, ..., e_n)$ une base de $V$ et notons $(e_1^*, ..., e_n^*)$ la base duale dans $V^*$. Ainsi, on a l'isomorphisme définit par $e_{i_1}^* \otimes ...\otimes e_{i_k}^* \mapsto (e_{i_1} \otimes ...\otimes e_{i_k})^*$ et l'isomorphisme $e_{i_1}^* \wedge ...\wedge e_{i_k}^* \mapsto (e_{i_1} \wedge ... \wedge e_{i_k})^*$
+		\end{preu}
+
+		Soit $V, W$ deux espaces vectoriels et soit $f: V \to W$ une application linéaire, alors on définit $\Lambda^k f : \Lambda^k V \to \Lambda^k W$ par
+		$$\Lambda^k f (v_1\wedge ... \wedge v_k) = f(v_1) \wedge ... \wedge f(v_k)$$
+		et aussi $\Lambda^* f : \Lambda^* V \to \Lambda^* W$ par $\Lambda^* f = \Sumd_{k\geq 0} \Lambda^k f$. \\
+
+		Soit $V$ un $\R$-espace vectoriel euclidien orienté de dimension $n$. Notons $(e_1, ..., e_n)$ une base orthonormée directe de $V$. On pose 
+		$$\langle u_1 \wedge ... \wedge u_k | v_1 \wedge ... \wedge v_k \rangle_k = \det (\langle u_i | v_j \rangle)$$
+		c'est un produit scalaire sur $\Lambda^k V$ \\
+
+		Notons $\Vol = e_1 \wedge ... \wedge e_n$ appelé élément volume de $\Lambda^n V$. \\
+
+		\begin{defi}[Étoile de Hodge]
+		Soit $V$ un $\R$-espace vectoriel euclidien orienté de dimension $n$. Pour $0 \leq k \leq n$, il existe un unique isomorphisme linéaire $\star : \Lambda^k V \to \Lambda^{n-k} V$ appelée étoile de Hodge telle que 
+		$$\omega \wedge \rho = \langle \star w | \rho \rangle_{n-k} \Vol, \quad \forall \omega \in \Lambda^k V, \quad \forall \rho \in \Lambda^{n-k} V$$
+		\end{defi} 
+		\begin{preu}
+		Soit $\omega \in \Lambda^k V$ et on pose l'application linéaire $\rho \in \Lambda^{n-k} V \mapsto \omega \wedge \rho \in \Lambda^n V$. Comme $\Lambda^n V$ est de dimension 1, on a $\omega \wedge \rho = c(\rho)\Vol$. Alors $c : \Lambda^{n-k} V \to \R$ est une forme linéaire donc se représente par un unique $\star\omega \in \Lambda^{n-k} V$.
+		\end{preu}
+
+		\subsubsection{Formes différentielles:}
+
+		Soit $k\in \N^*$, on définit la $k$-ème puissance du produit fibré du fibré tangent $T\mathcal{M}$ avec lui-même:
+		$$T^{\diamond k}\mathcal{M} = \{ (v_1, ..., v_k)\in (T\mathcal{M})^k | \tau_\mathcal{M}(v_1) = ... = \tau_\mathcal{M}(v_k)\}$$
+
+		\begin{defi}[Forme différentielle]
+		Une $k$-forme differentielle sur $\mathcal{M}$ est une application lisse $T^{\diamond k}\mathcal{M} \to \R$ telle que la restriction a chaque fibre soit une forme $k$-linéaire alternée. On note $\Omega^k\mathcal{M}$ l'espace vectoriel des $k$-formes différentielles sur $\mathcal{M}$. Aussi on note $\Omega^0\mathcal{M} = \mathscr{C}^\infty(\mathcal{M})$.
+		\end{defi}
+
+		\begin{pro}
+		Considérons la représentation $\rho_k : \GL((\R^m)^*) \to \GL(\Lambda^k (\R^m)^*), f \mapsto \Lambda^k f$ et notons $\rho_k(\tau^*_\mathcal{M})$ le fibré vectoriel induit par la représentation $\rho_k$ et par le fibré cotangent $\tau^*_\mathcal{M}$ de $\mathcal{M}$. Alors,
+		$$\Omega^k\mathcal{M} \simeq \Gamma(\rho_k(\tau^*_\mathcal{M}))$$
+		\end{pro}
+
+		On dispose de l'application $\wedge : \Omega^p\mathcal{M} \times \Omega^q\mathcal{M} \to \Omega^{p+q}\mathcal{M}$ appelé produit extérieur qui est induit par le produit extérieur sur les espaces $\Lambda^k(\R^m)^*$. Ainsi, l'espace $\Omega^*\mathcal{M} = \Sumd_{k\geq 0} \Omega^k\mathcal{M}$ muni du produit exterieur $\wedge$ est une algèbre. \\
+
+		\begin{defi}
+		Soient $\mathcal{M}, \mathcal{N}$ deux variétés lisse, $f:\mathcal{N} \to \mathcal{M}$ une application lisse et $\eta \in \Omega^k\mathcal{M}$. Alors $f^*\eta = \eta (Tf, ..., Tf) : T^{\diamond k}\mathcal{N} \to \R$ est une $k$-forme différentielle sur $\mathcal{N}$ appelée la forme tirée en arrière par $f$ de $\eta$. \\
+		\end{defi}
+
+		\begin{defi}[Différentielle extérieure]
+		Soit $(U, \phi)$ une carte de $\mathcal{M}$ et soit $x\in U$ et notons $\phi = (x^1, ..., x^m)$ et notons $(\partial_1, ..., \partial_m)$ la base de $T_x\mathcal{M}$ image reciproque de la base canonique de $\R^m$ par $T_x\phi$ et notons $(dx^1, ..., dx^m)$ la base duale de $(\partial_1, ..., \partial_m)$ dans $(T_x\mathcal{M})^*$. Pour $f\in \Omega^0\mathcal{M} = \mathscr{C}^\infty(\mathcal{M})$ on définit l'application linéaire $d : \Omega^0\mathcal{M} \to \Omega^1\mathcal{M}$ par 
+		$$df = \frac{\partial f \circ \phi^{-1}}{\partial x^1}dx^1 +...+ \frac{\partial f \circ \phi^{-1}}{\partial x^m}dx^m$$
+		En particulier on a $d(x^k) = dx^k$. \\
+		Puis pour $\omega \in \Omega^k\mathcal{M}$ une $k$-forme sur $\mathcal{M}$ s'écrivant $\omega = f dx^{i_1} \wedge ... \wedge dx^{i_k}$ alors on définit l'application linéaire $d: \Omega^k\mathcal{M} \to \Omega^{k+1}\mathcal{M}$ par 
+		$$d\omega = df \wedge dx^{i_1} \wedge ... \wedge dx^{i_k}$$
+		On appelle les application $d: \Omega^k\mathcal{M} \to \Omega^{k+1}\mathcal{M}$ la différentielle extérieure sur $\mathcal{M}$.
+		\end{defi}
+
+		\begin{pro}
+		La dérivée exterieure $d: \Omega^k\mathcal{M} \to \Omega^{k+1}\mathcal{M}$ vérifie les propriétés suivantes :
+		\be
+			\item $d$ est linéaire
+			\item $d^2 = 0$ 
+			\item Pour $\omega_1 \in \Omega^p\mathcal{M}$ et $\omega_2 \in \Omega^q\mathcal{M}$, $\quad d(\omega_1 \wedge \omega_2) = d\omega_1 \wedge \omega_2 + (-1)^p\omega_1 \wedge d\omega_2$
+			\item Pour $f\in \Omega^0\mathcal{M}$ et pour tout champs de vecteurs $X$ sur $\mathcal{M}$ on a $df(X) = fX$
+			\item Pour $f:\mathcal{N} \to \mathcal{M}$ lisse et pour $\omega \in \Omega^k\mathcal{M}$ on a $f^*(d\omega) = d(f^*\omega)$
+			\item Pour tout champs de vecteurs $X,Y$ sur $\mathcal{M}$ et pour toute $1$-forme $\omega \in \Omega^1\mathcal{M}$ on a $d\omega(X,Y) = X(\omega(Y)) - Y(\omega(X)) - \omega([X, Y])$
+		\ee
+		\end{pro}
+
+		\begin{defi}[Cohomologie de Rham]
+		Soit $\mathcal{M}$ une variété lisse, pour $k\in \N^*$ on définit la $k$-ème cohomologie de Rham l'espace quotient 
+		$$H_{dr}^k\mathcal{M} = \frac{\Ker d_{k+1}}{\Ima d_k}$$
+		où $d_k = d: \Omega^k\mathcal{M} \to \Omega^{k+1}\mathcal{M}$.
+		\end{defi}
+
+		\begin{exe}
+		Soit $U$ est un ouvert de $\R^3$, on identifie $(\R^3)^*$ et $\R^3$. Alors pour $f \in \Omega^0U = \mathscr{C}^\infty(U)$ on a:
+		$$df = \frac{\partial f}{\partial x} dx + \frac{\partial f}{\partial y} dy + \frac{\partial f}{\partial z} dz = \grad f$$
+		Soit $\omega = f_x dx + f_y dy + f_z dz \in \Omega^1U$, alors on a
+		$$d\omega = \left(\frac{\partial f_z}{\partial y} - \frac{\partial f_y}{\partial z}\right)dy\wedge dz + \left(\frac{\partial f_x}{\partial z} - \frac{\partial f_z}{\partial x}\right)dz\wedge dx + \left(\frac{\partial f_y}{\partial x} - \frac{\partial f_x}{\partial y}\right)dx\wedge dy$$
+		or $\star (dy\wedge dz) = dx$, $\quad\star (dz\wedge dx) = dy$ et $\quad\star (dx\wedge dy) = dz$ et on a 
+		$$\star d\omega = \rot f$$ 
+		Soit $\omega = f_x dy\wedge dz + f_y dz\wedge dx + f_z dx \wedge dy \in \Omega^2U$, alors on a 
+		$$d\omega = \left(\frac{\partial f_x}{\partial x} + \frac{\partial f_y}{\partial y} + \frac{\partial f_z}{\partial z}\right) dx\wedge dy\wedge dz$$
+		or $\star (dx\wedge dy\wedge dz) = 1$ et
+		$$\star d\omega = \Div f$$
+		En utilisant $d^2 = 0$ on a immediatement 
+		$$\rot(\grad f) = 0 $$
+		et 
+		$$\Div(\rot f) = 0$$
+		\end{exe}
+
+		\subsubsection{Dérivation de Lie:}
+
 \end{document}
