@@ -443,11 +443,154 @@
 		$$\gamma_{\beta\alpha}(\phi_\alpha(x), h) = (\phi_\beta(x), g_{\beta\alpha}(x)h)$$
 		Pour tout $x\in U_\alpha \cap U_\beta$ et tout $h\in G$ \\
 
-		Alors les applications $\gamma_{\beta\alpha}$ définissent une relation d'équivalence sur l'union disjointe $\DUnion_{\alpha \in A}\phi_\alpha(U_\alpha)\times G$. Notons $P$ l'espace quotient qui est une variété lisse. \\
+		Alors les applications $\gamma_{\beta\alpha}$ définissent une relation d'équivalence sur l'union disjointe $\DUnion_{\alpha \in A}\phi_\alpha(U_\alpha)\times G$. Notons $P$ l'espace quotient qui est une variété lisse. Et les projections sur la premiere composante $\pi_\alpha : \phi_\alpha(U_\alpha) \times G \to \phi_\alpha(U_\alpha)$ fournissent une application lisse $\pi : P \to \mathcal{M}$. \\
 
-		On dispose aussi d'une application lisse $\pi : P \to \mathcal{M}$ telle qu'il existe des difféomorphismes $\psi_\alpha : \pi^{-1}(U_\alpha) \to \phi_\alpha(U_\alpha) \times G$ tels que $\pi_\alpha \circ \psi_\alpha = \pi \circ \phi_\alpha$ appelés trivialisation locales où $\pi_\alpha : \phi_\alpha(U_\alpha) \times G \to \phi_\alpha(U_\alpha)$ désigne la projection par rapport à la première composante. Aussi on a $\psi_\beta \circ \psi_\alpha^{-1} = \gamma_{\beta\alpha}$. \\
+		\begin{defi}[Fibré principal]
+		On appelle fibré principal sur $\mathcal{M}$ et de groupe structural $G$ l'application $\pi: P \to \mathcal{M}$ qui vérifie:
+		\be 
+			\item Il existe des difféomorphismes appelés trivialisations locales $\psi_\alpha : \pi^{-1}(U_\alpha) \to \phi_\alpha(U_\alpha) \times G$ tels que $\pi_\alpha \circ \psi_\alpha = \phi_\alpha \circ \pi$. 
+			\item $G$ agit à droite de façon lisse sur $P$ tel que chaque fibre $P_x = \pi^{-1}(x)$ soit stable par $G$ et tel que $G$ agisse transitivement sur chaque fibre $P_x$.
+		\ee
+		On a alors $\dim P = \dim \mathcal{M} + \dim G$.
+		\end{defi}
 
-		Pour chaque $x\in \mathcal{M}$ on définit la fibre au dessus de $x$ comme $P_x = \pi^{-1}(x)$. De plus, G agit à droite de façon lisse sur $P$ tel que chaque $\pi^{-1}(U_\alpha)$ est stable par $G$ et tel que chaque trivalisation locale $\psi_\alpha$ vérifie $\phi_\alpha(x.g) = \phi_\alpha(x).g$ pour tout $x\in \pi^{-1}(U_\alpha)$ et tout $g\in G$ et où l'action à droite sur $\phi_\alpha(U_\alpha)\times G$ est la multiplication à droite sur la seconde composante.
+		\begin{defi}[Morphisme de fibrés principaux]
+		Soient $\pi : P \to \mathcal{M}$ et $\rho : Q\to \mathcal{N}$ deux fibrés principaux de groupe structural $G$ est la donnée d'une application lisse $f:\mathcal{M}\to \mathcal{N}$ et d'une application lisse $F: P \to Q$ qui est $G$-équivariante telle que $\rho \circ F = f \circ \pi$. \\
+		On dit que $F$ recouvre $f$. \\
 
+		On dit que $\pi : P \to \mathcal{M}$ et $\rho : Q\to \mathcal{M}$ sont équivalent s'il existe un isomorphisme $P\to Q$ de fibrés principaux qui recouvre $\id_\mathcal{M}$.
+		\end{defi}
+
+		\begin{defi}[Fibré trivial]
+		$\pi : \mathcal{M}\times G \to \mathcal{M}$ qui est la projection par rapport à la première composante s'appelle le fibré principal trivial explicite. \\
+		Un fibré principal sur $\mathcal{M}$ de groupe structural $G$ est dit trivial s'il est équivalent au fibré principal trivial explicite. 
+		\end{defi}
+
+		\begin{defi}[Produit fibré]
+		Soient $\pi : P \to \mathcal{M}$ et $\rho : Q\to \mathcal{M}$ des fibrés principaux de groupe structural $G$, on définit le produit fibré par 
+		$$P\diamond Q = \{(p,q)\in P\times Q | \pi(p) = \rho (q)\}$$
+		\end{defi}
+
+		\begin{defi}[Section]
+		Soit $\pi : P \to \mathcal{M}$ un fibré principal de $\mathcal{M}$. On dit qu'une application lisse $s:\mathcal{M} \to P$ est une section globale de $P$ si $\pi \circ s = \id_\mathcal{M}$ et si $s(x) \in P_x, \forall x\in \mathcal{M}$. \\
+		Pour tout ouvert $U\subset \mathcal{M}$ on appelle section locale sur $U$ toute section de $\pi : \pi^{-1}(U) \to U$. \\
+		On note $\Gamma(P)$ l'ensemble des sections de $\pi : P \to \mathcal{M}$.
+		\end{defi}
+
+		\begin{pro}
+		Un fibré principal admet une section globale si et seulement si il est trivial. De plus, l'ensemble de ses sections est en bijection avec l'ensemble de ses trivialisations.
+		\end{pro}
+
+		Soit $\pi : P \to \mathcal{M}$ un fibré principal de groupe structural $G$ sur $\mathcal{M}$. On pose pour $p\in P$
+		$$i_p : G \to P, \quad g \mapsto p.g$$
+		Et comme $i_p(e) = p$, on dispose de 
+		$$T_e i_p: \mathfrak{g} \to T_pP$$
+
+		\begin{defi}[Vecteur vertical]
+		On dit qu'un vecteur tangent de $T_pP$ est vertical s'il est dans l'image de $T_e i_p$. On note 
+		$$\Verti(T_pP) = \Ima(T_e i_p) = T_e i_p(\mathfrak{g})$$
+		De plus $p\in P \mapsto \Verti(T_pP)$ est une distribution de $(\dim G)$-espaces sur $P$. 
+		\end{defi}
+
+		\begin{pro}
+		On a la suite exacte courte d'espaces vectoriels
+		$$0 \to \mathfrak{g} \overset{T_e i_p}{\longrightarrow} T_p P \overset{T_p \pi}{\longrightarrow} T_x\mathcal{M} \to 0$$ 
+		Ainsi on a $\dim(\Verti(T_pP)) = \dim G$. \\
+		\end{pro}
+
+		\begin{defi}
+		Pour $X\in \mathfrak{g}$ on pose $X^\sharp(p) = T_e i_p(X) \in \Verti(T_pP)$. Puis on définit 
+		$$X^\sharp: P \to TP, \quad p \mapsto X^\sharp(p)$$
+		On dit que $X^\sharp$ est le champs de vecteur fondamental sur $P$ associé à $X$. \\
+		De plus on a l'application $.^\sharp : \mathfrak{g} \to \Gamma(TP)$ est un morphisme d'algèbres de Lie.
+		\end{defi}
+
+		\subsubsection{Connection sur un fibré principal:}
+
+		\begin{defi}[Connexion]
+		Notons $R_g : p\in P \mapsto p.g \in P$ et soit $\pi : P \to \mathcal{M}$ un fibré principal de groupe structural $G$. Une connexion sur $P$ est la donnée $p\in P \mapsto \Hor(T_pP)$ d'une distribution lisse de $m$-espaces sur $P$ telle que:
+		\be
+			\item $\Verti(T_pP) \oplus \Hor(T_pP) = T_pP$
+			\item $T_pR_g(\Hor(T_pP)) = \Hor(T_{p.g}P)$ pour tout $g\in G$ et tout $p\in P$
+		\ee 
+		\end{defi}
+
+		\begin{pro}
+		Notons $x = \pi(p)$ alors d'après la suite exacte courte, l'application $T\pi$ fourni un isomorphisme d'espaces vectoriels
+		$$\Hor(T_pP) \to T_x\mathcal{M}$$
+		\end{pro}
+
+		\begin{pro}
+		On a 
+		\be
+			\item $R_g \circ i_p = i_{p.g} \circ \ad_{g^{-1}}$
+			\item $T_pR_g(\Verti(T_pP)) = \Verti(T_{p.g}P)$
+		\ee
+		\end{pro}
+		\begin{preu}
+		On a $R_g \circ i_p(h) = p.hg = p.gg^{-1}hg = i_{p.g}(ad_{g_{-1}}(h))$. D'où (i).\\
+		(ii) s'obtient en considérant les applications tangentes dans (i).
+		\end{preu}
+
+		\begin{defi}
+		Soit $\mathcal{M}$ une variété lisse et $V$ un $\R$-espace vectoriel. Une 1-forme différentielle sur $\mathcal{M}$ à valeur dans $V$ est une application lisse $\xi : T\mathcal{M} \to V$ qui est linéaire sur chaque fibre $T_x\mathcal{M}$. \\
+		On note $\Omega^1(\mathcal{M}, V)$ l'espace vectoriel des 1-formes différentielles sur $\mathcal{M}$ à valeur dans $V$.
+		\end{defi}
+
+		\begin{defi}
+		Soient $\mathcal{M}, \mathcal{N}$ deux variétés lisse, $V$ un $\R$-espace vectoriel, $f:\mathcal{N} \to \mathcal{M}$ une application lisse et $\eta \in \Omega^1(\mathcal{M}, V)$. Alors $f^*\eta = \eta \circ Tf : T\mathcal{N} \to V$ est une $1$-forme différentielle sur $\mathcal{N}$ à valeur dans $V$ appelée la forme tirée en arrière par $f$ de $\eta$. \\
+		\end{defi}
+
+		Soit $p \in P \mapsto \Hor(T_pP)$ une connexion sur $P$. Cela fournit une application linéaire $\rho_p : T_pP \to \Verti(T_pP)$ qui est la projection sur la première composante de la somme directe. Alors pour chaque $p\in P$ on dispose d'une application linéaire 
+		$$\omega_p : T_pP \overset{\rho_p}{\longrightarrow} \Verti(T_pP) \overset{(T_e i_p)^{-1}}{\longrightarrow} \mathfrak{g}$$
+		Qui fourni une 1-forme différentielle sur $P$ à valeur dans $\mathfrak{g}$
+		$$\omega : TP \to \mathfrak{g}$$
+
+		\begin{pro}
+		On a pour tout $g\in G$,
+		$$R_g^*\omega = \Ad_{g^{-1}} \circ \omega$$ 
+		\end{pro}
+
+		\begin{defi}[Connexion d'Ehresmann]
+		Soit $\pi : P \to \mathcal{M}$ un fibré principal de groupe structural $G$. On dit que $\omega \in  \Omega^1(P, \mathfrak{g})$ est une connexion d'Ehresmann si elle vérifie la condition 
+		$$R_g^*\omega  = \Ad_{g^{-1}} \circ \omega \quad \forall g\in G$$
+		ou de façon équivalente si elle vérifie la condition 
+		$$\omega(X^\sharp) = X \quad \forall X \in \mathfrak{g}$$
+		\end{defi}
+
+		\begin{pro}
+		Soient $\pi : P \to \mathcal{M}$ et $\rho : Q \to \mathcal{N}$ des fibrés principaux de groupe structural $G$ et soit $F: P\to Q$ un morphisme de fibré principaux recouvrant l'application $f: \mathcal{M} \to \mathcal{N}$ et soit $\omega$ une connexion d'Ehresmann sur $Q$. Alors $F^*\omega$ est une connexion d'Ehresmann sur $P$.
+		\end{pro}
+
+		\begin{defi}[Forme de Maurer-Cartan]
+		Soit $G$ un groupe de Lie. On appelle forme de Maurer-Cartan sur $\mathfrak{g}$, la 1-forme à valeur dans $\mathfrak{g}$ notée $\Omega : TG \to \mathfrak{g}$, et définit par 
+		$$\Omega_g = T_gL_{g^{-1}} : T_gG \to \mathfrak{g}$$
+		pour tout $g\in G$.
+		\end{defi}
+
+		\begin{pro}
+		Soit $G$ un groupe de Lie. Alors sa forme de Maurer-Cartan est l'unique connexion d'Ehresmann sur le fibré principal $G \to \{x\}$.
+		\end{pro}
+
+		\begin{pro}
+		La forme de Maurer-Cartan d'un groupe $G$ fournit une trivialisation globale $\tilde{\Omega} : TG \to G\times \mathfrak{g}$ de $TG$ définie par
+		$$\tilde{\Omega}(p) = (\tau_G(p), \Omega(p))$$
+		\end{pro}
+
+		\subsubsection{Transport parallèle:}
+
+		\begin{pro}
+		Soit $\pi : P \to \mathcal{M}$ un fibré principal de groupe structural $G$ muni d'une connexion d'Ehresmann $\omega$, soit $\gamma : [0,1] \to \mathcal{M}$ une courbe lisse et soit $p_0\in \pi^{-1}(\gamma(0))$. Alors il existe une unique courbe lisse $\tilde{\gamma_{p_0}} : [0,1] \to P$ telle que 
+		\be
+			\item $\tilde{\gamma_{p_0}}(0) = p_0$
+			\item $\pi \circ \tilde{\gamma_{p_0}} = \gamma$
+			\item $\tilde{\gamma_{p_0}}'(t) \in \Hor(T_{\tilde{\gamma_{p_0}}(t)}P)$ pour tout $t \in [0,1]$
+		\ee
+		\end{pro}
+
+		\begin{pro}
+		Soit $\pi : P \to \mathcal{M}$ un fibré principal de groupe structural $G$ muni d'une connexion d'Ehresmann $\omega$, soit $\gamma : [0,1] \to \mathcal{M}$ une courbe lisse. On définit une application 
+		$$\Par_t^\gamma : \pi^{-1}(\gamma(0)) \to \pi^{-1}(\gamma(t)), \quad p_0 \mapsto \tilde{\gamma_{p_0}}(t)$$
+		\end{pro}
 
 \end{document}

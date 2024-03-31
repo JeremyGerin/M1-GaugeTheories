@@ -9,4 +9,6 @@
 \contentsline {subsubsection}{Groupes de Lie:}{12}{}%
 \contentsline {subsubsection}{Théorème de Frobenius:}{13}{}%
 \contentsline {subsubsection}{Fibré principal:}{14}{}%
+\contentsline {subsubsection}{Connection sur un fibré principal:}{16}{}%
+\contentsline {subsubsection}{Transport parallèle:}{18}{}%
 \contentsfinish 
