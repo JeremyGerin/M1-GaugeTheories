@@ -2,8 +2,11 @@
 \contentsline {subsubsection}{Variétés différentielles:}{1}{}%
 \contentsline {subsubsection}{Fibré tangent:}{2}{}%
 \contentsline {subsubsection}{Fibrés vectoriels:}{4}{}%
-\contentsline {subsubsection}{Algèbre exterieure:}{5}{}%
-\contentsline {subsubsection}{Formes différentielles:}{7}{}%
-\contentsline {subsubsection}{Flot local d'un champs de vecteurs:}{9}{}%
-\contentsline {subsubsection}{Dérivation de Lie:}{10}{}%
+\contentsline {subsubsection}{Algèbre exterieure:}{6}{}%
+\contentsline {subsubsection}{Formes différentielles:}{8}{}%
+\contentsline {subsubsection}{Flot local d'un champs de vecteurs:}{10}{}%
+\contentsline {subsubsection}{Dérivation de Lie:}{11}{}%
+\contentsline {subsubsection}{Groupes de Lie:}{12}{}%
+\contentsline {subsubsection}{Théorème de Frobenius:}{13}{}%
+\contentsline {subsubsection}{Fibré principal:}{14}{}%
 \contentsfinish 

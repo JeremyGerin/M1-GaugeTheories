@@ -62,6 +62,10 @@
 		De plus, l'inclusion $\mathcal{N} \to \mathcal{M}$ est lisse.
 		\end{pro}
 
+		\begin{defi}[Variété quotient]
+		Soit $\mathcal{M}$ une variété lisse et soit une action lisse libre et propre d'un groupe $G$ sur $\mathcal{M}$. Alors il existe une unique structure de variété lisse sur $\mathcal{M}/G$ telle que la projection canonique soit un $\mathscr{C}^\infty$-difféomorphisme local.
+		\end{defi}
+
 		\subsubsection{Fibré tangent:}
 		Soit $U\subset \R^m$ un ouvert, on pose $TU = U\times\R^m$ et on note 
 		$$\tau_U : TU \to U, (x, v) \mapsto x$$
@@ -328,4 +332,122 @@
 		Le théorème de dérivation des fonctions composées montre que si $\phi$ est un flot local sur $X$ alors
 		$$\mathscr{L}_X(f) = \frac{d}{dt}_{|t = 0}f\circ\phi_t$$
 		\end{defi}
+
+		\begin{pro}
+		L'application $X \in \Gamma(T\mathcal{M}) \to \mathscr{L}_X \in \mathscr{D}(\mathcal{M})$ est un isomorphisme de $\R$-espaces vectoriels ainsi que de $\mathscr{C}^\infty(\mathcal{M})$-modules.
+		\end{pro}
+
+		\begin{defi}[Crochet de champs de vecteurs]
+		Soient $\delta, \delta'$ deux dérivations sur $\mathcal{M}$ alors
+		$$[\delta, \delta'] = \delta \circ \delta' - \delta' \circ \delta$$
+		est une dérivation sur $\mathcal{M}$. \\
+
+		Si $X, Y$ sont deux champs de vecteurs sur $\mathcal{M}$ on note $[X, Y]$ le champs de vecteurs tel que 
+		$$\mathscr{L}_{[X, Y]} = [\mathscr{L}_X, \mathscr{L}_Y]$$
+		\end{defi}
+
+		\begin{pro}
+		Le crochet de champs de vecteurs vérifie les propriétés suivantes:
+		\be
+			\item $(X, Y) \to [X, Y]$ est bilinéaire
+			\item $[X, Y] = -[Y, X]$
+			\item $[X, [Y, Z]] + [Y, [Z, X]] + [Z, [X, Y]] = 0$
+		\ee
+		\end{pro}
+
+		\subsubsection{Groupes de Lie:}
+
+		\begin{defi}[Groupe de Lie]
+		Un groupe de Lie $G$ est la donnée d'un groupe et d'une variété lisse telle que la multiplication et l'inverse soient des applications lisses.
+		\end{defi}
+
+		\begin{defi}[Algèbre de Lie]
+		Une algèbre de Lie $\mathfrak{g}$ est un espace vectoriel muni d'une application bilinéaire, appelée crochet de Lie, $[.,.] : \mathfrak{g}\times\mathfrak{g} \to \mathfrak{g}$ vérifiant:
+		$$[X, Y] = - [Y, X] \quad \text{(antisymétrie)}$$
+		et $$[X, [Y, Z]] + [Y, [Z, X]] + [Z, [X, Y]] = 0 \quad \text{(identité de Jacobi)}$$
+		\end{defi}
+
+		\begin{defi}
+		Soit $G$ un groupe de Lie, on définit pour $g\in G$ l'application adjointe 
+		$$\ad_g : G \to G, h \mapsto ghg^{-1}$$ 
+		On note aussi $\Ad_g = T_e(\ad_g)$ \\
+		\end{defi}
+
+		On note $L_g$ la translation à gauche par $g$, c'est un $\mathscr{C}^\infty$-difféomorphisme de $G$. Alors $G$ agit sur $TG$ via 
+		$$g.v = T(L_g)v$$
+
+		\begin{defi}[Champs de vecteurs invariant à gauche]
+		Soit $X: G \to TG$ un champs de vecteur sur $G$. On dit que $X$ est invariant à gauche si $T(L_g)X = X, \forall g\in G$. On note $\mathcal{L}(G)$ l'espace des champs de vecteurs invariants à gauche.\\
+		\end{defi}
+
+		Comme $T(L_g) : T_hG\to T_{gh}G$ est un isomorphisme d'espace vectoriel, un champs de vecteur invariant à gauche est entièrement déterminé par ses valeurs sur $T_eG$, et réciproquement, pour $v\in T_eG$, il existe un unique champs de vecteurs invariant à gauche $X_v$ tel que $X_v(e)=v$. Ainsi, l'application $v\to X_v$ est un isomorphisme d'espace vectoriel entre $T_eG$ et $\mathcal{L}(G)$. \\
+
+		\begin{pro}
+		Si $X, Y$ sont des champs de vecteurs invariants à gauche alors $[X, Y]$ est aussi un champs de vecteur invariant à gauche. 
+		\end{pro}
+
+		Ainsi, on muni $T_eG$ qu'on notera désormais $\mathfrak{g}$ du crochet de Lie, qui en fait une algèbre de Lie qu'on appelle algèbre de Lie associée au groupe de Lie $G$.
+		$$[u, v] = [X_u, X_v](e)$$ \\
+
+		\begin{defi}[Sous-groupes à un paramètre]
+		Soit $G$ un groupe de Lie, on appelle sous-groupe à un paramètre de $G$ tout morphisme de groupes $\phi : \R \to G$
+		\end{defi}
+
+		\begin{pro}
+		Soit $X \in \mathfrak{g}$ qui détermine un champs de vecteurs invariant à gauche sur $G$ qu'on note aussi $X$. Soit $\gamma_X(t)$ définie sur $I$ la courbe intégrale maximale du champs de vecteurs $X$ passant par $e$ à $t=0$. Alors $\gamma_X$ est un sous-groupe à un paramètre de $G$.
+		\end{pro}
+
+		\begin{defi}[Exponentielle]
+		On définit l'application $\exp : \mathfrak{g} \to G$ par 
+		$$\exp(X) = \gamma_X(1)$$
+		où $\gamma_X$ désigne le sous-groupe à un paramètre associé à $X\in \mathfrak{g}$.
+		\end{defi}
+
+		\subsubsection{Théorème de Frobenius:}
+
+		\begin{defi}[Grasmannienne]
+		Soient $0\leq k \leq n$. On définie la grasmannienne des $k$-espaces de $\R^n$ par 
+		$$G(n,k) = \{ W \subset \R^n | \text{ tel que W est un sous-espace vectoriel de dimension k}\}$$ 
+		On peut voir $G(n,k) = \GL(\R^n) / \Sigma$ où $\Sigma = \{f\in \GL(\R^n) | f(\R^k) = \R^k\}$. Ainsi, $G(n,k)$ est muni d'une structure de variété lisse. \\
+		\end{defi} 
+		
+		Soit $\mathcal{M}$ une variété lisse et soit $t_\beta\alpha : U_\alpha \cap U_\beta \to \GL(\R^m)$ le cocycle de son fibré tangent où $\{(U_\alpha, \phi_\alpha), \alpha \in A\}$ désigne l'atlas lisse de $\mathcal{M}$. On définit alors les fonctions de transitions 
+		$$\psi_{\beta\alpha} : \phi_\alpha(U_\alpha\cap U_\beta) \times G(n, k) \to \phi_\beta(U_\alpha \cap U_\beta) \times G(n,k)$$
+		donné par 
+		$$\psi_{\beta\alpha}(\phi_\alpha(x), V) = (\phi_\beta(x) , t_{\beta\alpha}(x)V)$$
+		pour tout $x\in U_\alpha \cap U_\beta \subset \mathcal{M}$ et pour tout $V\in G(n,k)$. \\
+
+		\begin{defi}[Fibré grassmannien]
+		Cela définit un fibré $\pi : G(T\mathcal{M}, k) \to \mathcal{M}$ appelé le fibré grasmannien de $k$-espace sur $\mathcal{M}$. \\
+		Une section de $\pi : G(T\mathcal{M}, k) \to \mathcal{M}$ est appelée une distribution lisse de $k$-espaces sur $\mathcal{M}$.
+		\end{defi}
+
+		\begin{defi}
+		Soit $\mathcal{M}$ une variété lisse, soit $W$ une distribution lisse de $k$-espaces sur $\mathcal{M}$ et soit $x_0\in \mathcal{M}$. On dit qu'une sous variété $\mathcal{N}$ de $\mathcal{M}$ de dimension $k$ intègre $W$ avec condition initiale $x_0$ si $x_0 \in \mathcal{N}$ et $T_x\mathcal{N} = W(x)$ pour tout $x\in \mathcal{N}$. \\
+		On dit que $W$ est intégrable s'il existe une telle sous-variété $\mathcal{M}$ pour tout $x_0\in \mathcal{M}$.
+		\end{defi}
+
+		\begin{defi}[Condition d'intégrabilité de Frobenius]
+		Soit $W$ une distribution de $k$-espaces sur une variété lisse $\mathcal{M}$. On dit que $W$ satifait la condition d'intégrabilité de Frobenius dans un ouvert $U\in \mathcal{M}$ si pour tout champs de vecteurs $X,Y$ définit sur $U$ tels que $X(x) \in W(x)$ et $Y(x) = W(x)$ pour tout $x\in U$ on a $[X, Y](x) \in W(x)$ pour tout $x\in \mathcal{M}$.
+		\end{defi}
+
+		\begin{pro}[Théorème d'intégrabilité de Frobenius]
+		Soit $W$ une distribution de $k$-espaces sur une variété lisse $\mathcal{M}$. Alors $W$ est intégrable si et seulement si elle vérifie la condition d'intégrabilité de Frobenius.
+		\end{pro}
+
+		\subsubsection{Fibré principal:}
+
+		Soit $\mathcal{M}$ une variété lisse munie de son atlas lisse $\{(U_\alpha, \phi_\alpha), \alpha \in A\}$ et d'un cocycle $g_{\beta\alpha} : U_\alpha \cap U_\beta \to G$ où $G$ est un groupe de Lie. On définit alors
+		$$\gamma_{\beta\alpha} : \phi_\alpha(U_\alpha \cap U_\beta) \times G \to \phi_\beta(U_\alpha \cap U_\beta) \times G$$
+		donné par
+		$$\gamma_{\beta\alpha}(\phi_\alpha(x), h) = (\phi_\beta(x), g_{\beta\alpha}(x)h)$$
+		Pour tout $x\in U_\alpha \cap U_\beta$ et tout $h\in G$ \\
+
+		Alors les applications $\gamma_{\beta\alpha}$ définissent une relation d'équivalence sur l'union disjointe $\DUnion_{\alpha \in A}\phi_\alpha(U_\alpha)\times G$. Notons $P$ l'espace quotient qui est une variété lisse. \\
+
+		On dispose aussi d'une application lisse $\pi : P \to \mathcal{M}$ telle qu'il existe des difféomorphismes $\psi_\alpha : \pi^{-1}(U_\alpha) \to \phi_\alpha(U_\alpha) \times G$ tels que $\pi_\alpha \circ \psi_\alpha = \pi \circ \phi_\alpha$ appelés trivialisation locales où $\pi_\alpha : \phi_\alpha(U_\alpha) \times G \to \phi_\alpha(U_\alpha)$ désigne la projection par rapport à la première composante. Aussi on a $\psi_\beta \circ \psi_\alpha^{-1} = \gamma_{\beta\alpha}$. \\
+
+		Pour chaque $x\in \mathcal{M}$ on définit la fibre au dessus de $x$ comme $P_x = \pi^{-1}(x)$. De plus, G agit à droite de façon lisse sur $P$ tel que chaque $\pi^{-1}(U_\alpha)$ est stable par $G$ et tel que chaque trivalisation locale $\psi_\alpha$ vérifie $\phi_\alpha(x.g) = \phi_\alpha(x).g$ pour tout $x\in \pi^{-1}(U_\alpha)$ et tout $g\in G$ et où l'action à droite sur $\phi_\alpha(U_\alpha)\times G$ est la multiplication à droite sur la seconde composante.
+
+
 \end{document}

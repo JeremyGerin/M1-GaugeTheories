@@ -6,33 +6,50 @@
 \contentsline {preu}{{preuve}{1}{}}{1}{}%
 \contentsline {defi}{{Définition}{5}{Sous-variété}}{2}{}%
 \contentsline {pro}{{Proposition}{2}{}}{2}{}%
-\contentsline {defi}{{Définition}{6}{Fibré tangent}}{3}{}%
+\contentsline {defi}{{Définition}{6}{Variété quotient}}{2}{}%
+\contentsline {defi}{{Définition}{7}{Fibré tangent}}{3}{}%
 \contentsline {pro}{{Proposition}{3}{}}{4}{}%
 \contentsline {preu}{{preuve}{2}{}}{4}{}%
-\contentsline {defi}{{Définition}{7}{Cocycle}}{4}{}%
-\contentsline {defi}{{Définition}{8}{Fibré vectoriel}}{5}{}%
+\contentsline {defi}{{Définition}{8}{Cocycle}}{4}{}%
+\contentsline {defi}{{Définition}{9}{Fibré vectoriel}}{5}{}%
 \contentsline {pro}{{Proposition}{4}{}}{5}{}%
-\contentsline {defi}{{Définition}{9}{Fibré cotangent}}{5}{}%
-\contentsline {defi}{{Définition}{10}{Fibré tensoriel}}{5}{}%
-\contentsline {defi}{{Définition}{11}{Section}}{5}{}%
-\contentsline {defi}{{Définition}{12}{Algèbre exterieure}}{5}{}%
+\contentsline {defi}{{Définition}{10}{Fibré cotangent}}{5}{}%
+\contentsline {defi}{{Définition}{11}{Fibré tensoriel}}{5}{}%
+\contentsline {defi}{{Définition}{12}{Section}}{5}{}%
+\contentsline {defi}{{Définition}{13}{Algèbre exterieure}}{6}{}%
 \contentsline {pro}{{Proposition}{5}{}}{6}{}%
 \contentsline {pro}{{Proposition}{6}{}}{6}{}%
 \contentsline {preu}{{preuve}{3}{}}{6}{}%
-\contentsline {pro}{{Proposition}{7}{}}{6}{}%
-\contentsline {preu}{{preuve}{4}{}}{6}{}%
-\contentsline {defi}{{Définition}{13}{Étoile de Hodge}}{7}{}%
+\contentsline {pro}{{Proposition}{7}{}}{7}{}%
+\contentsline {preu}{{preuve}{4}{}}{7}{}%
+\contentsline {defi}{{Définition}{14}{Étoile de Hodge}}{7}{}%
 \contentsline {preu}{{preuve}{5}{}}{7}{}%
-\contentsline {defi}{{Définition}{14}{Forme différentielle}}{7}{}%
-\contentsline {pro}{{Proposition}{8}{}}{7}{}%
-\contentsline {defi}{{Définition}{15}{}}{8}{}%
-\contentsline {defi}{{Définition}{16}{Différentielle extérieure}}{8}{}%
-\contentsline {pro}{{Proposition}{9}{}}{8}{}%
-\contentsline {defi}{{Définition}{17}{Cohomologie de Rham}}{8}{}%
+\contentsline {defi}{{Définition}{15}{Forme différentielle}}{8}{}%
+\contentsline {pro}{{Proposition}{8}{}}{8}{}%
+\contentsline {defi}{{Définition}{16}{}}{8}{}%
+\contentsline {defi}{{Définition}{17}{Différentielle extérieure}}{8}{}%
+\contentsline {pro}{{Proposition}{9}{}}{9}{}%
+\contentsline {defi}{{Définition}{18}{Cohomologie de Rham}}{9}{}%
 \contentsline {exe}{{Exemple}{1}{}}{9}{}%
-\contentsline {defi}{{Définition}{18}{Flot local d'un champs de vecteurs}}{9}{}%
-\contentsline {defi}{{Définition}{19}{Courbe integrale}}{10}{}%
+\contentsline {defi}{{Définition}{19}{Flot local d'un champs de vecteurs}}{10}{}%
+\contentsline {defi}{{Définition}{20}{Courbe integrale}}{10}{}%
 \contentsline {pro}{{Proposition}{10}{}}{10}{}%
 \contentsline {pro}{{Proposition}{11}{}}{10}{}%
-\contentsline {defi}{{Définition}{20}{Dérivation}}{10}{}%
-\contentsline {defi}{{Définition}{21}{Dérivation de Lie}}{11}{}%
+\contentsline {defi}{{Définition}{21}{Dérivation}}{11}{}%
+\contentsline {defi}{{Définition}{22}{Dérivation de Lie}}{11}{}%
+\contentsline {pro}{{Proposition}{12}{}}{11}{}%
+\contentsline {defi}{{Définition}{23}{Crochet de champs de vecteurs}}{11}{}%
+\contentsline {pro}{{Proposition}{13}{}}{11}{}%
+\contentsline {defi}{{Définition}{24}{Groupe de Lie}}{12}{}%
+\contentsline {defi}{{Définition}{25}{Algèbre de Lie}}{12}{}%
+\contentsline {defi}{{Définition}{26}{}}{12}{}%
+\contentsline {defi}{{Définition}{27}{Champs de vecteurs invariant à gauche}}{12}{}%
+\contentsline {pro}{{Proposition}{14}{}}{12}{}%
+\contentsline {defi}{{Définition}{28}{Sous-groupes à un paramètre}}{13}{}%
+\contentsline {pro}{{Proposition}{15}{}}{13}{}%
+\contentsline {defi}{{Définition}{29}{Exponentielle}}{13}{}%
+\contentsline {defi}{{Définition}{30}{Grasmannienne}}{13}{}%
+\contentsline {defi}{{Définition}{31}{Fibré grassmannien}}{14}{}%
+\contentsline {defi}{{Définition}{32}{}}{14}{}%
+\contentsline {defi}{{Définition}{33}{Condition d'intégrabilité de Frobenius}}{14}{}%
+\contentsline {pro}{{Proposition}{16}{Théorème d'intégrabilité de Frobenius}}{14}{}%
