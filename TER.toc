@@ -1,14 +1,21 @@
 \babel@toc {french}{}\relax 
-\contentsline {subsubsection}{Variétés différentielles:}{1}{}%
-\contentsline {subsubsection}{Fibré tangent:}{2}{}%
-\contentsline {subsubsection}{Fibrés vectoriels:}{4}{}%
-\contentsline {subsubsection}{Algèbre exterieure:}{6}{}%
-\contentsline {subsubsection}{Formes différentielles:}{8}{}%
-\contentsline {subsubsection}{Flot local d'un champs de vecteurs:}{10}{}%
-\contentsline {subsubsection}{Dérivation de Lie:}{11}{}%
-\contentsline {subsubsection}{Groupes de Lie:}{12}{}%
-\contentsline {subsubsection}{Théorème de Frobenius:}{13}{}%
-\contentsline {subsubsection}{Fibré principal:}{14}{}%
-\contentsline {subsubsection}{Connection sur un fibré principal:}{16}{}%
-\contentsline {subsubsection}{Transport parallèle:}{18}{}%
+\contentsline {chapter}{\numberline {1}Variétés différentielle}{1}{}%
+\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont I}}Généralités}{2}{}%
+\contentsline {subsubsection}{Définitions:}{2}{}%
+\contentsline {subsubsection}{Sous-variétés:}{3}{}%
+\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont II}}Fibrés vectoriels et fibré principal}{3}{}%
+\contentsline {subsubsection}{Fibré principal:}{3}{}%
+\contentsline {subsubsection}{Fibrés vectoriels:}{5}{}%
+\contentsline {subsubsection}{Fibré tangent, fibré cotangent et fibré tensoriel:}{6}{}%
+\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont III}}Formes différentielles}{7}{}%
+\contentsline {subsubsection}{Algèbre exterieure:}{7}{}%
+\contentsline {subsubsection}{Formes différentielles:}{9}{}%
+\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont IV}}Flot local d'un champs de vecteurs}{11}{}%
+\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont V}}Dérivation de Lie}{12}{}%
+\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont VI}}Théorème de Frobenius}{13}{}%
+\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont VII}}Connexions}{14}{}%
+\contentsline {subsubsection}{Connection d'Ehresmann:}{14}{}%
+\contentsline {subsubsection}{Forme de Maurer-Cartan:}{16}{}%
+\contentsline {subsubsection}{Connexion de Koszul:}{17}{}%
+\contentsline {chapter}{\numberline {2}Groupes et algèbres de Lie}{19}{}%
 \contentsfinish 

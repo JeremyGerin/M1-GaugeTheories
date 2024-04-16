@@ -1,0 +1,48 @@
+\chapter{Groupes et algèbres de Lie}
+\minisommairech
+
+\begin{defi}[Groupe de Lie]
+Un groupe de Lie $G$ est la donnée d'un groupe et d'une variété lisse telle que la multiplication et l'inverse soient des applications lisses.
+\end{defi}
+
+\begin{defi}[Algèbre de Lie]
+Une algèbre de Lie $\mathfrak{g}$ est un espace vectoriel muni d'une application bilinéaire, appelée crochet de Lie, $[.,.] : \mathfrak{g}\times\mathfrak{g} \to \mathfrak{g}$ vérifiant:
+$$[X, Y] = - [Y, X] \quad \text{(antisymétrie)}$$
+et $$[X, [Y, Z]] + [Y, [Z, X]] + [Z, [X, Y]] = 0 \quad \text{(identité de Jacobi)}$$
+\end{defi}
+
+\begin{defi}
+Soit $G$ un groupe de Lie, on définit pour $g\in G$ l'application adjointe 
+$$\ad_g : G \to G, h \mapsto ghg^{-1}$$ 
+On note aussi $\Ad_g = T_e(\ad_g)$ \\
+\end{defi}
+
+On note $L_g$ la translation à gauche par $g$, c'est un $\mathscr{C}^\infty$-difféomorphisme de $G$. Alors $G$ agit sur $TG$ via 
+$$g.v = T(L_g)v$$
+
+\begin{defi}[Champs de vecteurs invariant à gauche]
+Soit $X: G \to TG$ un champs de vecteur sur $G$. On dit que $X$ est invariant à gauche si $T(L_g)X = X, \forall g\in G$. On note $\mathcal{L}(G)$ l'espace des champs de vecteurs invariants à gauche.\\
+\end{defi}
+
+Comme $T(L_g) : T_hG\to T_{gh}G$ est un isomorphisme d'espace vectoriel, un champs de vecteur invariant à gauche est entièrement déterminé par ses valeurs sur $T_eG$, et réciproquement, pour $v\in T_eG$, il existe un unique champs de vecteurs invariant à gauche $X_v$ tel que $X_v(e)=v$. Ainsi, l'application $v\to X_v$ est un isomorphisme d'espace vectoriel entre $T_eG$ et $\mathcal{L}(G)$. \\
+
+\begin{pro}
+Si $X, Y$ sont des champs de vecteurs invariants à gauche alors $[X, Y]$ est aussi un champs de vecteur invariant à gauche. 
+\end{pro}
+
+Ainsi, on muni $T_eG$ qu'on notera désormais $\mathfrak{g}$ du crochet de Lie, qui en fait une algèbre de Lie qu'on appelle algèbre de Lie associée au groupe de Lie $G$.
+$$[u, v] = [X_u, X_v](e)$$ \\
+
+\begin{defi}[Sous-groupes à un paramètre]
+Soit $G$ un groupe de Lie, on appelle sous-groupe à un paramètre de $G$ tout morphisme de groupes $\phi : \R \to G$
+\end{defi}
+
+\begin{pro}
+Soit $X \in \mathfrak{g}$ qui détermine un champs de vecteurs invariant à gauche sur $G$ qu'on note aussi $X$. Soit $\gamma_X(t)$ définie sur $I$ la courbe intégrale maximale du champs de vecteurs $X$ passant par $e$ à $t=0$. Alors $\gamma_X$ est un sous-groupe à un paramètre de $G$.
+\end{pro}
+
+\begin{defi}[Exponentielle]
+On définit l'application $\exp : \mathfrak{g} \to G$ par 
+$$\exp(X) = \gamma_X(1)$$
+où $\gamma_X$ désigne le sous-groupe à un paramètre associé à $X\in \mathfrak{g}$.
+\end{defi}

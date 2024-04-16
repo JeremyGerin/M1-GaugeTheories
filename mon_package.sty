@@ -13,9 +13,9 @@
 
 	\RequirePackage{titletoc}
 	\titlecontents{part}[0cm]{\scshape \addvspace{2em}}{\contentslabel{1.5em}}{\hspace{-1.5em}}{\hfill \contentspage}[\addvspace{0.5em}]
-	\titlecontents{chapter}[1cm]{}{\contentslabel{1.5em}}{\hspace{-1.5em}}{\dotfill \contentspage}[\addvspace{0.5em}]
-	\titlecontents{section}[2cm]{}{\contentslabel{1.5em}}{\hspace{-1.5em}}{\dotfill \contentspage}[\addvspace{0.25em}]
-	\titlecontents{subsection}[3cm]{}{\contentslabel{2.5em}}{\hspace{-2.5em}}{\dotfill \contentspage}[\addvspace{0.25em}]
+	\titlecontents{chapter}[1cm]{\scshape\addvspace{2em}}{\chaptername\nobreakspace\thecontentslabel:\hspace{0.5em}}{}{\dotfill \contentspage}[\addvspace{0.5em}]
+	\titlecontents{section}[2cm]{\addvspace{0.33em}}{\hspace{0.66em}\contentslabel{2em}}{\hspace{-1.5em}}{\dotfill \contentspage}[\addvspace{0.33em}]
+	\titlecontents{subsection}[3cm]{}{\contentslabel{2em}}{}{\dotfill \contentspage}[\addvspace{0.25em}]
 	
 	\RequirePackage{geometry}
 	\geometry{left=3cm, right=3cm, bottom=3cm, top=4cm, headsep=1.5cm}
@@ -28,8 +28,10 @@
 	\RequirePackage{fancyhdr}
 	\pagestyle{fancy}
 
-	\fancyhead[L]{\includegraphics[scale=0.4]{logo_univ.png}}
-	\fancyhead[R]{}
+	\fancyhead[LE]{\includegraphics[scale=0.4]{logo_univ.png}}
+	\fancyhead[RO]{\includegraphics[scale=0.4]{logo_univ.png}}
+	\fancyhead[RE]{}
+	\fancyhead[LO]{}
 	\fancyfoot[C]{\thepage}
 	
 	\RequirePackage[tight, french]{minitoc}
@@ -37,8 +39,8 @@
 	
 	\renewcommand{\thesection}{\Roman{section}}
 	
-	\newcommand\sommaire{\renewcommand{\contentsname}{Sommaire} \setcounter{tocdepth}{3} \tableofcontents}
-	\newcommand\minisommairech{\renewcommand{\mtctitle}{Sommaire}\minitoc \newpage}
+	\newcommand\sommaire{\renewcommand{\contentsname}{Sommaire} \setcounter{tocdepth}{4} \tableofcontents}
+	\newcommand\minisommairech{\renewcommand{\mtctitle}{Sommaire}\setcounter{minitocdepth}{4}\minitoc \newpage}
 
 	\newcommand\be{\begin{enumerate}[label=(\roman*)]}
 	\newcommand\ee{\end{enumerate}}
@@ -72,6 +74,16 @@
 	\theorembodyfont{\normalfont}
 	\theoremseparator{: \\ }
 	\newtheorem*{pro}{Proposition}
+	}
+
+	{
+	\theoremstyle{break}
+	\theoremprework{\pagebreak[2]} 
+	\theorempostwork{\pagebreak[2]} 
+	\theoremheaderfont{\scshape}
+	\theorembodyfont{\normalfont}
+	\theoremseparator{: \\ }
+	\newtheorem*{lem}{Lemme}
 	}
 	
 	{
