@@ -428,7 +428,7 @@ On note $\Omega^1(\mathcal{M}, V)$ l'espace vectoriel des 1-formes différentiel
 \end{defi}
 
 \begin{defi}[Connexion d'Ehresmann]
-Notons $R_g : p\in P \mapsto p.g \in P$ et soit $\pi : P \to \mathcal{M}$ un fibré principal de groupe structural $G$. Une connexion sur $P$ est la donnée $p\in P \mapsto \Hor(T_pP)$ d'une distribution lisse de $m$-espaces sur $P$ telle que:
+Notons $R_g : p\in P \mapsto p.g \in P$ et soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal. Une connexion sur $P$ est la donnée $p\in P \mapsto \Hor(T_pP)$ d'une distribution lisse de $m$-espaces sur $P$ telle que:
 \be
 	\item $\Verti(T_pP) \oplus \Hor(T_pP) = T_pP$
 	\item $T_pR_g(\Hor(T_pP)) = \Hor(T_{p.g}P)$ pour tout $g\in G$ et tout $p\in P$
@@ -467,7 +467,7 @@ Soient $\mathcal{M}, \mathcal{N}$ deux variétés lisse, $V$ un $\R$-espace vect
 \end{defi}
 
 \begin{pro}
-Soient $\pi : P \to \mathcal{M}$ et $\rho : Q \to \mathcal{N}$ des fibrés principaux de groupe structural $G$ et soit $F: P\to Q$ un morphisme de fibré principaux recouvrant l'application $f: \mathcal{M} \to \mathcal{N}$ et soit $\omega$ une connexion d'Ehresmann sur $Q$. Alors $F^*\omega$ est une connexion d'Ehresmann sur $P$.
+Soient $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ et $G \hookrightarrow G \overset{\rho}{\to} \mathcal{N}$ des fibrés principaux de groupe structural $G$ et soit $F: P\to Q$ un morphisme de fibré principaux recouvrant l'application $f: \mathcal{M} \to \mathcal{N}$ et soit $\omega$ une connexion d'Ehresmann sur $Q$. Alors $F^*\omega$ est une connexion d'Ehresmann sur $P$.
 \end{pro}
 
 \begin{pro}
@@ -480,7 +480,7 @@ Soit $\pi : P \to \mathcal{M}$ un fibré principal de groupe structural $G$ muni
 \end{pro}
 
 \begin{pro}
-Soit $\pi : P \to \mathcal{M}$ un fibré principal de groupe structural $G$ muni d'une connexion d'Ehresmann $\omega$, soit $\gamma : [0,1] \to \mathcal{M}$ une courbe lisse. On définit une application 
+Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal muni d'une connexion d'Ehresmann $\omega$, soit $\gamma : [0,1] \to \mathcal{M}$ une courbe lisse. On définit une application 
 $$\Par_t^\gamma : \pi^{-1}(\gamma(0)) \to \pi^{-1}(\gamma(t)), \quad p_0 \mapsto \tilde{\gamma_{p_0}}(t)$$
 \end{pro}
 
@@ -512,7 +512,7 @@ Soit $E \to \mathcal{M}$ un fibré vectoriel. Une connexion de Koszul est une ap
 \ee
 \end{defi}
 
-Soit $\pi : P \to \mathcal{M}$ un fibré principal de groupe structural $G$, soit $\rho : G \to \GL(V)$ une représentation de $G$ et soit $p \in P \mapsto \Hor(T_pP)$ une connexion d'Ehresmann sur $P$. Notons $\tilde{\pi} : E = P\times_\rho V \to \mathcal{M}$ et $s : P\times V \to E$ la surjection canonique. Soit $(p, v) \in P\times V$ un représentant de $y\in E$ et posons 
+Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal, soit $\rho : G \to \GL(V)$ une représentation de $G$ et soit $p \in P \mapsto \Hor(T_pP)$ une connexion d'Ehresmann sur $P$. Notons $\tilde{\pi} : E = P\times_\rho V \to \mathcal{M}$ et $s : P\times V \to E$ la surjection canonique. Soit $(p, v) \in P\times V$ un représentant de $y\in E$ et posons 
 $$H_y = T_{(p,v)}s(\Hor(T_pP) \times \{v\})$$ 
 Cette définition ne dépend pas du choix du représentant $(p, v)$ de $y$ puisque en notant $\tilde{R_g}: (p,v) \mapsto (p, v).g$, on a $s \circ \tilde{R_g} = s$ donc $T_{(p,v).g} s \circ T_{(p,v)} \tilde{R_g} = T_{(p, v)} s$ et
 $$T_{(p,v)}\tilde{R_g}(\Hor(T_pP)\times \{v\}) = T_pR_g(\Hor(T_pP)) \times \{\rho(g^{-1})v\} = \Hor(T_{p.g}P) \times \{\rho(g^{-1})v\}$$
@@ -531,4 +531,22 @@ Soit $\nabla$ une connexion de Koszul sur $T\mathcal{M}$. Alors $\nabla$ se prol
 	$$\nabla_X(\sigma \otimes \sigma') = \nabla_X(\sigma)\otimes \sigma' + \sigma \otimes \nabla_X(\sigma')$$
 	\item commute avec les contractions
 \ee
+\end{pro}
+
+\subsubsection{Courbure:} 
+
+Pour $p\in P$ et $v\in T_pP$ alors on note $w = w^H + w^V$ où $w^H \in \Hor(T_pP)$ et $w^V \in \Verti(T_pP)$ dans la somme directe associée à la connexion d'Ehresmann $\omega$.
+
+\begin{defi}[Courbure]
+Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal muni d'une connexion d'Ehresmann $\omega$. La courbure de $\omega$ est l'application $D\omega : T^{\diamond 2}P \to \mathfrak{g}$ définie par 
+$$D\omega(u,v) = d\omega(u^H, v^H) \quad \forall (u,v)\in T^{\diamond 2}P$$
+\end{defi}
+
+\begin{pro}
+Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal muni d'une connexion d'Ehresmann $\omega$. Alors la distribution associée $p\to \Hor(T_pP)$ est intégrable si et seulement si $D\omega = 0$.
+\end{pro}
+
+\begin{pro}[Equation de structure de Cartan]
+Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal muni d'une connexion d'Ehresmann $\omega$. Alors on a 
+$$D\omega = d\omega + \frac{1}{2}\omega\wedge\omega$$
 \end{pro}

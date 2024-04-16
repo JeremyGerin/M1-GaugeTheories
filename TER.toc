@@ -17,5 +17,6 @@
 \contentsline {subsubsection}{Connection d'Ehresmann:}{14}{}%
 \contentsline {subsubsection}{Forme de Maurer-Cartan:}{16}{}%
 \contentsline {subsubsection}{Connexion de Koszul:}{17}{}%
+\contentsline {subsubsection}{Courbure:}{18}{}%
 \contentsline {chapter}{\numberline {2}Groupes et algèbres de Lie}{19}{}%
 \contentsfinish 
