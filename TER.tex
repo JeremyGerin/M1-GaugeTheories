@@ -5,8 +5,11 @@
 \usepackage{enumitem}
 \usepackage[style, maths]{mon_package}
 \usepackage{multicol}
+\usepackage{tikz-cd}
+\usepackage{systeme}
+\sysextracolsign{|}
 
-\title{Travail encadré de recherche - Théories de jauges}
+\title{Travail encadré de recherche - Théories de jauge}
 \author{Jérémy \textsc{Gerin}}
 \date{2023}
 
@@ -15,10 +18,14 @@
 		\maketitle
 		\dominitoc
 		\sommaire
+
 	\mainmatter
 		\include{varietes-diff.tex}
+		%\include{gal.tex}
+		\include{yang-mills.tex}
 
-		\include{gal.tex}
+	\appendix
+		\include{algebre_mult.tex}
+		%\include{dirac.tex}
 
-		
 \end{document}

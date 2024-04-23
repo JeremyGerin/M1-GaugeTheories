@@ -16,6 +16,12 @@
 	\titlecontents{chapter}[1cm]{\scshape\addvspace{2em}}{\chaptername\nobreakspace\thecontentslabel:\hspace{0.5em}}{}{\dotfill \contentspage}[\addvspace{0.5em}]
 	\titlecontents{section}[2cm]{\addvspace{0.33em}}{\hspace{0.66em}\contentslabel{2em}}{\hspace{-1.5em}}{\dotfill \contentspage}[\addvspace{0.33em}]
 	\titlecontents{subsection}[3cm]{}{\contentslabel{2em}}{}{\dotfill \contentspage}[\addvspace{0.25em}]
+
+	\newcommand\appendixchapter[1]{
+	\refstepcounter{chapter}
+	\chapter*{Annexe \thechapter: #1}
+	\addcontentsline{toc}{chapter}{Annexe \thechapter: #1}
+	}
 	
 	\RequirePackage{geometry}
 	\geometry{left=3cm, right=3cm, bottom=3cm, top=4cm, headsep=1.5cm}
@@ -199,6 +205,9 @@
 	\newcommand\Co[1]{\mathscr{C}^{#1}}
 	\newcommand\Perm{\mathfrak{S}}
 	\newcommand\Part{\mathscr{P}}
+	\newcommand\ket[1]{|#1\rangle}
+	\newcommand\bra[1]{\langle #1|}
+	\newcommand\braket[2]{\langle #1| #2\rangle}
 	\DeclareMathOperator{\Vect}{Vect}
 	\DeclareMathOperator{\Vol}{Vol}
 	\DeclareMathOperator{\Ker}{Ker}
@@ -211,8 +220,8 @@
 	\DeclareMathOperator{\SO}{SO}
 	\DeclareMathOperator{\Mink}{Mink}
 	\DeclareMathOperator{\Diff}{Diff}
-	\DeclareMathOperator{\grad}{grad}
-	\DeclareMathOperator{\rot}{rot}
+	\DeclareMathOperator{\grad}{\overrightarrow{\text{grad}}}
+	\DeclareMathOperator{\rot}{\overrightarrow{\text{rot}}}
 	\DeclareMathOperator{\Div}{div}
 	\DeclareMathOperator{\supp}{supp}
 	\DeclareMathOperator{\ad}{ad}
@@ -220,6 +229,7 @@
 	\DeclareMathOperator{\Verti}{Vert}
 	\DeclareMathOperator{\Hor}{Hor}
 	\DeclareMathOperator{\Par}{Par}
+
 \fi
 
 \endinput

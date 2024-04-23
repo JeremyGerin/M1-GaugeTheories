@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.14)  16 APR 2024 18:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.14)  24 APR 2024 01:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -579,7 +579,7 @@ File: french.mld 2006/03/21
 ))
 Package minitoc Info: I0010
 (minitoc)             The francais language is selected.
-(minitoc)              on input line 38.
+(minitoc)              on input line 44.
 
 (/usr/share/texlive/texmf-dist/tex/latex/minitoc/francais.mld
 File: francais.mld 2004/12/14
@@ -826,58 +826,377 @@ Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
 \colbreak@box=\box100
 \mc@col@check@num=\count343
 )
+(/usr/share/texlive/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
+Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks45
+\pgfutil@tempdima=\dimen189
+\pgfutil@tempdimb=\dimen190
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box101
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
+))
+Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks46
+\pgfkeys@temptoks=\toks47
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+ex
+\pgfkeys@tmptoks=\toks48
+))
+\pgf@x=\dimen191
+\pgf@y=\dimen192
+\pgf@xa=\dimen193
+\pgf@ya=\dimen194
+\pgf@xb=\dimen195
+\pgf@yb=\dimen196
+\pgf@xc=\dimen197
+\pgf@yc=\dimen198
+\pgf@xd=\dimen199
+\pgf@yd=\dimen256
+\w@pgf@writea=\write4
+\r@pgf@reada=\read3
+\c@pgf@counta=\count344
+\c@pgf@countb=\count345
+\c@pgf@countc=\count346
+\c@pgf@countd=\count347
+\t@pgf@toka=\toks49
+\t@pgf@tokb=\toks50
+\t@pgf@tokc=\toks51
+\pgf@sys@id@count=\count348
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfsyssoftpath@smallbuffer@items=\count349
+\pgfsyssoftpath@bigbuffer@items=\count350
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen257
+\pgfmath@count=\count351
+\pgfmath@box=\box102
+\pgfmath@toks=\toks52
+\pgfmath@stack@operand=\toks53
+\pgfmath@stack@operation=\toks54
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count352
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x
+File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@picminx=\dimen258
+\pgf@picmaxx=\dimen259
+\pgf@picminy=\dimen260
+\pgf@picmaxy=\dimen261
+\pgf@pathminx=\dimen262
+\pgf@pathmaxx=\dimen263
+\pgf@pathminy=\dimen264
+\pgf@pathmaxy=\dimen265
+\pgf@xx=\dimen266
+\pgf@xy=\dimen267
+\pgf@yx=\dimen268
+\pgf@yy=\dimen269
+\pgf@zx=\dimen270
+\pgf@zy=\dimen271
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex
+File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@path@lastx=\dimen272
+\pgf@path@lasty=\dimen273
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex
+File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@shorten@end@additional=\dimen274
+\pgf@shorten@start@additional=\dimen275
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x
+File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfpic=\box103
+\pgf@hbox=\box104
+\pgf@layerbox@main=\box105
+\pgf@picture@serial@count=\count353
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex
+File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgflinewidth=\dimen276
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex
+File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@pt@x=\dimen277
+\pgf@pt@y=\dimen278
+\pgf@pt@temp=\dimen279
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex
+File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex
+File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x
+File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowsep=\dimen280
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@max=\dimen281
+\pgf@sys@shading@range@num=\count354
+\pgf@shadingcount=\count355
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex
+File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfexternal@startupbox=\box106
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x
+File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex
+File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex
+File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfnodeparttextbox=\box107
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@nodesepstart=\dimen282
+\pgf@nodesepend=\dimen283
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen284
+\pgffor@skip=\dimen285
+\pgffor@stack=\toks55
+\pgffor@toks=\toks56
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex
+File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@plot@mark@count=\count356
+\pgfplotmarksize=\dimen286
+)
+\tikz@lastx=\dimen287
+\tikz@lasty=\dimen288
+\tikz@lastxsaved=\dimen289
+\tikz@lastysaved=\dimen290
+\tikz@lastmovetox=\dimen291
+\tikz@lastmovetoy=\dimen292
+\tikzleveldistance=\dimen293
+\tikzsiblingdistance=\dimen294
+\tikz@figbox=\box108
+\tikz@figbox@bg=\box109
+\tikz@tempbox=\box110
+\tikz@tempbox@bg=\box111
+\tikztreelevel=\count357
+\tikznumberofchildren=\count358
+\tikznumberofcurrentchild=\count359
+\tikz@fig@count=\count360
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfmatrixcurrentrow=\count361
+\pgfmatrixcurrentcolumn=\count362
+\pgf@matrix@numberofcolumns=\count363
+)
+\tikz@expandcount=\count364
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.
+code.tex
+File: pgflibraryarrows.meta.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowinset=\dimen295
+\pgfarrowlength=\dimen296
+\pgfarrowwidth=\dimen297
+\pgfarrowlinewidth=\dimen298
+))) (/usr/share/texlive/texmf-dist/tex/generic/systeme/systeme.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count365
+\decimalpart=\count366
+)
+Package: xstring 2021/07/21 v1.84 String manipulations (CT)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/systeme/systeme.tex
+\SYS_systemecode=\toks57
+\SYS_systempreamble=\toks58
+\SYSeqnum=\count367
+)
+Package: systeme 2020/05/03 v0.34 Mise en forme de systemes d'equations (CT)
+)
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count344
-\l__pdf_internal_box=\box101
+\l__color_backend_stack_int=\count368
+\l__pdf_internal_box=\box112
 )
-(./TER.aux (./varietes-diff.aux) (./gal.aux))
+(./TER.aux (./varietes-diff.aux) (./yang-mills.aux) (./algebre_mult.aux))
 \openout1 = `TER.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 16.
 LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 1
-3.
+6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Info: Redefining \degres on input line 13.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Info: Redefining \degres on input line 16.
 Package french.ldf Info: Setting StandardItemizeEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 13.
+(french.ldf)             reported on input line 16.
 Package french.ldf Info: Setting StandardEnumerateEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 13.
-LaTeX Info: Redefining \up on input line 13.
+(french.ldf)             reported on input line 16.
+LaTeX Info: Redefining \up on input line 16.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count345
-\scratchdimen=\dimen189
-\scratchbox=\box102
-\nofMPsegments=\count346
-\nofMParguments=\count347
-\everyMPshowfont=\toks45
-\MPscratchCnt=\count348
-\MPscratchDim=\dimen190
-\MPnumerator=\count349
-\makeMPintoPDFobject=\count350
-\everyMPtoPDFconversion=\toks46
+\scratchcounter=\count369
+\scratchdimen=\dimen299
+\scratchbox=\box113
+\nofMPsegments=\count370
+\nofMParguments=\count371
+\everyMPshowfont=\toks59
+\MPscratchCnt=\count372
+\MPscratchDim=\dimen300
+\MPnumerator=\count373
+\makeMPintoPDFobject=\count374
+\everyMPtoPDFconversion=\toks60
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -936,18 +1255,18 @@ Package minitoc(hints) Warning: W0040
 (minitoc(hints))                It is incompatible 
 (minitoc(hints))                with the minitoc package.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 15
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 18
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
@@ -958,7 +1277,7 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Package minitoc Info: I0024
-(minitoc)             PREPARING MINITOCS FROM TER.toc on input line 17.
+(minitoc)             PREPARING MINITOCS FROM TER.toc on input line 20.
 Package minitoc Info: I0033
 (minitoc)             Writing TER.mtc1.
 \openout3 = `TER.mtc1'.
@@ -967,10 +1286,14 @@ Package minitoc Info: I0033
 (minitoc)             Writing TER.mtc2.
 \openout3 = `TER.mtc2'.
 
-<logo_univ.png, id=9, 178.6675pt x 80.3pt>
+Package minitoc Info: I0033
+(minitoc)             Writing TER.mtc3.
+\openout3 = `TER.mtc3'.
+
+<logo_univ.png, id=12, 178.6675pt x 80.3pt>
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 17.
+Package pdftex.def Info: logo_univ.png  used on input line 20.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 
@@ -984,13 +1307,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [2
 
  <./logo_univ.png>] (./TER.toc)
-\tf@toc=\write4
-\openout4 = `TER.toc'.
+\tf@toc=\write5
+\openout5 = `TER.toc'.
 
  [3]
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 18.
+Package pdftex.def Info: logo_univ.png  used on input line 22.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 
@@ -1001,9 +1324,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
-[4
-
-]
+[4]
 \openout2 = `varietes-diff.aux'.
 
  (./varietes-diff.tex
@@ -1015,6 +1336,7 @@ Chapitre 1.
 (./TER.mtc1) [1
 
 
+
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
@@ -1022,7 +1344,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 42.
+Package pdftex.def Info: logo_univ.png  used on input line 40.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1033,7 +1355,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 60--61
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
 
  []
 
@@ -1050,23 +1372,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 
  []
 
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 108.
+Package pdftex.def Info: logo_univ.png  used on input line 104.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1077,28 +1399,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 108--110
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 130--131
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 117--119
 
  []
 
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 137.
+Package pdftex.def Info: logo_univ.png  used on input line 141.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1109,13 +1416,33 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
  []
 
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 176.
+Package pdftex.def Info: logo_univ.png  used on input line 168.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1126,18 +1453,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 180--182
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 199--200
+Underfull \hbox (badness 10000) in paragraph at lines 177--178
 
  []
 
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 206.
+Package pdftex.def Info: logo_univ.png  used on input line 207.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1148,16 +1470,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 209--210
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 213--215
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 217--219
 
  []
@@ -1168,13 +1480,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 220--221
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 227--228
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
 
  []
 
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 237.
+Package pdftex.def Info: logo_univ.png  used on input line 230.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1185,18 +1497,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 244--245
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 247--248
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
 
  []
 
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 266.
+Package pdftex.def Info: logo_univ.png  used on input line 269.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1209,7 +1516,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [9]
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 298.
+Package pdftex.def Info: logo_univ.png  used on input line 301.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 
@@ -1223,7 +1530,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [10]
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 335.
+Package pdftex.def Info: logo_univ.png  used on input line 338.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 
@@ -1235,18 +1542,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 354--356
+Underfull \hbox (badness 10000) in paragraph at lines 357--359
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 369--371
+Underfull \hbox (badness 10000) in paragraph at lines 374--376
 
  []
 
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 371.
+Package pdftex.def Info: logo_univ.png  used on input line 376.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1257,20 +1564,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 376--378
+Underfull \hbox (badness 10000) in paragraph at lines 381--383
 
  []
 
-LaTeX Font Info:    Trying to load font information for U+euf on input line 402
-.
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 402.
+Package pdftex.def Info: logo_univ.png  used on input line 407.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 36.46945pt, for example:
@@ -1280,13 +1581,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 412--414
+LaTeX Font Info:    Trying to load font information for U+euf on input line 409
+.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+Underfull \hbox (badness 10000) in paragraph at lines 419--421
 
  []
 
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 437.
+Package pdftex.def Info: logo_univ.png  used on input line 445.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1297,18 +1603,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 461--463
+Underfull \hbox (badness 10000) in paragraph at lines 463--465
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 466--467
+Underfull \hbox (badness 10000) in paragraph at lines 468--469
 
  []
 
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 471.
+Package pdftex.def Info: logo_univ.png  used on input line 486.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1321,7 +1627,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [15]
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 508.
+Package pdftex.def Info: logo_univ.png  used on input line 520.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 
@@ -1332,15 +1638,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 520--521
-
- []
-
+[16])
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 542.
+Package pdftex.def Info: logo_univ.png  used on input line 23.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 36.46945pt, for example:
@@ -1349,10 +1652,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
-[17])
+[17]
+\openout2 = `yang-mills.aux'.
+
+ (./yang-mills.tex
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 19.
+Package pdftex.def Info: logo_univ.png  used on input line 1.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 
@@ -1363,42 +1669,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
-[18]
-\openout2 = `gal.aux'.
-
- (./gal.tex
-Chapitre 2.
-Package minitoc Info: I0006
-(minitoc)             TER.mtc2 is empty on input line 2.
-[19
+[18
 
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 16--18
+Chapitre 2.
+\openout3 = `TER.mtc'.
 
- []
+\openout3 = `TER.mtc'.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 24--25
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--35
-
- []
-
+(./TER.mtc2) [19]
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 42.
+Package pdftex.def Info: logo_univ.png  used on input line 43.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 36.46945pt, for example:
@@ -1407,10 +1694,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
-[20])
+[20]
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 21.
+Package pdftex.def Info: logo_univ.png  used on input line 84.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 
@@ -1422,6 +1709,106 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [21]
+Underfull \hbox (badness 10000) in paragraph at lines 92--94
+
+ []
+
+)
+File: logo_univ.png Graphic file (type png)
+<use logo_univ.png>
+Package pdftex.def Info: logo_univ.png  used on input line 25.
+(pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 36.46945pt, for example:
+(fancyhdr)                \setlength{\headheight}{36.46945pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
+
+[22]
+\openout2 = `algebre_mult.aux'.
+
+ (./algebre_mult.tex
+Underfull \hbox (badness 10000) in paragraph at lines 11--13
+
+ []
+
+[23
+
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 52--54
+
+ []
+
+File: logo_univ.png Graphic file (type png)
+<use logo_univ.png>
+Package pdftex.def Info: logo_univ.png  used on input line 67.
+(pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 36.46945pt, for example:
+(fancyhdr)                \setlength{\headheight}{36.46945pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 69--71
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
+
+ []
+
+File: logo_univ.png Graphic file (type png)
+<use logo_univ.png>
+Package pdftex.def Info: logo_univ.png  used on input line 92.
+(pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 36.46945pt, for example:
+(fancyhdr)                \setlength{\headheight}{36.46945pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+
+ []
+
+)
+File: logo_univ.png Graphic file (type png)
+<use logo_univ.png>
+Package pdftex.def Info: logo_univ.png  used on input line 28.
+(pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 36.46945pt, for example:
+(fancyhdr)                \setlength{\headheight}{36.46945pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
+
+[26]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the TER.maf file.
@@ -1433,46 +1820,47 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the TER.log file.
 
-\tf@thm=\write5
-\openout5 = `TER.thm'.
+\tf@thm=\write6
+\openout6 = `TER.thm'.
 
-(./TER.aux (./varietes-diff.aux) (./gal.aux)) ) 
+(./TER.aux (./varietes-diff.aux) (./yang-mills.aux) (./algebre_mult.aux)) ) 
 Here is how much of TeX's memory you used:
- 10251 strings out of 478287
- 155186 string characters out of 5849289
- 485724 words of memory out of 5000000
- 28096 multiletter control sequences out of 15000+600000
- 491977 words of font info for 89 fonts, out of 8000000 for 9000
+ 22243 strings out of 478287
+ 421706 string characters out of 5849289
+ 724394 words of memory out of 5000000
+ 39835 multiletter control sequences out of 15000+600000
+ 492213 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,17n,76p,764b,566s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvip
-s/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-mi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/rsfs/rsfs10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1095.pfb><
-/usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fon
-ts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-s
-uper/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></
-usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/font
-s/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/type1/public/cm-su
-per/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></u
-sr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts
-/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fonts/type1/public/cm-sup
-er/sfti1200.pfb>
-Output written on TER.pdf (25 pages, 402896 bytes).
+ 98i,21n,103p,746b,1165s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/us
+r/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf/fonts/type1/pu
+blic/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx12
+00.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/t
+exmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/pub
+lic/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc120
+0.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/te
+xmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/publ
+ic/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200
+.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/tex
+mf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fonts/type1/publi
+c/cm-super/sfti1200.pfb>
+Output written on TER.pdf (30 pages, 449323 bytes).
 PDF statistics:
- 220 PDF objects out of 1000 (max. 8388607)
- 137 compressed objects within 2 object streams
+ 243 PDF objects out of 1000 (max. 8388607)
+ 153 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,51 @@
+\appendixchapter{Formalisme de Dirac}
+
+\section{Kets, bras et bracket:}
+
+Soit $\mathcal{H}$ un espace de Hilbert dont on notera $\langle ., . \rangle_\mathcal{H}$ le produit scalaire (semi-linéaire à gauche et linéaire à droite) et $||.||_\mathcal{H}$ la norme. On notera $\mathcal{H}^*$ son dual munie de la norme d'opérateur $||.||_{\mathcal{H}^*}$ .
+
+\begin{defi}[Ket]
+On appelle kets les vecteurs de $\mathcal{H}$ qu'on note $\ket{\psi}$. \\
+On note $t\mapsto\ket{\psi(t)}$ une fonction à valeur dans $\mathcal{H}$.
+\end{defi}
+
+\begin{defi}[Bra]
+On appelle bras les éléments de $\mathcal{H}^*$ qu'on notera $\bra{\phi}$. \\ 
+On appelle bracket le résultat de l'application d'un bra $\bra{\phi}$ sur un ket $\ket{\psi}$, noté $\braket{\phi}{\psi}$.
+\end{defi}
+
+Soit $\ket{\phi} \in \mathcal{H}$, alors l'application $\ket{\psi} \mapsto \langle \ket{\phi}, \ket{\psi}\rangle_\mathcal{H}$ est une forme linéaire continue d'après l'inégalité de Cauchy-Schwarz. Elle correspond donc à un bra qu'on notera $\bra{\phi}$. Ainsi, par définition 
+$$\braket{\phi}{\psi} = \langle \ket{\phi}, \ket{\psi}\rangle_\mathcal{H}$$
+Ainsi on associe à chaque ket $\ket{\phi}$ un bra $\bra{\phi}$. \\
+
+Réciproquement, via le théorème de représentation de Riesz on associe à chaque bra $\bra{\phi}$ un ket $\ket{\phi}$ tel que 
+$$\braket{\phi}{\psi} = \langle \ket{\phi}, \ket{\psi}\rangle_\mathcal{H} \qquad \forall \ket{\psi}\in \mathcal{H}$$
+
+Ainsi on dispose d'une isométrie semi-linéaire $\ket{\phi} \mapsto \bra{\phi}$ qui permet sans ambiguïté de noter $||\phi|| = ||\ket{\phi}||_\mathcal{H} = ||\bra{\phi}||_{\mathcal{H}^*}$.  \\
+
+\begin{pro}[Relation de fermeture]
+Une famille $(\ket{\phi_n})_n$ est une base hilbertienne de $\mathcal{H}$ si et seulement si 
+$$\id  = \sum_{n=0}^\infty \ket{\phi_n}\bra{\phi_n}$$
+\end{pro}
+
+\section{Opérateurs linéaires:}
+
+\begin{defi}[Opérateur linéaire]
+Un opérateur linéaire sur $\mathcal{H}$ est la donnée d'un sous espace dense $D(A)$ de $\mathcal{H}$ et d'une application linéaire $A: D(A) \to \mathcal{H}$. On note $A\ket{\psi} = \ket{A\psi}$.
+\end{defi}
+
+\begin{defi}
+Soient $A$ et $B$ deux opérateurs sur $\mathcal{H}$. On dit que $B$ est une extension de $A$ si $D(A) \subset D(B)$ et si $A = B$ sur $D(A)$.
+\end{defi} 
+
+\begin{defi}[Adjoint]
+Soit $A$ un opérateur sur $\mathcal{H}$, on pose $D(A^\dagger)$ l'ensemble des vecteur $\ket{\phi} \in \mathcal{H}$ tel qu'il existe un unique $\ket{\omega} \in \mathcal{H}$ tel que
+$$\braket{\omega}{\psi} = \braket{\phi}{A\psi} \qquad \forall \ket{\psi} \in D(A)$$
+On définit alors l'opérateur adjoint de $A$ noté $A^\dagger$ sur $D(A^\dagger)$ par $\ket{A^\dagger\phi} = \ket{\omega}$
+\end{defi}
+
+\begin{defi}[Opérateur auto-adjoint]
+Un opérateur $A$ est dit autoadjoint si et seulement si $A = A^\dagger$, c'est à dire si et seulement si 
+$$D(A) = D(A^\dagger) \quad \text{et} \quad 
+\ket{A^\dagger\phi} = \ket{A\phi} \quad \forall \ket{\phi}\in D(A)$$.
+\end{defi}
