@@ -1,6 +1,3 @@
-\chapter{Géométrie différentielle}
-\minisommairech
-
 Soit $\mathcal{M}$ un espace topologique séparé à base dénombrable d'ouverts, soit $m\in \N$ et soit $r\in \N \cup \{\infty\}$.
 
 \section{Généralités}
@@ -96,13 +93,22 @@ Enfin, on dispose d'une action à droite lisse de $G$ sur chaque $H_\alpha$ déf
 $$(\phi_\alpha(x), h).g = (\phi_\alpha(x), hg) \in H_\alpha$$
 Et pour $(\phi_\alpha(x), h) \in H_{\beta\alpha}$ et $g\in G$ on a 
 $$[\gamma_{\beta\alpha}(\phi_\alpha(x), h)].g = (\phi_\beta(x), g_{\beta\alpha}hg) = \gamma_{\beta\alpha}[(\phi_\alpha(x), h).g]$$ 
-Ainsi cela définit une action à droite lisse de $G$ sur $P$ qui laisse stable chaque fibre $P_x$ au dessus de $x\in \mathcal{M}$. 
+Ce qui fourni une action a droite de $G$ sur l'espace total $P$ par passage au quotient. \\
+
+De plus, en choisissant un élément $g\in G$ servant de point-base, on dispose d'un difféomorphisme non-canonique $G \to G, \quad h \mapsto hg$ entre le groupe $G$ et la fibre $G$, ce qui donne le diagramme commutatif suivant:
+$$\begin{matrix}
+(x, hg) \in (U_\alpha \cap U_\beta) \times G & \longmapsto & (x, g_{\alpha\beta}hg) \in (U_\alpha \cap U_\beta) \times G\\ \\
+\upmapsto &  & \upmapsto \\ \\
+(x, h) \in (U_\alpha \cap U_\beta) \times G & \longmapsto & (x, g_{\alpha\beta}h) \in (U_\alpha \cap U_\beta) \times G
+\end{matrix}
+$$
+Ainsi, on dispose d'une action à gauche de $G$ sur les fibres de changement de point-base. \\
 
 \begin{defi}[Fibré principal]
 On appelle fibré principal sur $\mathcal{M}$ et de groupe structural $G$ l'application $\pi: P \to \mathcal{M}$ qui vérifie:
 \be 
 	\item Il existe des difféomorphismes $\Phi_\alpha : \pi^{-1}(U_\alpha) \to V_\alpha \times G$ appelés trivialisations locales tels que $\pi_\alpha \circ \Phi_\alpha = \phi_\alpha \circ \pi$. 
-	\item $G$ agit à droite de façon lisse sur $P$ tel que chaque fibre $P_x = \pi^{-1}(x)$ soit stable par $G$ et tel que $G$ agisse transitivement sur chaque fibre $P_x$.
+	\item $G$ agit à droite de façon lisse et librement sur $P$ et agit à gauche librement et transitivement sur chaque fibre $P_x = \pi^{-1}(x)$.
 \ee
 On a alors $\dim P = \dim \mathcal{M} + \dim G$ et on note $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$.
 \end{defi}
@@ -221,8 +227,11 @@ On dispose de l'application $\wedge : \Omega^p\mathcal{M} \times \Omega^q\mathca
 
 Soit $\tau: E \to \mathcal{M}$ un fibré vectoriel de fibre modèle $V$, une $k$-forme différentielle à valeur dans $V$ est une section du fibré $\Lambda^k T^*\mathcal{M}\otimes E$. On note alors $\Omega^k(\mathcal{M}, E) = \Gamma(\Lambda^k T^*\mathcal{M}\otimes E)$ et $\Omega(\mathcal{M}, E) = \Gamma(\Lambda T^*\mathcal{M}\otimes E)$. \\
 
-On dispose également d'un produit extérieur induit par celui sur les applications multilinéaires alternée $\wedge:\Lambda^p(\R^m)^* \otimes E \times \Lambda^q(\R^m)^* \otimes F \to \Lambda^{p+q}(\R^m)^* \otimes E \otimes F$  
+On dispose également d'un produit extérieur induit par celui entre les applications multilinéaires alternée $\wedge:\Lambda^p(\R^m)^* \otimes E \times \Lambda^q(\R^m)^* \otimes F \to \Lambda^{p+q}(\R^m)^* \otimes E \otimes F$  
 $$\wedge: \Omega^p(\mathcal{M}, E) \times \Omega^q(\mathcal{M}, F) \to \Omega^{p+q}(\mathcal{M}, E\otimes F)$$
+
+En particulier on dispose également d'un produit extérieur induit par celui entre les applications multilinéaires alternées à valeur dans une algèbre de Lie $\mathfrak{g}$.
+$$\wedge: \Omega^p(\mathcal{M}, \mathfrak{g}) \times \Omega^q(\mathcal{M}, \mathfrak{g}) \to \Omega^{p+q}(\mathcal{M}, \mathfrak{g})$$
 \end{defi}
 
 \begin{rem}
@@ -403,9 +412,9 @@ Soit $W$ une distribution de $k$-espaces sur une variété lisse $\mathcal{M}$. 
 
 \section{Connexions}
 
-Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal de groupe structural $G$ sur $\mathcal{M}$. On pose pour $p\in P$
+Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal de groupe structural $G$ sur $\mathcal{M}$. On dispose pour $p\in P$ de l'immersion
 $$i_p : G \to P, \quad g \mapsto p.g$$
-Et comme $i_p(e) = p$, on dispose de 
+Et comme $i_p(e) = p$, on a
 $$T_e i_p: \mathfrak{g} \to T_pP$$
 
 \begin{defi}[Vecteur vertical]
@@ -413,12 +422,6 @@ On dit qu'un vecteur tangent de $T_pP$ est vertical s'il est dans l'image de $T_
 $$\Verti(T_pP) = \Ima(T_e i_p) = T_e i_p(\mathfrak{g})$$
 De plus $p\in P \mapsto \Verti(T_pP)$ est une distribution de $(\dim G)$-espaces sur $P$. 
 \end{defi}
-
-\begin{pro}
-On a la suite exacte courte d'espaces vectoriels
-$$0 \to \mathfrak{g} \overset{T_e i_p}{\longrightarrow} T_p P \overset{T_p \pi}{\longrightarrow} T_x\mathcal{M} \to 0$$ 
-Ainsi on a $\dim(\Verti(T_pP)) = \dim G$. \\
-\end{pro}
 
 \begin{defi}
 Pour $X\in \mathfrak{g}$ on pose $X^\sharp(p) = T_e i_p(X) \in \Verti(T_pP)$. Puis on définit 
@@ -448,7 +451,7 @@ $$\omega : TP \to \mathfrak{g}$$
 \end{preu}
 
 \begin{pro}
-Notons $x = \pi(p)$ alors d'après la suite exacte courte, l'application $T\pi$ fourni un isomorphisme d'espaces vectoriels
+Notons $x = \pi(p)$ alors d'après la surjectivité de $T_p\pi$, on dispose d'un isomorphisme d'espaces vectoriels
 $$\Hor(T_pP) \to T_x\mathcal{M}$$
 \end{pro}
 
@@ -472,20 +475,6 @@ Soient $\mathcal{M}, \mathcal{N}$ deux variétés lisse, $V$ un $\R$-espace vect
 Soient $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ et $G \hookrightarrow G \overset{\rho}{\to} \mathcal{N}$ des fibrés principaux de groupe structural $G$ et soit $F: P\to Q$ un morphisme de fibré principaux recouvrant l'application $f: \mathcal{M} \to \mathcal{N}$ et soit $\omega$ une connexion d'Ehresmann sur $Q$. Alors $F^*\omega$ est une connexion d'Ehresmann sur $P$.
 \end{pro}
 
-\begin{pro}
-Soit $\pi : P \to \mathcal{M}$ un fibré principal de groupe structural $G$ muni d'une connexion d'Ehresmann $\omega$, soit $\gamma : [0,1] \to \mathcal{M}$ une courbe lisse et soit $p_0\in \pi^{-1}(\gamma(0))$. Alors il existe une unique courbe lisse $\tilde{\gamma_{p_0}} : [0,1] \to P$ telle que 
-\be
-	\item $\tilde{\gamma_{p_0}}(0) = p_0$
-	\item $\pi \circ \tilde{\gamma_{p_0}} = \gamma$
-	\item $\tilde{\gamma_{p_0}}'(t) \in \Hor(T_{\tilde{\gamma_{p_0}}(t)}P)$ pour tout $t \in [0,1]$
-\ee
-\end{pro}
-
-\begin{pro}
-Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal muni d'une connexion d'Ehresmann $\omega$, soit $\gamma : [0,1] \to \mathcal{M}$ une courbe lisse. On définit une application 
-$$\Par_t^\gamma : \pi^{-1}(\gamma(0)) \to \pi^{-1}(\gamma(t)), \quad p_0 \mapsto \tilde{\gamma_{p_0}}(t)$$
-\end{pro}
-
 \subsubsection{Forme de Maurer-Cartan:}
 
 \begin{defi}[Forme de Maurer-Cartan]
@@ -495,8 +484,24 @@ pour tout $g\in G$.
 \end{defi}
 
 \begin{pro}
-Soit $G$ un groupe de Lie. Alors sa forme de Maurer-Cartan est l'unique connexion d'Ehresmann sur le fibré principal $G \to \{x\}$.
+Soit $G$ un groupe de Lie. Alors sa forme de Maurer-Cartan est l'unique connexion d'Ehresmann sur le fibré principal $G \hookrightarrow G \to \{x\}$.
 \end{pro}
+\begin{preu}
+Soit $\omega: TG \to \mathfrak{g}$ une connexion d'Ehresmann sur $G$. On a le diagramme commutatif pour tout $g\in G$
+$$\begin{matrix}
+T_eG  & \overset{T_gR_{g}}{\longrightarrow} & T_gG \\ \\
+\omega\big\downarrow &  & \big\downarrow\omega \\ \\
+\mathfrak{g} & \overset{\Ad_{g^{-1}}}{\longrightarrow} & \mathfrak{g}
+\end{matrix}
+$$
+Or les flèches horizontales sont des isomorphismes ce qui signifie que $\omega$ est complètement déterminée sur $T_gG$ par ses valeurs sur $T_eG = \mathfrak{g}$ et ce pour tout $g\in G$. \\
+Maintenant soit $A\in \mathfrak{g}$. alors on a
+$$A^\sharp(e) = T_ei_e(A) = A$$
+Ainsi, 
+$$\omega(A) = \omega(A^\sharp(e)) = A$$
+Finalement, $\omega$ vaut l'identité sur $T_eG$ et détermine completement ses valeurs sur $TG$. Donc elle est unique.
+\end{preu}
+
 
 \begin{pro}
 La forme de Maurer-Cartan d'un groupe $G$ fournit une trivialisation globale $\tilde{\Omega} : TG \to G\times \mathfrak{g}$ de $TG$ définie par
@@ -510,16 +515,73 @@ Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal mu
 $$D\omega(u,v) = d\omega(u^H, v^H) \quad \forall (u,v)\in T^{\diamond 2}P$$
 \end{defi}
 
-\begin{pro}
-Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal muni d'une connexion d'Ehresmann $\omega$. Alors la distribution associée $p\to \Hor(T_pP)$ est intégrable si et seulement si $D\omega = 0$.
-\end{pro}
-
 \begin{pro}[Equation de structure de Cartan]
 Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal muni d'une connexion d'Ehresmann $\omega$. Alors on a 
 $$D\omega = d\omega + \frac{1}{2}\omega\wedge\omega$$
 \end{pro}
+\begin{preu}
+On a pour $(u,v)\in T^{\diamond 2}P$
+$$(\omega \wedge \omega) (u, v) = [\omega(u), \omega(v)] - [\omega(v), \omega(u)] = 2[\omega(u), \omega(v)]$$
+Ainsi cela revient à prouver que 
+$$D\omega(u, v) = d\omega(u, v) + [\omega(u), \omega(v)]$$
+
+Premier cas: \\
+$u,v\in \Verti(T_pP)$, alors $u = u^H$ et $v = v^H$ d'une part et d'autre part $\omega(u) = 0$ et $\omega(v) = 0$. Ainsi, on a
+$$D\omega(u, v) = d\omega(u^H, v^H) = d\omega(u, v)$$
+
+Deuxième cas:\\
+$u, v \in \Hor(T_pP)$. On a $u^H = 0$ et $v^H = 0$, ainsi 
+$$D\omega(u,v) = d\omega(u^H, v^H) = 0$$ 
+Puisque $u$ et $v$ sont verticaux, il existe $A, B\in \mathfrak{g}$ tel que $A^\sharp(p) = u$ et $B^\sharp(p) = v$. Ainsi on a
+$$d\omega(u, v) = d\omega(A^\sharp(p), B^\sharp(p)) = d\omega(A^\sharp, B^\sharp)(p)$$
+Or on a 
+$$d\omega(A^\sharp, B^\sharp) = A^\sharp(\omega(B^\sharp)) - B^\sharp(\omega(A^\sharp)) - \omega([A^\sharp, B^\sharp])$$
+Mais $\omega(A^\sharp) = A$ et $\omega(B^\sharp) = B$ sont des fonctions constantes donc les deux premier termes sont nuls. Ainsi on a
+\begin{eqnarray*}
+d\omega(A^\sharp, B^\sharp) &=& -\omega([A^\sharp, B^\sharp]) \\
+ & = & -\omega([A, B]^\sharp) \\
+ & = & -[A,B] \\
+ & = & -[\omega(A^\sharp), \omega(B^\sharp)]
+\end{eqnarray*}
+d'où
+\begin{eqnarray*}
+d\omega(u, v) &=& -[\omega(A^\sharp), \omega(B^\sharp)](p) \\
+ & = & -[\omega(A^\sharp)(p), \omega(B^\sharp)(p)] \\
+ & = & -[\omega(u), \omega(v)]
+\end{eqnarray*}
+
+Troisième cas: \\
+$u\in \Hor(T_pP)$ et $v\in \Verti(T_pP)$. Alors on a $u^H = u$ et $v^H = 0$. Donc on a immediatement 
+$$D\omega(u,v) = d\omega(u^H, v^H) = d\omega(u, 0) = 0$$
+et 
+$$[\omega(u), \omega(v)] = [0, \omega(v)] = 0$$
+Ainsi il suffit de montrer que $d\omega(u, v) = 0$. Soit $A\in \mathfrak{g}$ tel que $A^\sharp(p) = v$ et soit $W$ un champs de vecteur horizontal tel que $W(p) = u$. Ainsi
+$$d\omega(u,v) = d\omega(W, A^\sharp)(p)$$
+et alors 
+$$d\omega(W, A^\sharp) = W(\omega(A^\sharp)) - A^\sharp(\omega(W)) - \omega([W, A^\sharp])$$
+or $\omega(W) = 0$ puisque $W$ est horizontal et $\omega(A^\sharp) = A$ est constante ainsi
+$$d\omega(W, A^\sharp) = - \omega([W, A^\sharp])$$
+Donc il suffit de montrer que $[W, A^\sharp] \in \Ker\omega = \Hor(TP)$. On a
+$$[A^\sharp, W](p) = \lim_{t\to 0} \frac{1}{t}\left(T_p\phi_t^{-1}W(\phi_t(p))-W(p)\right)$$
+où $\phi_t(p) = p.\exp(tA)$ est le flot associé au champs de vecteurs $A^\sharp$. Ainsi, par définition des espaces horizontaux d'une connexion, on a 
+$$T_p\phi_t^{-1}W(\phi_t(p)) = T_pR_{\exp(tA)^{-1}} W(\phi_t(p)) \in \Hor(T_pP)$$
+Ainsi, $[A^\sharp, W](p)$ est limite de vecteurs horizontaux, donc est horizontal.
+\end{preu}
 
 \begin{pro}[Identité de Bianchi]
 Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal muni d'une connexion d'Ehresmann $\omega$. Notons $\Theta = D\omega$ alors
 $$D\Theta = 0$$
 \end{pro}
+\begin{preu}
+On a par l'équation de structure de Cartan
+$$\Theta = D\omega = d\omega + \frac{1}{2}\omega \wedge \omega$$
+donc 
+$$d\Theta = d^2\omega + \frac{1}{2}d\omega \wedge \omega - \frac{1}{2}\omega \wedge d\omega$$
+Mais $d^2\omega = 0$ et on a 
+$$\frac{1}{2}(d\omega \wedge \omega)(u_1^H, u_2^H, u_3^H) = 0$$
+puisque $\omega$ est toujours évaluée sur des vecteurs horizontaux.
+Ainsi,
+$$D\Theta(u_1, u_2, u_3) = d\Theta(u_1^H, u_2^H, u_3^H) = 0$$
+d'où $D\Theta = 0$.
+\end{preu}
+

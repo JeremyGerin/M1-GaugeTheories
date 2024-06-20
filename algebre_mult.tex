@@ -13,6 +13,23 @@ On appelle l'élément $x\otimes y$ de $E\times F$ un tenseur pur. \\
 
 De plus, si $(e_\mu)_\mu$ est une base de $E$ et $(f_\nu)_\nu$ une base de $F$ alors $(e_\mu\otimes f_\nu)_{\mu,\nu}$ est une base de $E\otimes F$, ainsi $\dim E\otimes F = \dim E \dim F$.
 \end{defi}
+\begin{preu}
+Considérons $\R^{(E\times F)}$ le $\R$-espace vectoriel des suites presques nulles indexées par $E\times F$ dont on note $(e_{x,y})_{(x,y)\in E\times F}$ la base canonique. Soit $\mathcal{R}$ le sous espace vectoriel engendré par les éléments 
+$$e_{x+x', y}-e_{x,y}-e_{x',y}$$
+$$e_{x, y+y'}-e_{x,y}-e_{x, y'}$$
+$$e_{\lambda x, y}-\lambda e_{x, y}$$
+$$e_{x, \lambda y}-\lambda e_{x, y}$$
+pour $x\in E$, $y\in F$ et $\lambda \in \R$. \\
+
+Alors on note $H = \R^{(E\times F)}/\mathcal{R}$ l'espace vectoriel quotient. De plus l'application $.\otimes . : E\times F \to H$ qui envoie $(x,y)$ sur la classe d'équivalence de $e_{x,y}$ dans $H$ est bilinéaire par définition de $\mathcal{R}$. \\
+
+Soit alors $f:E\times F \to G$ une application bilinéaire. Soit alors l' unique application linéaire $u: \R^{(E\times F)} \to G, e_{x,y} \mapsto f(x,y)$ a un noyau qui contient $\mathcal{R}$ par bilinéarité de $f$, donc l'application $u$ induit une unique application linéaire $g : H\to G$ tel que le diagramme commute 
+$$\begin{tikzcd}
+E \times F \arrow[r, "f"]  \arrow[d, ".\otimes ."] & G \\
+H \arrow[ru, "g"']& 
+\end{tikzcd}$$
+Ainsi $H$ vérifie la propriété universelle du produit tensoriel donc est unique à isomorphisme près.
+\end{preu}
 
 \begin{pro}
 Soient $E$, $F$, $G$ et $H$ des $\R$-espaces vectoriels de dimension finie. Alors le produit tensoriel vérifie les propriétés suivantes:
@@ -20,6 +37,7 @@ Soient $E$, $F$, $G$ et $H$ des $\R$-espaces vectoriels de dimension finie. Alor
 	\item (fonctorialité): Soient $f: E\to G$ et $g: F\to H$ des applications linéaires, alors il existe une unique application linéaire $f\otimes g: E\otimes F \to G \otimes H$ telle que 
 	$$f\otimes g(x\otimes y) = f(x) \otimes g(y)$$
 	\item $$E \otimes \R \simeq E$$
+	via l'isomorphisme qui envoie $e\otimes 1$ sur $e$.
 	\item (commutativité): $$E\otimes F \simeq F \otimes E$$
 	via l'isomorphisme qui envoie $e\otimes f$ sur $f\otimes e$.
 	\item (associativité): $$(E\otimes F)\otimes G \simeq E \otimes (F\otimes G)$$
@@ -75,18 +93,26 @@ Soit $V$, $W$ et $F$ des $\R$-espaces vectoriels. On a les propriétés suivante
 \ee
 \end{pro}
 \begin{preu}
-Comme $f$ est $k$-linéaire par propriété universelle du produit tensoriel, il existe une unique $h: \otimes^k V \to F$ linéaire telle que $f(v_1, ..., v_k) = h(v_1 \otimes ... \otimes v_k)$. Puis comme $f$ est alternée, $h$ descend au quotient en une unique application $g: \Lambda^k V \to F$ linéaire telle que $f(v_1, ..., v_k) = g(v_1\wedge ...\wedge v_k)$.   
+(ii) Comme $f$ est $k$-linéaire par propriété universelle du produit tensoriel, il existe une unique $h: \otimes^k V \to F$ linéaire telle que $f(v_1, ..., v_k) = h(v_1 \otimes ... \otimes v_k)$. Puis comme $f$ est alternée, $h$ descend au quotient en une unique application $g: \Lambda^k V \to F$ linéaire telle que $f(v_1, ..., v_k) = g(v_1\wedge ...\wedge v_k)$.   
 \end{preu}
 
-\begin{rem}
-De la même façon dont on identifie $E^*\otimes F^*$ avec les formes bilinéaires sur $E\times F$, on identifie $\otimes^k V^*$ avec les formes $k$-linéaires sur $V^k$ et on identifie $\Lambda^k V^*$ avec les formes $k$-linéaires alternées sur $V^k$. De plus, on identifie également $\otimes^k V^* \otimes F$ avec les applications $k$-linéaire $V^k \to F$ et $\Lambda^k V^* \otimes F$ avec les application $k$-linéaire alternées $V^k \to F$. \\
+De la même façon dont on identifie $E^*\otimes F^*$ avec les formes bilinéaires sur $E\times F$, on identifie $\otimes^k V^*$ avec les formes $k$-linéaires sur $V^k$ et on identifie $\Lambda^k V^*$ avec les formes $k$-linéaires alternées sur $V^k$. \\
+
+De plus, on identifie également $\otimes^k V^* \otimes F$ avec les applications $k$-linéaire $V^k \to F$ et $\Lambda^k V^* \otimes F$ avec les application $k$-linéaire alternées $V^k \to F$. \\
 
 On définit également le produit extérieur entre applications multilinéaires alternées en posant, 
 $$\begin{array}{ccccc}
 	\wedge & : & \Lambda^p V^* \otimes E \times \Lambda^q V^* \otimes F & \to & \Lambda^{p+q} V^* \otimes E \otimes F \\
 		& & (\omega \otimes u, \eta \otimes v) & \mapsto & (\omega \wedge \eta) \otimes u \otimes v \\
 \end{array}$$ \\
-\end{rem}
+
+En particulier, on définit le produit extérieur entre applications multilinéaires alternées à valeur dans une algèbre de Lie $\mathfrak{g}$ en précomposant par le crochet de Lie. C'est à dire
+$$\begin{array}{ccccc}
+	\wedge & : & \Lambda^p V^* \otimes \mathfrak{g} \times \Lambda^q V^* \otimes \mathfrak{g} & \to & \Lambda^{p+q} V^* \otimes \mathfrak{g} \\
+		& & (\omega \otimes u, \eta \otimes v) & \mapsto & (\omega \wedge \eta) \otimes [u, v] \\
+\end{array}$$ \\
+
+\section{Étoile de Hodge}
 
 Soit $V$ un $\R$-espace vectoriel orienté de dimension $n$ muni d'une forme bilinéaire symétrique non dégénérée $\eta$. Notons $(e_1, ..., e_n)$ une base orthonormée directe de $V$. On pose 
 $$\eta_k(u_1 \wedge ... \wedge u_k, v_1 \wedge ... \wedge v_k) = \det (\eta(u_i, v_j))$$

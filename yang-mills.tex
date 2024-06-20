@@ -1,7 +1,68 @@
-\chapter{Théories de Yang-Mills}
-\minisommairech
-
 \section{Théories de Yang-Mills}
+
+\subsubsection{Théorie de jauge en Physique:}
+
+Soient une variété lisse $\mathcal{M}$ de dimension $m$ dont $(V, x^\mu)$ est une carte locale, un groupe de Lie $G$ et un espace de Hilbert $\mathcal{H}$ muni d'une action de $G$ sur $\mathcal{H}$ qu'on notera $U\psi$ pour $U \in G$ et $\psi \in \mathcal{H}$. Soient enfin $B_\mu : V \to \mathfrak{g}$ des applications lisse qu'on appelera champs de jauge. Et soit $g\in \R$ une constante appelée constante de couplage de la théorie. \\
+
+Soit $U: V\to G$ une application lisse, une transformation de jauge locale du champs $\psi$ est donnée par:
+$$\psi \mapsto \tilde{\psi} = U^{-1}\psi$$
+On effectue alors les substitutions
+$$\frac{1}{i}\frac{\partial}{\partial x^\mu} \mapsto \frac{1}{i}\frac{\partial}{\partial x^\mu} + g B_\mu$$
+
+On impose ensuite l'invariance de jauge pour les opérateurs différentiels du premier ordre sous la transformation de jauge locale. On souhaite
+$$U\left(\frac{1}{i}\frac{\partial}{\partial x^\mu} + g B'_\mu\right)\tilde{\psi} = \left(\frac{1}{i}\frac{\partial}{\partial x^\mu} + g B_\mu\right)\psi$$
+On a 
+\begin{eqnarray*}
+U\left(\frac{1}{i}\frac{\partial}{\partial x^\mu} + g B'_\mu\right)\tilde{\psi} &=& U\left(\frac{1}{i}\frac{\partial}{\partial x^\mu} + g B'_\mu\right)U^{-1}\psi \\
+&=& \frac{1}{i}U\frac{\partial U^{-1}}{\partial x^\mu}\psi + \frac{1}{i}\frac{\partial \psi}{\partial x^\mu} + gUB'_\mu U^{-1}\psi
+\end{eqnarray*}
+Ainsi, on doit avoir
+$$\frac{1}{i}U\frac{\partial U^{-1}}{\partial x^\mu} + gUB'_\mu U^{-1} = gB_\mu$$
+autrement dit
+$$B'_\mu = U^{-1}B_\mu U - \frac{1}{ig}\frac{\partial U^{-1}}{\partial x^\mu}U$$
+Maintenant en différentiant $U^{-1}U = I$, on a 
+$$\frac{\partial U^{-1}}{\partial x^\mu}U + U^{-1}\frac{\partial U}{\partial x^\mu} = 0$$
+Ce qui donne 
+$$B'_\mu = U^{-1}B_\mu U + \frac{1}{ig}U^{-1}\frac{\partial U}{\partial x^\mu}$$ 
+
+\begin{defi}
+Soient $B_\mu$ et $B'_\mu$ deux champs de jauges. On dit que $B_\mu$ est $B'_\mu$ sont équivalent, s'il existe une transformation de jauge locale $U: V\to G$ telle que 
+$$B'_\mu = U^{-1}B_\mu U + \frac{1}{ig}U^{-1}\frac{\partial U}{\partial x^\mu}$$
+On dit que le champs $B_\mu$ est un champs de jauge pur si 
+$$B_\mu = \frac{1}{ig}U^{-1}\frac{\partial U}{\partial x^\mu}$$
+\end{defi}
+Soit alors $F_{\mu\nu}$ le tenseur de force de la théorie donné par
+$$F_{\mu\nu} = \partial_\nu B_\mu - \partial_\mu B_\nu - ig[B_\mu, B_\nu]$$
+On a 
+\begin{eqnarray*}
+B'_\mu B'_\nu &=& \left(U^{-1}B_\mu U + \frac{1}{ig}U^{-1}\partial_\mu U\right)\left(U^{-1}B_\nu U + \frac{1}{ig}U^{-1}\partial_\nu U\right) \\
+&=& U^{-1}B_\mu B_\nu U + \frac{1}{ig}U^{-1}B_\mu (\partial_\nu U) \\
+&+& \frac{1}{ig}U^{-1} (\partial_\mu U) U^{-1}B_\nu U + \frac{1}{(ig)^2}U^{-1}(\partial_\mu U) U^{-1} (\partial_\nu U)
+\end{eqnarray*}
+Ainsi
+\begin{eqnarray*}
+[B'_\mu, B'_\nu] &=& U^{-1}[B_\mu, B_\nu]U \\
+&+& \frac{1}{ig}U^{-1}\left( (\partial_\mu U)U^{-1}B_\nu - (\partial_\nu U)U^{-1}B_\mu \right) U \\ 
+&+& \frac{1}{ig}U^{-1} B_\mu (\partial_\nu U) - \frac{1}{ig}U^{-1} B_\nu (\partial_\mu U) \\
+&+& \frac{1}{(ig)^2}U^{-1}(\partial_\mu U) U^{-1} (\partial_\nu U) - \frac{1}{(ig)^2}U^{-1}(\partial_\nu U) U^{-1} (\partial_\mu U)
+\end{eqnarray*}
+Or 
+\begin{eqnarray*}
+\partial_\nu B'_\mu &=& \partial_\nu \left(U^{-1}B_\mu U + \frac{1}{ig}U^{-1}\partial_\mu U\right) \\
+&=& U^{-1} (\partial_\nu U) U^{-1} B_\mu U + U^{-1} (\partial_\nu B_\mu)U + U^{-1}B_\mu (\partial_\nu U) \\
+&+& \frac{1}{ig}U^{-1}(\partial_\nu U)U^{-1}(\partial_\mu U) + \frac{1}{ig} U^{-1} (\partial_\nu \partial_\mu U)
+\end{eqnarray*}
+Ainsi, on a
+$$F'_{\mu\nu} = U^{-1} F_{\mu\nu} U$$
+Qui est donc bien invariant sous une transformation de jauge locale. \\
+
+On peut alors écrire le lagrangien de l'interaction dont on s'arrange pour qu'il soit invariant sous les transformations de jauge locale, pour obtenir des équations invariantes de jauge. Ainsi on pose
+$$\mathcal{L}_{\text{libre}} = \tr \left(-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}\right)$$
+Finalement on peut écrire les équations d'Euler-Lagrange dans ce cas et on obtient les équations de Yang-Mills
+$$\sum_\mu \partial_\mu F_{\mu\nu} + ig[B_\mu, F_{\mu\nu}] = 0$$
+
+
+\subsubsection{Théorie de jauge en Géométrie:}
 
 \begin{defi}[Théorie de jauge]
 Une théorie de jauge est la donnée d'un fibré principal $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ et d'une connexion d'Ehresmann $\omega$. \\
@@ -19,7 +80,7 @@ D\star F & = 0  && \quad\text{Équation de Yang-Mills}
 \end{alignat*}
 \end{pro}
 
-\section{Electrodynamique classique}
+\section{Electrodynamique}
 
 \subsubsection{Équations de Maxwell dans le langage des formes:}
 
