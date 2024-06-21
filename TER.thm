@@ -7,75 +7,84 @@
 \contentsline {defi}{{Définition}{5}{Sous-variété}}{2}{}%
 \contentsline {pro}{{Proposition}{2}{}}{2}{}%
 \contentsline {defi}{{Définition}{6}{Variété quotient}}{2}{}%
-\contentsline {defi}{{Définition}{7}{Cocycle}}{2}{}%
-\contentsline {pro}{{Proposition}{3}{}}{2}{}%
+\contentsline {defi}{{Définition}{7}{Cocycle}}{3}{}%
+\contentsline {pro}{{Proposition}{3}{}}{3}{}%
 \contentsline {defi}{{Définition}{8}{Fibré principal}}{4}{}%
-\contentsline {defi}{{Définition}{9}{Morphisme de fibrés principaux}}{4}{}%
-\contentsline {defi}{{Définition}{10}{Fibré trivial}}{4}{}%
+\contentsline {defi}{{Définition}{9}{Morphisme de fibrés principaux}}{5}{}%
+\contentsline {defi}{{Définition}{10}{Fibré trivial}}{5}{}%
 \contentsline {defi}{{Définition}{11}{Section globale, section locale}}{5}{}%
 \contentsline {pro}{{Proposition}{4}{}}{5}{}%
 \contentsline {defi}{{Définition}{12}{Fibré vectoriel}}{6}{}%
 \contentsline {defi}{{Définition}{13}{Sous-fibré vectoriel}}{6}{}%
 \contentsline {defi}{{Définition}{14}{Produit fibré}}{6}{}%
-\contentsline {defi}{{Définition}{15}{Fibré vectoriel dual}}{6}{}%
-\contentsline {defi}{{Définition}{16}{Somme directe de fibrés vectoriels}}{6}{}%
-\contentsline {defi}{{Définition}{17}{Produit tensoriel de fibrés vectoriels}}{6}{}%
-\contentsline {defi}{{Définition}{18}{Section}}{6}{}%
+\contentsline {defi}{{Définition}{15}{Fibré vectoriel dual}}{7}{}%
+\contentsline {defi}{{Définition}{16}{Somme directe de fibrés vectoriels}}{7}{}%
+\contentsline {defi}{{Définition}{17}{Produit tensoriel de fibrés vectoriels}}{7}{}%
+\contentsline {defi}{{Définition}{18}{Section}}{7}{}%
 \contentsline {defi}{{Définition}{19}{Fibré tangent}}{7}{}%
 \contentsline {defi}{{Définition}{20}{Fibré cotangent}}{7}{}%
 \contentsline {defi}{{Définition}{21}{Fibré tensoriel}}{7}{}%
-\contentsline {defi}{{Définition}{22}{Forme différentielle}}{7}{}%
+\contentsline {defi}{{Définition}{22}{Forme différentielle}}{8}{}%
 \contentsline {rem}{{Remarque}{1}{}}{8}{}%
 \contentsline {defi}{{Définition}{23}{}}{8}{}%
 \contentsline {defi}{{Définition}{24}{Différentielle extérieure}}{8}{}%
-\contentsline {pro}{{Proposition}{5}{}}{8}{}%
-\contentsline {defi}{{Définition}{25}{}}{8}{}%
+\contentsline {pro}{{Proposition}{5}{}}{9}{}%
+\contentsline {defi}{{Définition}{25}{}}{9}{}%
 \contentsline {pro}{{Proposition}{6}{Lemme de Poincaré}}{9}{}%
 \contentsline {defi}{{Définition}{26}{Cohomologie de Rham}}{9}{}%
 \contentsline {exe}{{Exemple}{1}{}}{9}{}%
-\contentsline {defi}{{Définition}{27}{Flot local d'un champs de vecteurs}}{10}{}%
-\contentsline {defi}{{Définition}{28}{Courbe integrale}}{10}{}%
-\contentsline {pro}{{Proposition}{7}{}}{10}{}%
-\contentsline {pro}{{Proposition}{8}{}}{10}{}%
-\contentsline {defi}{{Définition}{29}{Dérivation}}{11}{}%
-\contentsline {defi}{{Définition}{30}{Dérivation de Lie}}{11}{}%
-\contentsline {pro}{{Proposition}{9}{}}{11}{}%
-\contentsline {defi}{{Définition}{31}{Crochet de champs de vecteurs}}{11}{}%
-\contentsline {pro}{{Proposition}{10}{}}{11}{}%
-\contentsline {defi}{{Définition}{32}{Grasmannienne}}{12}{}%
-\contentsline {defi}{{Définition}{33}{Fibré grassmannien}}{12}{}%
-\contentsline {defi}{{Définition}{34}{}}{12}{}%
-\contentsline {defi}{{Définition}{35}{Condition d'intégrabilité de Frobenius}}{12}{}%
-\contentsline {pro}{{Proposition}{11}{Théorème d'intégrabilité de Frobenius}}{12}{}%
-\contentsline {defi}{{Définition}{36}{Vecteur vertical}}{13}{}%
-\contentsline {defi}{{Définition}{37}{}}{13}{}%
-\contentsline {defi}{{Définition}{38}{Connexion d'Ehresmann}}{13}{}%
-\contentsline {preu}{{preuve}{2}{}}{14}{}%
-\contentsline {pro}{{Proposition}{12}{}}{14}{}%
-\contentsline {pro}{{Proposition}{13}{}}{14}{}%
-\contentsline {preu}{{preuve}{3}{}}{14}{}%
-\contentsline {defi}{{Définition}{39}{}}{14}{}%
-\contentsline {pro}{{Proposition}{14}{}}{14}{}%
-\contentsline {defi}{{Définition}{40}{Forme de Maurer-Cartan}}{15}{}%
-\contentsline {pro}{{Proposition}{15}{}}{15}{}%
-\contentsline {preu}{{preuve}{4}{}}{15}{}%
-\contentsline {pro}{{Proposition}{16}{}}{15}{}%
-\contentsline {defi}{{Définition}{41}{Courbure}}{16}{}%
-\contentsline {pro}{{Proposition}{17}{Equation de structure de Cartan}}{16}{}%
-\contentsline {preu}{{preuve}{5}{}}{16}{}%
-\contentsline {pro}{{Proposition}{18}{Identité de Bianchi}}{17}{}%
-\contentsline {preu}{{preuve}{6}{}}{18}{}%
-\contentsline {defi}{{Définition}{42}{}}{20}{}%
-\contentsline {defi}{{Définition}{43}{Théorie de jauge}}{21}{}%
-\contentsline {pro}{{Proposition}{19}{}}{21}{}%
-\contentsline {defi}{{Définition}{44}{Produit tensoriel}}{25}{}%
-\contentsline {preu}{{preuve}{7}{}}{25}{}%
-\contentsline {pro}{{Proposition}{20}{}}{26}{}%
-\contentsline {rem}{{Remarque}{2}{}}{26}{}%
-\contentsline {defi}{{Définition}{45}{Algèbre tensorielle}}{27}{}%
-\contentsline {defi}{{Définition}{46}{Algèbre extérieure}}{27}{}%
-\contentsline {pro}{{Proposition}{21}{}}{27}{}%
-\contentsline {preu}{{preuve}{8}{}}{28}{}%
-\contentsline {defi}{{Définition}{47}{Étoile de Hodge}}{29}{}%
-\contentsline {preu}{{preuve}{9}{}}{29}{}%
-\contentsline {pro}{{Proposition}{22}{}}{29}{}%
+\contentsline {defi}{{Définition}{27}{Flot local d'un champs de vecteurs}}{11}{}%
+\contentsline {defi}{{Définition}{28}{Courbe integrale}}{11}{}%
+\contentsline {pro}{{Proposition}{7}{}}{11}{}%
+\contentsline {pro}{{Proposition}{8}{}}{11}{}%
+\contentsline {defi}{{Définition}{29}{Dérivation}}{12}{}%
+\contentsline {defi}{{Définition}{30}{Dérivation de Lie}}{12}{}%
+\contentsline {pro}{{Proposition}{9}{}}{12}{}%
+\contentsline {defi}{{Définition}{31}{Crochet de champs de vecteurs}}{12}{}%
+\contentsline {pro}{{Proposition}{10}{}}{12}{}%
+\contentsline {defi}{{Définition}{32}{Grasmannienne}}{13}{}%
+\contentsline {defi}{{Définition}{33}{Fibré grassmannien}}{13}{}%
+\contentsline {defi}{{Définition}{34}{}}{13}{}%
+\contentsline {defi}{{Définition}{35}{Condition d'intégrabilité de Frobenius}}{13}{}%
+\contentsline {pro}{{Proposition}{11}{Théorème d'intégrabilité de Frobenius}}{13}{}%
+\contentsline {defi}{{Définition}{36}{Vecteur vertical}}{14}{}%
+\contentsline {defi}{{Définition}{37}{}}{14}{}%
+\contentsline {defi}{{Définition}{38}{Connexion d'Ehresmann}}{14}{}%
+\contentsline {preu}{{preuve}{2}{}}{15}{}%
+\contentsline {pro}{{Proposition}{12}{}}{15}{}%
+\contentsline {pro}{{Proposition}{13}{}}{15}{}%
+\contentsline {preu}{{preuve}{3}{}}{15}{}%
+\contentsline {defi}{{Définition}{39}{}}{15}{}%
+\contentsline {pro}{{Proposition}{14}{}}{15}{}%
+\contentsline {defi}{{Définition}{40}{Forme de Maurer-Cartan}}{16}{}%
+\contentsline {pro}{{Proposition}{15}{}}{16}{}%
+\contentsline {preu}{{preuve}{4}{}}{16}{}%
+\contentsline {pro}{{Proposition}{16}{}}{16}{}%
+\contentsline {defi}{{Définition}{41}{Courbure}}{17}{}%
+\contentsline {pro}{{Proposition}{17}{Equation de structure de Cartan}}{17}{}%
+\contentsline {preu}{{preuve}{5}{}}{17}{}%
+\contentsline {pro}{{Proposition}{18}{Identité de Bianchi}}{18}{}%
+\contentsline {preu}{{preuve}{6}{}}{19}{}%
+\contentsline {pro}{{Proposition}{19}{}}{20}{}%
+\contentsline {preu}{{preuve}{7}{}}{20}{}%
+\contentsline {thm}{{Théorème}{1}{}}{21}{}%
+\contentsline {preu}{{preuve}{8}{}}{21}{}%
+\contentsline {thm}{{Théorème}{2}{}}{21}{}%
+\contentsline {preu}{{preuve}{9}{}}{22}{}%
+\contentsline {rem}{{Remarque}{2}{}}{22}{}%
+\contentsline {thm}{{Théorème}{3}{}}{22}{}%
+\contentsline {preu}{{preuve}{10}{}}{22}{}%
+\contentsline {defi}{{Définition}{42}{Théorie de jauge}}{22}{}%
+\contentsline {pro}{{Proposition}{20}{}}{23}{}%
+\contentsline {defi}{{Définition}{43}{}}{24}{}%
+\contentsline {defi}{{Définition}{44}{Produit tensoriel}}{29}{}%
+\contentsline {preu}{{preuve}{11}{}}{29}{}%
+\contentsline {pro}{{Proposition}{21}{}}{30}{}%
+\contentsline {rem}{{Remarque}{3}{}}{30}{}%
+\contentsline {defi}{{Définition}{45}{Algèbre tensorielle}}{31}{}%
+\contentsline {defi}{{Définition}{46}{Algèbre extérieure}}{31}{}%
+\contentsline {pro}{{Proposition}{22}{}}{31}{}%
+\contentsline {preu}{{preuve}{12}{}}{32}{}%
+\contentsline {defi}{{Définition}{47}{Étoile de Hodge}}{33}{}%
+\contentsline {preu}{{preuve}{13}{}}{33}{}%
+\contentsline {pro}{{Proposition}{23}{}}{33}{}%

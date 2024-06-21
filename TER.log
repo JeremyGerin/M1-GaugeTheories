@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.14)  20 JUN 2024 20:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.14)  21 JUN 2024 03:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1290,7 +1290,7 @@ vmode Sous-variétés:}{\reset@font\mtcSSSfont 2}{}}
 vmode Variétés quotients:}{\reset@font\mtcSSSfont 2}{}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \n
 umberline {{\fontencoding {T1}\selectfont II}}Fibrés principaux et fibrés vec
-toriels}{\reset@font\mtcSfont 2}{}}
+toriels}{\reset@font\mtcSfont 3}{}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leave
 vmode Fibré principal:}{\reset@font\mtcSSSfont 3}{}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leave
@@ -1300,42 +1300,39 @@ vmode Fibré tangent, fibré cotangent et fibré tensoriel:}{\reset@font\mtcSSS
 font 7}{}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \n
 umberline {{\fontencoding {T1}\selectfont III}}Formes différentielles}{\reset@
-font\mtcSfont 7}{}}
+font\mtcSfont 8}{}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \n
 umberline {{\fontencoding {T1}\selectfont IV}}Flot local d'un champs de vecteur
-s}{\reset@font\mtcSfont 10}{}}
+s}{\reset@font\mtcSfont 11}{}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \n
 umberline {{\fontencoding {T1}\selectfont V}}Dérivation de Lie}{\reset@font\mt
-cSfont 11}{}}
+cSfont 12}{}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \n
 umberline {{\fontencoding {T1}\selectfont VI}}Théorème de Frobenius}{\reset@f
-ont\mtcSfont 12}{}}
+ont\mtcSfont 13}{}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leave
-vmode Fibré grassmannien:}{\reset@font\mtcSSSfont 12}{}}
+vmode Fibré grassmannien:}{\reset@font\mtcSSSfont 13}{}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leave
-vmode Théorème de Frobénius:}{\reset@font\mtcSSSfont 12}{}}
+vmode Théorème de Frobénius:}{\reset@font\mtcSSSfont 13}{}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \n
 umberline {{\fontencoding {T1}\selectfont VII}}Connexions}{\reset@font\mtcSfont
- 13}{}}
+ 14}{}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leave
-vmode Connection d'Ehresmann:}{\reset@font\mtcSSSfont 13}{}}
+vmode Connection d'Ehresmann:}{\reset@font\mtcSSSfont 14}{}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leave
-vmode Forme de Maurer-Cartan:}{\reset@font\mtcSSSfont 15}{}}
+vmode Forme de Maurer-Cartan:}{\reset@font\mtcSSSfont 16}{}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leave
-vmode Courbure:}{\reset@font\mtcSSSfont 16}{}}
+vmode Courbure:}{\reset@font\mtcSSSfont 17}{}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \n
 umberline {{\fontencoding {T1}\selectfont VIII}}Théories de Yang-Mills}{\reset
-@font\mtcSfont 19}{}}
+@font\mtcSfont 20}{}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leave
-vmode Théorie de jauge en Physique:}{\reset@font\mtcSSSfont 19}{}}
+vmode Théorie de jauge en Géométrie:}{\reset@font\mtcSSSfont 20}{}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leave
-vmode Théorie de jauge en Géométrie:}{\reset@font\mtcSSSfont 21}{}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \n
-umberline {{\fontencoding {T1}\selectfont IX}}Electrodynamique}{\reset@font\mtc
-Sfont 21}{}}
+vmode Théorie de jauge en Physique:}{\reset@font\mtcSSSfont 23}{}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leave
 vmode Équations de Maxwell dans le langage des formes:}{\reset@font\mtcSSSfont
- 21}{}}
+ 25}{}}
 Package minitoc Info: I0033
 (minitoc)             Writing TER.mtc1.
 \openout3 = `TER.mtc1'.
@@ -1385,7 +1382,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 37.
+Package pdftex.def Info: logo_univ.png  used on input line 39.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1398,14 +1395,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
-
- []
-
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 71.
+Package pdftex.def Info: logo_univ.png  used on input line 55.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 36.46945pt, for example:
@@ -1415,28 +1409,28 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--82
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--84
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--97
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 104.
+Package pdftex.def Info: logo_univ.png  used on input line 92.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1447,18 +1441,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 104--106
+Underfull \hbox (badness 10000) in paragraph at lines 96--98
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--125
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
 
  []
 
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 138.
+Package pdftex.def Info: logo_univ.png  used on input line 124.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1469,28 +1463,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 155--156
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 160--161
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 162--163
+Underfull \hbox (badness 10000) in paragraph at lines 124--126
 
  []
 
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 167.
+Package pdftex.def Info: logo_univ.png  used on input line 156.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1501,18 +1480,38 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 209.
+Package pdftex.def Info: logo_univ.png  used on input line 188.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1523,28 +1522,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 223--225
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 226--227
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
-
- []
-
-LaTeX Font Info:    Trying to load font information for U+euf on input line 233
-.
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 239.
+Package pdftex.def Info: logo_univ.png  used on input line 221.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 
@@ -1556,13 +1536,32 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
+Underfull \hbox (badness 10000) in paragraph at lines 225--227
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
+
+ []
+
+LaTeX Font Info:    Trying to load font information for U+euf on input line 235
+.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
 
  []
 
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 278.
+Package pdftex.def Info: logo_univ.png  used on input line 252.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1575,7 +1574,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [8]
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 310.
+Package pdftex.def Info: logo_univ.png  used on input line 294.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 
@@ -1589,7 +1588,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [9]
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 347.
+Package pdftex.def Info: logo_univ.png  used on input line 308.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 
@@ -1601,19 +1600,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 366--368
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 383--385
-
- []
-
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 385.
+Package pdftex.def Info: logo_univ.png  used on input line 348.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 36.46945pt, for example:
@@ -1623,13 +1614,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 390--392
+Underfull \hbox (badness 10000) in paragraph at lines 370--372
 
  []
 
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 416.
+Package pdftex.def Info: logo_univ.png  used on input line 381.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1640,11 +1631,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [12]
+Underfull \hbox (badness 10000) in paragraph at lines 388--390
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--397
+
+ []
+
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 455.
+Package pdftex.def Info: logo_univ.png  used on input line 418.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 36.46945pt, for example:
@@ -1654,19 +1653,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 466--468
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 471--472
-
- []
-
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 488.
+Package pdftex.def Info: logo_univ.png  used on input line 461.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 36.46945pt, for example:
@@ -1676,13 +1667,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 501--503
+Underfull \hbox (badness 10000) in paragraph at lines 472--474
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--478
 
  []
 
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 520.
+Package pdftex.def Info: logo_univ.png  used on input line 494.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1693,11 +1689,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [15]
+Underfull \hbox (badness 10000) in paragraph at lines 507--509
+
+ []
+
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 555.
+Package pdftex.def Info: logo_univ.png  used on input line 526.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 36.46945pt, for example:
@@ -1707,14 +1706,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 567--569
-
- []
-
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 584.
+Package pdftex.def Info: logo_univ.png  used on input line 561.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 36.46945pt, for example:
@@ -1724,7 +1720,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 584--586
+Underfull \hbox (badness 10000) in paragraph at lines 573--575
+
+ []
+
+File: logo_univ.png Graphic file (type png)
+<use logo_univ.png>
+Package pdftex.def Info: logo_univ.png  used on input line 590.
+(pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 36.46945pt, for example:
+(fancyhdr)                \setlength{\headheight}{36.46945pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 590--592
 
  []
 
@@ -1742,17 +1755,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
-[18]
+[19]
 \openout2 = `yang-mills.aux'.
 
  (./yang-mills.tex
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
+Underfull \hbox (badness 10000) in paragraph at lines 29--31
 
  []
 
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 32.
+Package pdftex.def Info: logo_univ.png  used on input line 35.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1762,33 +1775,29 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
-[19
+[20
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 56--58
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--61
 
  []
 
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 62.
+Package pdftex.def Info: logo_univ.png  used on input line 64.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 36.46945pt, for example:
-(fancyhdr)                \setlength{\headheight}{36.46945pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
-
-[20]
-File: logo_univ.png Graphic file (type png)
-<use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 100.
-(pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 36.46945pt, for example:
@@ -1798,9 +1807,65 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
 [21]
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
-Package pdftex.def Info: logo_univ.png  used on input line 145.
+Package pdftex.def Info: logo_univ.png  used on input line 92.
+(pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 36.46945pt, for example:
+(fancyhdr)                \setlength{\headheight}{36.46945pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+File: logo_univ.png Graphic file (type png)
+<use logo_univ.png>
+Package pdftex.def Info: logo_univ.png  used on input line 118.
+(pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 36.46945pt, for example:
+(fancyhdr)                \setlength{\headheight}{36.46945pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 148--150
+
+ []
+
+File: logo_univ.png Graphic file (type png)
+<use logo_univ.png>
+Package pdftex.def Info: logo_univ.png  used on input line 150.
+(pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 36.46945pt, for example:
+(fancyhdr)                \setlength{\headheight}{36.46945pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
+
+[24]
+File: logo_univ.png Graphic file (type png)
+<use logo_univ.png>
+Package pdftex.def Info: logo_univ.png  used on input line 182.
 (pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
 
 
@@ -1811,8 +1876,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 153--155
+[25]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: logo_univ.png Graphic file (type png)
+<use logo_univ.png>
+Package pdftex.def Info: logo_univ.png  used on input line 216.
+(pdftex.def)             Requested size: 71.46573pt x 32.11942pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 36.46945pt, for example:
+(fancyhdr)                \setlength{\headheight}{36.46945pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 224--226
 
  []
 
@@ -1830,7 +1911,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
-[23]
+[27]
 \openout2 = `algebre_mult.aux'.
 
  (./algebre_mult.tex
@@ -1847,7 +1928,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
-[24
+[28
 
 
 
@@ -1867,7 +1948,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
-[25]
+[29]
 Underfull \hbox (badness 10000) in paragraph at lines 30--32
 
  []
@@ -1884,7 +1965,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
-[26]
+[30]
 Underfull \hbox (badness 10000) in paragraph at lines 70--72
 
  []
@@ -1906,7 +1987,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
-[27]
+[31]
 Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
@@ -1943,7 +2024,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
-[28]
+[32]
 Underfull \hbox (badness 10000) in paragraph at lines 127--128
 
  []
@@ -1962,7 +2043,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-24.46945pt}.
 
-[29]
+[33]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the TER.maf file.
@@ -1984,10 +2065,10 @@ Package minitoc(hints) Warning: W0024
 
 (./TER.aux (./varietes-diff.aux) (./yang-mills.aux) (./algebre_mult.aux)) ) 
 Here is how much of TeX's memory you used:
- 22246 strings out of 478287
- 422144 string characters out of 5849289
- 728459 words of memory out of 5000000
- 39849 multiletter control sequences out of 15000+600000
+ 22247 strings out of 478287
+ 422156 string characters out of 5849289
+ 722494 words of memory out of 5000000
+ 39850 multiletter control sequences out of 15000+600000
  488746 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,21n,103p,746b,1165s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2014,10 +2095,10 @@ lic/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm080
 xmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/publ
 ic/cm-super/sfrm2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200
 .pfb>
-Output written on TER.pdf (33 pages, 402566 bytes).
+Output written on TER.pdf (37 pages, 408579 bytes).
 PDF statistics:
- 238 PDF objects out of 1000 (max. 8388607)
- 151 compressed objects within 2 object streams
+ 253 PDF objects out of 1000 (max. 8388607)
+ 162 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

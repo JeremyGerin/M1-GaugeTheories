@@ -1,5 +1,97 @@
 \section{Théories de Yang-Mills}
 
+\subsubsection{Théorie de jauge en Géométrie:}
+
+\begin{pro}
+Soit $\pi_1 : P = \mathcal{M}\times G \to \mathcal{M}$ le fibré principal explicite avec $\sigma_1: \mathcal{M} \to P$ la section canonique. Soit $B: T\mathcal{M} \to \mathfrak{g}$ une $1$-forme à valeur dans $\mathfrak{g}$ sur $\mathcal{M}$. Alors il existe une unique connexion d'Ehresmann $\omega$ sur $P$ telle que $\sigma_1(\omega) = B$ qui est donnée par
+$$\omega = \Ad_{\pi_2^{-1}}\pi_1^*(B) + \pi_2^*(\Omega)$$
+où $\Omega$ est la forme de Maurer-Cartan sur $G$ et $\pi_2: P\to G$ est la projection sur la seconde composante de $P$.
+\end{pro}
+\begin{preu}
+Posons
+$$\omega_1 = \Ad_{\pi_2^{-1}}\pi_1^*(B)$$
+On a $\sigma_1^*\omega_1 = B$ puisque par construction $\omega_1$ est égale à $\pi_1^*B$ sur $\mathcal{M}\times \{e\}$
+Ensuite on a pour $h\in G$, $p\in P$ et $u\in T_pP$
+\begin{eqnarray*}
+R_h^*\omega_1(u) &=& \omega_1(TR_h u) \\
+&=& \Ad_{\pi_2^{-1}(p.h)}((\pi_1^*B)(TR_h u)) \\
+&=& \Ad_{h^{-1}\pi_2^{-1}(p)}(B(T\pi_1(TR_h u))) \\
+&=& \Ad_{h^{-1}}\Ad_{\pi_2^{-1}(p)}(B(T\pi_1 u)) \\
+&=& \Ad_{h^{-1}}\Ad_{\pi_2^{-1}(p)}(\pi_1^* B)(u) \\
+&=& \Ad_{h^{-1}}\omega_1(u)
+\end{eqnarray*}
+De plus, on a pour $A\in \mathfrak{g}$ 
+$$\omega_1(A^\sharp) = \Ad_{\pi_2^{-1}}(\pi_1^*B)(A^\sharp) = \Ad_{\pi_2^{-1}} B(T\pi_1 A^\sharp) = 0$$ 
+
+Soit $\eta$ une connexion d'Ehresmann verifiant $\sigma_1^*(\eta) = B$. Posons alors $\alpha = \eta - \omega_1$ qui est une connexion d'Ehresmann. Notons aussi $i_x: G\to P, h \mapsto (x, h)$ pour $x\in \mathcal{M}$. Alors $i_x^*\alpha: TG \to \mathfrak{g}$ est une connexion d'Ehresmann sur $G$ donc il s'agit de la forme de Maurer-Cartan par unicité de cette dernière. Donc on a $\Omega = i_x^*\alpha$. Ensuite on a 
+$$\pi_2^*\Omega = \pi_2^*i_x^*\alpha = (i_x\pi_2)^*\alpha$$
+Or pour $u\in T\mathcal{M}$ et $v\in TG$ on a
+$$(i_x\pi_2)^*\alpha(u,v) = \alpha(0, v) = \alpha(u, v)$$
+Finalement $\alpha = \pi_2^*\Omega$.
+\end{preu}
+
+\begin{thm}
+Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal, soit $\sigma: \mathcal{M} \to P$ une section du fibré et soit $B: T\mathcal{M} \to \mathfrak{g}$ une $1$-forme à valeur dans $\mathfrak{g}$ sur $\mathcal{M}$. Alors il existe une unique connexion d'Ehresmann $\omega: TP \to \mathfrak{g}$ telle que $B = \sigma^*\omega$. De plus, on a
+$$\omega = \Ad_{g_\sigma^{-1}}\pi^*(B)+g_\sigma^*(\Omega)$$
+où $\Omega$ est la forme de Maurer-Cartan de $G$ et où $g: P \to G$ est donné ci-après.
+\end{thm}
+\begin{preu}
+Notons $\phi_\sigma: P\to \mathcal{M}\times G$ la trivialisation associée à $\sigma$. Pour $p\in P$ notons $x = \pi(p)\in \mathcal{M}$. Alors $p$ et $\sigma(x)$ vivent dans la même fibre $P_x$ donc il existe un unique élément $g_\sigma(p)\in G$ tel que
+$$p = \sigma(x).g_\sigma(p)$$
+Ce qui définit une fonction $g: P\to G$ et alors la trivialisation associée $\phi_\sigma$ est donné par
+$$\phi_\sigma(p) = (\pi(p), g_\sigma(x))$$
+Soit alors $\omega_0 = \Ad_{\pi_2^{-1}}\pi_1^*(B) + \pi_2^*(\Omega)$ la connexion d'Ehresmann sur $\mathcal{M}\times G$ construite précédement. On pose alors,
+$$\omega = \phi_\sigma^*(\omega_0)$$
+Or comme $\pi_1\phi_\sigma = \pi$ et $\pi_2\phi_\sigma = g_\sigma$ on a immediatement 
+$$\omega = \Ad_{g_\sigma^{-1}}\pi^*(B)+g_\sigma^*(\Omega)$$
+\end{preu}
+
+\begin{thm}
+Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal, soit $\omega$ une connexion d'Ehresmann sur $P$, soient $\sigma_1, \sigma_2:\mathcal{M}\to P$ deux sections de $P$ et posons $B_1 = \sigma_1^*\omega$ et $B_2 = \sigma_2^*\omega$. $B_1$ et $B_2$ sont des 1-formes à valeur dans $\mathfrak{g}$ sur $\mathcal{M}$ et on a pour tout $x\in \mathcal{M}$ 
+$$\sigma_2(x) = \sigma_1(x).g(x)$$
+où $g:\mathcal{M} \to G$ est une transformation de jauge locale. \\
+Alors on dispose de la relation entre $B_1$ et $B_2$:
+$$B_2 = \Ad_{g^{-1}}B_1+g^*\Omega$$
+\end{thm}
+\begin{preu}
+Par unicité on a
+$$\omega = \Ad_{g_1^{-1}}\pi^*B_1+g_1^*(\Omega)$$
+où $g_i(p)$ est l'unique élément de $G$ tel que $p = \sigma_i(x).g_i(p)$.
+Alors $g_1\sigma_2 = g$ d'où le resultat.
+\end{preu}
+
+\begin{rem}
+Dans le cas de groupes de Lie matriciels cela devient
+$$B_2 = g^{-1}B_1g + g^{-1}dg$$
+\end{rem}
+
+\begin{thm}
+Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal, soit $\{V_\alpha, \phi_\alpha\}$ une famille de trivialisations locales recouvrant $P$ et soient $B_\alpha$ des 1-formes à valeurs dans $\mathfrak{g}$ sur $V_\alpha$ pour chaque $\alpha$ et vérifiant 
+$$B_\beta = \Ad_{g_{\alpha\beta}^{-1}}B_\alpha + g_{\alpha\beta}^{-1}*\Omega$$ 
+où $g_{\alpha\beta}: V_\alpha\cap V_\beta \to G$ est le cocycle du fibré principal relatif aux $\{V_\alpha, \phi_\alpha\}$. \\
+Alors il existe une unique connexion d'Ehresmann $\omega$ sur $P$ tel que $B_\alpha = \sigma_\alpha^*(\omega)$ pour chaque $\alpha$.
+\end{thm}
+\begin{preu}
+On applique le premier théorème localement, puis on recolle ce qui est possible d'après le deuxième théorème.
+\end{preu}
+
+
+\begin{defi}[Théorie de jauge]
+Une théorie de jauge est la donnée d'un fibré principal $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ et d'une connexion d'Ehresmann $\omega$. \\
+Dans ce cas on appelle champs de jauge sur $P$ la connexion d'Ehresmann $\omega$ et champs de force la courbure $D\omega$. \\
+Une transformation de jauge du fibré principal est un automorphisme de fibrés principaux $\psi: P \to P$ recouvrant l'identité sur $\mathcal{M}$ qui commute avec l'action à droite de $G$ sur $P$.
+\end{defi}
+
+\begin{pro}
+Soit $\sigma : V\to \pi^{-1}(V)$ une section du fibré principal. On note $A = \sigma^*(\omega)$ le champs de jauge local et $F = \sigma^*(D\omega)$ le champs de force local. Alors on a
+$$F = dA + \frac{1}{2}A\wedge A$$
+et
+\begin{alignat*}{2}
+DF & = 0   && \quad\text{Identité de Bianchi} \\
+D\star F & = 0  && \quad\text{Équation de Yang-Mills}
+\end{alignat*}
+\end{pro}
+
 \subsubsection{Théorie de jauge en Physique:}
 
 Soient une variété lisse $\mathcal{M}$ de dimension $m$ dont $(V, x^\mu)$ est une carte locale, un groupe de Lie $G$ et un espace de Hilbert $\mathcal{H}$ muni d'une action de $G$ sur $\mathcal{H}$ qu'on notera $U\psi$ pour $U \in G$ et $\psi \in \mathcal{H}$. Soient enfin $B_\mu : V \to \mathfrak{g}$ des applications lisse qu'on appelera champs de jauge. Et soit $g\in \R$ une constante appelée constante de couplage de la théorie. \\
@@ -60,27 +152,6 @@ On peut alors écrire le lagrangien de l'interaction dont on s'arrange pour qu'i
 $$\mathcal{L}_{\text{libre}} = \tr \left(-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}\right)$$
 Finalement on peut écrire les équations d'Euler-Lagrange dans ce cas et on obtient les équations de Yang-Mills
 $$\sum_\mu \partial_\mu F_{\mu\nu} + ig[B_\mu, F_{\mu\nu}] = 0$$
-
-
-\subsubsection{Théorie de jauge en Géométrie:}
-
-\begin{defi}[Théorie de jauge]
-Une théorie de jauge est la donnée d'un fibré principal $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ et d'une connexion d'Ehresmann $\omega$. \\
-Dans ce cas on appelle champs de jauge sur $P$ la connexion d'Ehresmann $\omega$ et champs de force la courbure $D\omega$. \\
-Une transformation de jauge du fibré principal est un automorphisme de fibrés principaux $\psi: P \to P$ recouvrant l'identité sur $\mathcal{M}$ qui commute avec l'action à droite de $G$ sur $P$.
-\end{defi}
-
-\begin{pro}
-Soit $\sigma : V\to \pi^{-1}(V)$ une section du fibré principal. On note $A = \sigma^*(\omega)$ le champs de jauge local et $F = \sigma^*(D\omega)$ le champs de force local. Alors on a
-$$F = dA + \frac{1}{2}A\wedge A$$
-et
-\begin{alignat*}{2}
-DF & = 0   && \quad\text{Identité de Bianchi} \\
-D\star F & = 0  && \quad\text{Équation de Yang-Mills}
-\end{alignat*}
-\end{pro}
-
-\section{Electrodynamique}
 
 \subsubsection{Équations de Maxwell dans le langage des formes:}
 
