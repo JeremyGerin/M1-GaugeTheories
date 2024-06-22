@@ -1,28 +1,31 @@
 \babel@toc {french}{}\relax 
-\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont I}}Généralités}{1}{}%
-\contentsline {subsubsection}{Définitions:}{1}{}%
-\contentsline {subsubsection}{Sous-variétés:}{2}{}%
-\contentsline {subsubsection}{Variétés quotients:}{2}{}%
-\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont II}}Fibrés principaux et fibrés vectoriels}{3}{}%
-\contentsline {subsubsection}{Fibré principal:}{3}{}%
-\contentsline {subsubsection}{Fibrés vectoriels:}{5}{}%
-\contentsline {subsubsection}{Fibré tangent, fibré cotangent et fibré tensoriel:}{7}{}%
-\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont III}}Formes différentielles}{8}{}%
-\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont IV}}Flot local d'un champs de vecteurs}{11}{}%
-\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont V}}Dérivation de Lie}{12}{}%
-\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont VI}}Théorème de Frobenius}{13}{}%
-\contentsline {subsubsection}{Fibré grassmannien:}{13}{}%
-\contentsline {subsubsection}{Théorème de Frobénius:}{13}{}%
-\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont VII}}Connexions}{14}{}%
-\contentsline {subsubsection}{Connection d'Ehresmann:}{14}{}%
-\contentsline {subsubsection}{Forme de Maurer-Cartan:}{16}{}%
-\contentsline {subsubsection}{Courbure:}{17}{}%
-\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont VIII}}Théories de Yang-Mills}{20}{}%
-\contentsline {subsubsection}{Théorie de jauge en Géométrie:}{20}{}%
-\contentsline {subsubsection}{Théorie de jauge en Physique:}{23}{}%
-\contentsline {subsubsection}{Équations de Maxwell dans le langage des formes:}{25}{}%
-\contentsline {chapter}{Annexe A: Algèbre multilinéaire}{29}{}%
-\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont I}}Produit tensoriel}{29}{}%
-\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont II}}Algèbre extérieure}{31}{}%
-\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont III}}Étoile de Hodge}{32}{}%
+\contentsline {subsubsection}{Remerciements}{5}{chapter*.1}%
+\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont I}}Généralités}{6}{section.0.1}%
+\contentsline {subsubsection}{Définitions:}{6}{subsubsection*.2}%
+\contentsline {subsubsection}{Sous-variétés:}{7}{subsubsection*.3}%
+\contentsline {subsubsection}{Variétés quotients:}{7}{subsubsection*.4}%
+\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont II}}Groupes et algèbres de Lie}{8}{section.0.2}%
+\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont III}}Fibrés principaux et fibrés vectoriels}{9}{section.0.3}%
+\contentsline {subsubsection}{Fibré principal:}{9}{subsubsection*.5}%
+\contentsline {subsubsection}{Fibrés vectoriels:}{11}{subsubsection*.6}%
+\contentsline {subsubsection}{Fibré tangent, fibré cotangent et fibré tensoriel:}{13}{subsubsection*.7}%
+\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont IV}}Formes différentielles}{14}{section.0.4}%
+\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont V}}Flot local d'un champ de vecteurs}{17}{section.0.5}%
+\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont VI}}Dérivation de Lie}{18}{section.0.6}%
+\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont VII}}Théorème de Frobenius}{19}{section.0.7}%
+\contentsline {subsubsection}{Fibré grassmannien:}{19}{subsubsection*.8}%
+\contentsline {subsubsection}{Théorème de Frobénius:}{19}{subsubsection*.9}%
+\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont VIII}}Connexions}{20}{section.0.8}%
+\contentsline {subsubsection}{Connection d'Ehresmann:}{21}{subsubsection*.10}%
+\contentsline {subsubsection}{Forme de Maurer-Cartan:}{22}{subsubsection*.11}%
+\contentsline {subsubsection}{Courbure:}{23}{subsubsection*.12}%
+\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont IX}}Théories de jauge}{26}{section.0.9}%
+\contentsline {subsubsection}{En Géométrie:}{26}{subsubsection*.13}%
+\contentsline {subsubsection}{En Physique:}{29}{subsubsection*.14}%
+\contentsline {chapter}{Annexe A: Algèbre multilinéaire}{33}{appendix*.15}%
+\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont I}}Produit tensoriel}{33}{section.A.1}%
+\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont II}}Algèbre extérieure}{35}{section.A.2}%
+\contentsline {section}{\numberline {{\fontencoding {T1}\selectfont III}}Étoile de Hodge}{36}{section.A.3}%
+\contentsline {chapter}{Annexe B: Équations de Maxwell en terme de formes}{39}{appendix*.16}%
+\contentsline {chapter}{Bibliographie}{43}{appendix*.17}%
 \contentsfinish 

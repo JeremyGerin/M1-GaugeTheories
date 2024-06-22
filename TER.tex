@@ -7,25 +7,1055 @@
 \usepackage{multicol}
 \usepackage{tikz-cd}
 \usepackage{systeme}
+\usepackage{hyperref}
 \sysextracolsign{|}
 
-\title{Travail encadré de recherche - Théories de jauge}
+\hypersetup{
+	colorlinks = true,
+	linkcolor=black,
+}
+
+\title{Travail encadré de recherche - Introduction aux théories de jauge}
 \author{Jérémy \textsc{Gerin}}
-\date{2023}
+\date{2024}
 
 \begin{document}
-	\frontmatter
-		\maketitle
-		\dominitoc
-		\sommaire
+\frontmatter
 
-	\mainmatter
-		\include{varietes-diff.tex}
-		\include{yang-mills.tex}
+\mainmatter
+\maketitle
+\sommaire
 
-	\appendix
-		\include{algebre_mult.tex}
-		%\include{gal.tex}
-		%\include{dirac.tex}
+\newpage
+
+\section*{Remerciements}
+\addcontentsline{toc}{subsubsection}{Remerciements}
+
+Je remercie Rémi Leclercq d'avoir accepté de m'encadrer et de m'avoir fait découvrir ce sujet et pour ses explications particulièrement claires.
+
+\newpage
+
+En Physique, une théorie de jauge est un type de théorie des champs dans laquelle le lagrangien est invariant sous une transformation locale dite \emph{de jauge}. Ce terme fait référence à des degrés de liberté redondant dans le formalisme lagrangien du système physique. L'ensemble de ces transformations de jauge forme un groupe appelé \emph{groupe de jauge de la théorie}. Lorsqu'une telle théorie est quantifiée, les quantas du champ de jauge sont alors appelés \emph{bosons de jauge}. \\
+
+Le modèle standard, qui décrit de façon unifié l'électromagnétisme et les interactions nucléaires faible et forte, est une théorie de jauge non abélienne qui repose sur le groupe $U(1)\times \SU(2) \times \SU(3)$ et possède un total de 12 bosons de jauge: le photon, 3 bosons faibles et 8 gluons. \\
+
+Les théories de jauges classique, qui nous intéressent ici, reposent sur la notion de \emph{fibré principal} dont la fibre s'identifie au groupe de jauge qui est un groupe de Lie. Le champ de jauge $A$ y apparaît comme une connexion et la forme de Yang-Mills associée $F = dA$ comme la courbure de cette connexion. 
+
+\section{Généralités}
+
+\subsubsection{Définitions:}
+
+Soit $\mathcal{M}$ un espace topologique séparé à base dénombrable d'ouverts, soit $m\in \N$ et soit $r\in \N \cup \{\infty\}$.
+
+\begin{defi}[Carte]
+Une \emph{carte} sur $\mathcal{M}$ à valeur dans $\R ^m$ est la donnée d'un couple $(U, \phi)$ où $U$ est un ouvert de $\mathcal{M}$ et $\phi : U \to \phi(U) \in \R^m$ est un homéomorphisme de $U$ sur son image avec $\phi(U)$ ouvert dans $\R^m$.
+\end{defi}
+
+\begin{defi}[Atlas]
+Un \emph{atlas} de $\mathcal{M}$ dans $\R^m$ de classe $\mathscr{C}^r$ est un ensemble $\mathscr{A}$ de cartes $(U, \phi)$ à valeur dans $\R^m$ dont les domaines de cartes $U$ recouvrent $\mathcal{M}$ et qui sont $\mathscr{C}^r$-compatibles, c'est à dire telles que:
+$$\forall (U, \phi), (V, \psi) \in \mathscr{A}, \quad \psi \circ \phi ^{-1} : \phi(U\cap V) \to \psi(U \cap V) \quad \text{est un }\mathscr{C}^r\text{-difféomorphisme}$$
+Deux $\mathscr{C}^r$-atlas sont $\mathscr{C}^r$-compatibles si leur réunion est un $\mathscr{C}^r$-atlas. Cela définit une relation d'équivalence et la réunion de la classe d'équivalence d'un $\mathscr{C}^r$-atlas est l'unique $\mathscr{C}^r$-atlas maximal qui le contient.
+\end{defi}
+
+\begin{defi}[Variété différentielle]
+Une \emph{variété différentielle} de classe $\mathscr{C}^r$ (ou lisse si $r = \infty$) de dimension $m$ est un espace topologique séparé et à base dénombrable d'ouverts muni d'un $\mathscr{C}^r$-atlas maximal à valeur dans $\R^m$.
+\end{defi}
+
+\begin{defi}
+Soient $\mathcal{M}$, $\mathcal{N}$ deux variétés de classe $\mathscr{C}^r$ et $f: \mathcal{M} \to \mathcal{N}$. On dira que $f$ est $\mathscr{C}^r$ (ou lisse si $r = \infty$) si $\forall x\in \mathcal{M}$ il existe une carte $(U, \phi)$ de $\mathcal{M}$ telle que $x\in U$ et une carte $(V, \psi)$ de $\mathcal{N}$ telle que $f(x) \in V$ et telles que $f(U)\subset V$ et si l'application $f$ lue dans les cartes locales 
+$$\psi \circ f \circ \phi^{-1}:\phi(U)\to \psi(V)$$
+est $\mathscr{C}^r$ en $\phi(x)$. \\
+Par composition des applications différentiables, cette définition ne dépend pas du choix des cartes.
+\end{defi}
+
+\begin{pro}
+Soient $\mathcal{M}$, $\mathcal{N}$ et $\mathcal{P}$ des variétés $\mathscr{C}^r$ et $f:\mathcal{M}\to \mathcal{N}$ et $g:\mathcal{N}\to\mathcal{P}$ des applications $\mathscr{C}^r$. Alors $g \circ f: \mathcal{M} \to \mathcal{P}$ est $\mathscr{C}^r$.
+\end{pro}
+\begin{preu}
+Par composition des applications différentiables
+\end{preu}
+
+\subsubsection{Sous-variétés:}
+
+\begin{defi}[Sous-variété]
+Soit $\mathcal{M}$ une variété lisse de dimension $m$ et soit $\mathcal{N}$ une partie de $\mathcal{M}$ telle qu'il existe $n\leq m$ tel que pour toute carte $(U, \phi)$ de $\mathcal{M}$ telle que $U \cap \mathcal{N} \neq \emptyset$ on ait
+$$\phi : U\cap \mathcal{N} \to \phi(U)\cap \R^n$$
+est un homéomorphisme.\\
+Dans ce cas on dit que $\mathcal{N}$ est une sous-variété lisse de $\mathcal{M}$ de dimension $n$ et de codimension $m-n$ dans $\mathcal{M}$.
+\end{defi}
+
+\begin{pro}
+Soit $\mathcal{N}$ une \emph{sous-variété} lisse de $\mathcal{M}$ alors si on note $\{(U_\alpha, \phi_\alpha), \alpha \in A\}$ l'atlas lisse de $\mathcal{M}$ alors l'ensemble $\{(U_\alpha \cap \mathcal{N}, \phi_\alpha), \alpha \in A\}$ est un atlas lisse sur $\mathcal{N}$ qui fait de $\mathcal{N}$ une variété lisse de dimension $n$. \\
+De plus, l'inclusion $\mathcal{N} \to \mathcal{M}$ est lisse.
+\end{pro}
+
+\subsubsection{Variétés quotients:}
+
+\begin{defi}[Variété quotient]
+Soit $\mathcal{M}$ une variété lisse et soit une action lisse libre et propre d'un groupe de Lie $G$ sur $\mathcal{M}$. Alors il existe une unique structure de variété lisse sur $\mathcal{M}/G$ telle que la projection canonique soit une application lisse.
+\end{defi}
+
+\newpage
+\section{Groupes et algèbres de Lie}
+
+\begin{defi}[Groupe de Lie]
+Un \emph{groupe de Lie} $G$ est la donnée d'un groupe et d'une variété lisse telle que la multiplication et l'inverse soient des applications lisses.
+\end{defi}
+
+\begin{defi}[Algèbre de Lie]
+Une \emph{algèbre de Lie} $\mathfrak{g}$ est un espace vectoriel muni d'une application bilinéaire, appelée crochet de Lie, $[.,.] : \mathfrak{g}\times\mathfrak{g} \to \mathfrak{g}$ vérifiant:
+$$[X, Y] = - [Y, X] \quad \text{(antisymétrie)}$$
+et $$[X, [Y, Z]] + [Y, [Z, X]] + [Z, [X, Y]] = 0 \quad \text{(identité de Jacobi)}$$
+\end{defi}
+
+\begin{defi}
+Soit $G$ un groupe de Lie, on définit pour $g\in G$ \emph{l'application adjointe} 
+$$\ad_g : G \to G, h \mapsto ghg^{-1}$$ 
+On note aussi $\Ad_g = T_e(\ad_g)$ \\
+\end{defi}
+
+On note $L_g$ la translation à gauche par $g$, c'est un $\mathscr{C}^\infty$-difféomorphisme de $G$. Alors $G$ agit sur $TG$ via 
+$$g.v = T(L_g)v$$
+
+\begin{defi}[Champs de vecteurs invariant à gauche]
+Soit $X: G \to TG$ un champ de vecteur sur $G$. On dit que $X$ est invariant à gauche si $T(L_g)X = X, \forall g\in G$. On note $\mathcal{L}(G)$ l'espace des champs de vecteurs invariants à gauche.\\
+\end{defi}
+
+Comme $T(L_g) : T_hG\to T_{gh}G$ est un isomorphisme d'espace vectoriel, un champ de vecteur invariant à gauche est entièrement déterminé par ses valeurs sur $T_eG$, et réciproquement, pour $v\in T_eG$, il existe un unique champ de vecteurs invariant à gauche $X_v$ tel que $X_v(e)=v$. Ainsi, l'application $v\to X_v$ est un isomorphisme d'espace vectoriel entre $T_eG$ et $\mathcal{L}(G)$. \\
+
+\begin{pro}
+Si $X, Y$ sont des champs de vecteurs invariants à gauche alors $[X, Y]$ est aussi un champ de vecteur invariant à gauche. 
+\end{pro}
+
+Ainsi, on muni $T_eG$ qu'on notera désormais $\mathfrak{g}$ du crochet de Lie, qui en fait une algèbre de Lie qu'on appelle algèbre de Lie associée au groupe de Lie $G$.
+$$[u, v] = [X_u, X_v](e)$$ \\
+
+\newpage
+\section{Fibrés principaux et fibrés vectoriels}
+
+\begin{defi}[Cocycle]
+Soit $\mathcal{M}$ une variété lisse, soit $\{(U_\alpha, \phi_\alpha), \alpha \in A\}$ son atlas lisse et soit $G$ un groupe de Lie. Un \emph{cocycle} sur $\mathcal{M}$ à valeur dans $G$ est une famille de fonctions lisses $g_{\beta\alpha} : U_\alpha \cap U_\beta \to G$ telle que $\forall \alpha, \beta, \gamma \in A$,
+$$g_{\gamma\alpha}(x) = g_{\gamma\beta}(x)g_{\beta\alpha}(x), \quad \forall x \in U_\alpha \cap U_\beta \cap U_\gamma$$ 
+\end{defi}
+
+\begin{pro}
+Soit $\rho : G \to H$ un morphisme de groupes de Lie et soit un cocycle $g_{\beta\alpha}$ à valeur dans un groupe de Lie $G$, alors $\rho \circ g_{\beta\alpha}$ est un cocycle sur $\mathcal{M}$ à valeur dans $H$. \\
+\end{pro}
+
+Soit $\mathcal{M}$ une variété lisse de dimension $m$ et d'atlas $\{(U_\alpha, \phi_\alpha), \alpha \in A\}$ munie d'un cocycle $g_{\beta\alpha}$ à valeur dans un groupe de Lie $G$ de dimension $r$. Notons $V_\alpha = \phi_\alpha(U_\alpha) \subset \R^m$, $V_{\beta\alpha} = \phi_\alpha(U_\alpha \cap U_\beta) \subset \R^m$ et notons $\phi_{\beta\alpha} = \phi_\beta \circ \phi_\alpha^{-1} : V_{\beta\alpha} \to V_{\alpha\beta}$ les fonctions de transitions.
+
+\subsubsection{Fibré principal:}
+
+On pose $H_\alpha = V_\alpha\times G$ et $H_{\beta\alpha} = V_{\beta\alpha}\times G$ et on définit $\gamma_{\beta\alpha} : H_{\beta\alpha} \to H_{\alpha\beta}$ pour tout $\alpha, \beta \in A$ par
+$$\gamma_{\beta\alpha}(\phi_\alpha(x), h) = (\phi_\beta(x), g_{\beta\alpha}h), \quad \forall x\in V_{\beta\alpha}, \quad \forall h\in G$$
+Soit alors $X = \DUnion_{\alpha \in A} H_\alpha$ muni de la topologie union disjointe et soit la relation binaire sur $X$ définie par
+$$(x, g) \in H_{\beta\alpha} \sim (y, h) \in H_{\alpha\beta} \iff (y,h) = \gamma_{\beta\alpha}(x,g)$$
+C'est une relation d'équivalence sur $X$ puisque la famille des $\gamma_{\beta\alpha}$ vérifie:
+\be
+	\item $\gamma_{\alpha\alpha} = \id$ sur $H_\alpha$
+	\item $\gamma_{\beta\alpha}^{-1} = \gamma_{\alpha\beta}$ sur $H_{\alpha\beta}$
+	\item $\gamma_{\delta\beta} \circ \gamma_{\beta\alpha} = \gamma_{\delta\alpha}$ sur $H_{\beta\alpha} \cap \gamma_{\beta\alpha}^{-1}(H_{\delta\beta}) \subset H_{\delta\alpha}$ \\
+\ee
+
+Soit alors $P = X/\sim$ muni de la topologie quotient. Soit alors $\{(\mathcal{O}_\beta, \theta_\beta), \beta \in B\}$ l'atlas de $G$, l'application $V_\alpha \times \theta_\beta(\mathcal{O}_\beta) \subset \R^m \times \R^r \to P$ qui pour $x\in \mathcal{M}$ et $h\in G$ envoie $(\phi_\alpha(x), \theta_\beta(h))$ sur sa classe d'équivalence dans $P$ est un homéomorphisme sur son image. Notons $p_{\alpha, \beta} : P_{\alpha, \beta} \to V_\alpha \times \theta_\beta(\mathcal{O}_\beta)$ l'application réciproque. \\
+
+Ainsi, l'ensemble $\{(P_{\alpha, \beta}, p_{\alpha, \beta}), \alpha\in A, \beta\in B\}$ définit alors un atlas lisse sur $P$ qui est alors une variété lisse de dimension $m+r$. \\
+
+De plus, les applications $\pi_\alpha: H_\alpha \to V_\alpha$ de projection sur la première coordonnée induisent une surjection lisse $\pi : P \to \mathcal{M}$, lisse par définition de l'atlas de $P$. Et on dispose de $\mathscr{C}^\infty$-difféomorphismes $\Phi_\alpha : \pi^{-1}(U_\alpha) \to H_\alpha$ appelés trivialisations locales et telles qu'on a le diagramme commutatif:
+$$\begin{matrix}
+P \supset \pi^{-1}(U_\alpha) & \overset{\Phi_\alpha}{\longrightarrow} & H_\alpha \\ \\
+\pi\big\downarrow &  & \big\downarrow\pi_\alpha \\ \\
+\mathcal{M} \supset U_\alpha & \overset{\phi_\alpha}{\longrightarrow} & V_\alpha 
+\end{matrix}
+$$
+Enfin, on dispose d'une action à droite lisse de $G$ sur chaque $H_\alpha$ définie pour $g\in G$ et $(\phi_\alpha(x), h)\in H_\alpha$ par 
+$$(\phi_\alpha(x), h).g = (\phi_\alpha(x), hg) \in H_\alpha$$
+Et pour $(\phi_\alpha(x), h) \in H_{\beta\alpha}$ et $g\in G$ on a 
+$$[\gamma_{\beta\alpha}(\phi_\alpha(x), h)].g = (\phi_\beta(x), g_{\beta\alpha}hg) = \gamma_{\beta\alpha}[(\phi_\alpha(x), h).g]$$ 
+Ce qui fourni une action a droite de $G$ sur l'espace total $P$ par passage au quotient. \\
+
+De plus, en choisissant un élément $g\in G$ servant de point-base, on dispose d'un difféomorphisme non-canonique $G \to G, \quad h \mapsto hg$ entre le groupe $G$ et la fibre $G$, ce qui donne le diagramme commutatif suivant:
+$$\begin{matrix}
+(x, hg) \in (U_\alpha \cap U_\beta) \times G & \longmapsto & (x, g_{\alpha\beta}hg) \in (U_\alpha \cap U_\beta) \times G\\ \\
+\upmapsto &  & \upmapsto \\ \\
+(x, h) \in (U_\alpha \cap U_\beta) \times G & \longmapsto & (x, g_{\alpha\beta}h) \in (U_\alpha \cap U_\beta) \times G
+\end{matrix}
+$$
+Ainsi, on dispose d'une action à gauche de $G$ sur les fibres de changement de point-base. \\
+
+\begin{defi}[Fibré principal]
+On appelle \emph{fibré principal} sur $\mathcal{M}$ et de groupe structural $G$ l'application $\pi: P \to \mathcal{M}$ qui vérifie:
+\be 
+	\item Il existe des difféomorphismes $\Phi_\alpha : \pi^{-1}(U_\alpha) \to V_\alpha \times G$ appelés trivialisations locales tels que $\pi_\alpha \circ \Phi_\alpha = \phi_\alpha \circ \pi$. 
+	\item $G$ agit à droite de façon lisse et librement sur $P$ et agit à gauche librement et transitivement sur chaque fibre $P_x = \pi^{-1}(x)$.
+\ee
+On a alors $\dim P = \dim \mathcal{M} + \dim G$ et on note $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$.
+\end{defi}
+
+\begin{defi}[Morphisme de fibrés principaux]
+Soient $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ et $G \hookrightarrow Q \overset{\rho}{\to} \mathcal{N}$ deux fibrés principaux. Un \emph{morphisme de fibré principaux} est la donnée d'une application lisse $f:\mathcal{M}\to \mathcal{N}$ et d'une application lisse $F: P \to Q$ stable par l'action de $G$ telle que le diagramme suivant commute:
+$$\begin{matrix}
+P  & \overset{F}{\longrightarrow} & Q \\ \\
+\pi\big\downarrow &  & \big\downarrow\rho \\ \\
+\mathcal{M} & \overset{f}{\longrightarrow} & \mathcal{N} 
+\end{matrix}
+$$
+On dit que $F$ recouvre $f$. \\
+
+On dit que $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ et $G \hookrightarrow Q \overset{\rho}{\to} \mathcal{N}$ \emph{sont équivalent} s'il existe un isomorphisme $P\to Q$ de fibrés principaux qui recouvre $\id_\mathcal{M}$.
+\end{defi}
+
+\begin{defi}[Fibré trivial]
+$\pi : \mathcal{M}\times G \to \mathcal{M}$ qui est la projection par rapport à la première composante s'appelle le \emph{fibré principal trivial explicite}. \\
+Un fibré principal sur $\mathcal{M}$ de groupe structural $G$ est dit \emph{trivial} s'il est équivalent au fibré principal trivial explicite. 
+\end{defi}
+
+\begin{defi}[Section globale, section locale]
+Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal sur $\mathcal{M}$. Une \emph{section globale} est une application lisse $s:\mathcal{M} \to P$ telle que $\pi \circ s = \id_\mathcal{M}$ ou telle que $\forall x\in \mathcal{M}, s(x) \in P_x$. \\
+Pour tout ouvert $U\subset \mathcal{M}$, on appelle \emph{section locale} sur $U$ toute section de $\pi : \pi^{-1}(U) \to U$. \\
+On note $\Gamma(P)$ ou $\Gamma(\tau)$ l'ensemble des sections de $\tau: E \to \mathcal{M}$
+\end{defi}
+
+\begin{pro}
+Un fibré principal admet une section globale si et seulement si il et trivial. De plus, l'ensemble des sections globales est en bijection avec l'ensemble des trivialisations.
+\end{pro}
+
+\subsubsection{Fibrés vectoriels:}
+
+Soit $F$ un $\R$-espace vectoriel de dimension finie et soit $\rho : G \to \GL(F)$ une représentation de $G$. On pose $W_\alpha = V_\alpha\times F$ et $W_{\beta\alpha} = V_{\beta\alpha}\times F$ et on définit $\psi_{\beta\alpha} : W_{\beta\alpha} \to W_{\alpha\beta}$ par
+$$\psi_{\beta\alpha}(\phi_\alpha(x), v) = (\phi_\beta(x), \rho(g_{\beta\alpha})v), \quad \forall x\in V_{\beta\alpha}, \quad \forall v\in F$$
+
+Soit alors $Y = \DUnion_{\alpha \in A} W_\alpha$ muni de la topologie union disjointe et soit la relation binaire sur $Y$ définie par
+$$(x,u)\in W_{\beta\alpha} \sim (y, v)\in W_{\alpha\beta} \iff (y, v) = \psi_{\beta\alpha}(x, u)$$
+C'est une relation d'équivalence sur $X$ puisque la famille des $\psi_{\beta\alpha}$ vérifie:
+\be
+	\item $\psi_{\alpha\alpha} = \id$ sur $W_\alpha$
+	\item $\psi_{\beta\alpha}^{-1} = \psi_{\alpha\beta}$ sur $W_{\alpha\beta}$
+	\item $\psi_{\delta\beta} \circ \psi_{\beta\alpha} = \psi_{\delta\alpha}$ sur $W_{\beta\alpha} \cap \psi_{\beta\alpha}^{-1}(W_{\delta\beta}) \subset W_{\delta\alpha}$ \\
+\ee
+
+Soit alors $E = X/\sim$ muni de la topologie quotient. L'application $W_\alpha \to E$ qui envoie les éléments de $W_\alpha$ sur leur classe d'équivalence dans $E$ est un homéomorphisme sur son image. Notons, $e_\alpha: E_\alpha \to W_\alpha$ l'application réciproque. \\
+
+Ainsi, l'ensemble $\{(E_\alpha, e_\alpha), \alpha \in A\}$ définit alors un atlas lisse sur $E$ dont les fonctions de transition sont exactement les applications $\psi_{\beta\alpha}$ ce qui fait de $E$ une variété lisse de dimension $m+k$. \\
+
+De plus, les applications $\tau_\alpha: W_\alpha \to V_\alpha$ de projection sur la première coordonnée induisent une surjection lisse $\tau: E \to \mathcal{M}$. Notons alors $E_x = \tau^{-1}(x)$ la fibre au dessus de $x$. Soit $(U_\alpha, \phi_\alpha)$ une carte autour de $x$ dans $\mathcal{M}$ et soit $(E_\alpha, e_\alpha)$ la carte associée dans $E$. Alors, $e_\alpha : \{x\}\times E_x \to \{\phi_\alpha(x)\} \times F$ est une bijection. On muni $E_x$ d'une structure de $\R$-espace vectoriel tel que cette bijection devienne une application linéaire. Cette définition est indépendante du choix de la carte par construction des fonctions de transition $\psi_{\beta\alpha}$. \\
+
+\begin{defi}[Fibré vectoriel]
+On appelle \emph{fibré vectoriel} sur $\mathcal{M}$ de fibre modèle $F$ l'application $\tau: E \to \mathcal{M}$ telle que pour tout $x\in \mathcal{M}$ la fibre $E_x$ est un $\R$-espace vectoriel isomorphe à $F$. On a alors $\dim E = \dim \mathcal{M} + \dim F$. \\
+C'est la fibration vectorielle associée au fibré principal $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ via la représentation $\rho : G \to \GL(F)$, notée parfois $P\times_\rho F$.
+\end{defi}
+
+\begin{defi}[Sous-fibré vectoriel]
+Soit $\tau: E \to \mathcal{M}$ un fibré vectoriel de fibre modèle $V$. Un \emph{sous-fibré vectoriel} de $\tau$ est $\tau_{|F}$ où $F$ est une partie de $E$ telle que 
+\be
+	\item $E_x \cap F$ est un sous-espace vectoriel de $E_x$ pour tout x$\in \mathcal{M}$
+	\item Pour tout $x \in \mathcal{M}$, il existe un voisinage ouvert $U$ de $x$, une trivialisation locale $\varphi: \tau^{-1}(U) \to U\times V$ et un sous-espace vectoriel $W$ de $V$ tel que $\phi(F \cap \tau^{-1}(U)) = U \times W$ \\
+\ee 
+\end{defi}
+
+\begin{defi}[Produit fibré]
+Soient $\tau : E = \to \mathcal{M}$ et $\sigma : F = \to \mathcal{M}$ des fibrés vectoriels, on pose 
+$$E\diamond F = \{(u,v) \in E\times F | \tau(u) = \sigma(v)\}$$
+Alors $p: E\diamond F \to \mathcal{M}$ est un fibré vectoriel appelé \emph{produit fibré} de $E$ et $F$.
+\end{defi}
+
+Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal et soient $\tau : E = P\times_\rho V \to \mathcal{M}$ et $\tau' : F = P\times_{\rho'} W  \to \mathcal{M}$ deux fibrés vectoriels. \\
+
+\begin{defi}[Fibré vectoriel dual]
+On appelle \emph{dual} du fibré vectoriel $E$ et on note $E^*$ le fibré vectoriel $P \times_{\rho^*} (V^*)$ donné par la représentation duale $\rho^*$.
+\end{defi}
+
+\begin{defi}[Somme directe de fibrés vectoriels]
+On appelle \emph{somme directe} des fibré vectoriels $E$ et $F$ et on note $E\oplus F$ le fibré vectoriel $P \times_{\rho \oplus \rho'} (V\oplus W)$ donné par la représentation somme directe $\rho \oplus \rho'$.
+\end{defi}
+
+\begin{defi}[Produit tensoriel de fibrés vectoriels]
+On appelle \emph{produit tensoriel} des fibré vectoriels $E$ et $F$ et on note $E\otimes F$ le fibré vectoriel $P \times_{\rho \otimes \rho'} (V\otimes W)$ donné par la représentation produit tensoriel $\rho \otimes \rho'$.
+\end{defi}
+
+\begin{defi}[Section]
+Soit $\tau: E \to \mathcal{M}$ un fibré vectoriel sur $\mathcal{M}$. Une \emph{section} est une application $s:\mathcal{M} \to E$ telle que $\pi \circ s = \id_\mathcal{M}$ ou de façon équivalente telle que $\forall x\in \mathcal{M}, s(x) \in E_x$. \\
+On note $\Gamma(E)$ ou $\Gamma(\tau)$ l'espace vectoriel des sections de $\tau: E \to \mathcal{M}$. C'est aussi un $\mathscr{C}^\infty(\mathcal{M})$-module.
+\end{defi}
+
+\subsubsection{Fibré tangent, fibré cotangent et fibré tensoriel:}
+
+Notons $t_{\beta\alpha} = d\phi_{\beta\alpha} \circ \phi_\alpha : U_\alpha \cap U_\beta \to \GL(\R^m)$ le cocycle canoniquement donné par l'atlas de $\mathcal{M}$.
+
+\begin{defi}[Fibré tangent]
+Le \emph{fibré tangent} de $\mathcal{M}$ noté $\tau_\mathcal{M} : T\mathcal{M} \to \mathcal{M}$ est donné par le cocycle $t_{\beta\alpha}$ et la représentation fondamentale de $\GL(\R^m)$. \\
+On appelle champ de vecteurs une section du fibré $\tau_\mathcal{M}$.
+\end{defi}
+
+\begin{defi}[Fibré cotangent]
+Le \emph{fibré cotangent} de $\mathcal{M}$ noté $\tau^*_\mathcal{M} : T^*\mathcal{M} \to \mathcal{M}$ est donné par le cocycle $t_{\beta\alpha}$ et la représentation duale de $\GL(\R^m)$. 
+\end{defi}
+
+\begin{defi}[Fibré tensoriel]
+Soient $r,s\in \N$, alors le \emph{fibré tensoriel} d'ordre $(r,s)$ ($r$ covariant et $s$ contravariant) de $\mathcal{M}$, noté $\tau^{(r,s)}_\mathcal{M} : T^{(r,s)}\mathcal{M} \to \mathcal{M}$ est donné par le cocycle $t_{\beta\alpha}$ et la représentation tensorielle $\GL(\R^m) \to \GL(\otimes^r(\R^m)^* \otimes^s\R^m)$ de la représentation fondamentale et de sa représentation duale. \\
+On appelle champ tensoriel une section du fibré $\tau^{(r,s)}_\mathcal{M}$.
+\end{defi}
+
+\newpage
+\section{Formes différentielles}
+
+\begin{defi}[Forme différentielle]
+Notons $\Lambda^k T^*\mathcal{M}$ donné par la représentation $\GL(\R^m) \to \GL(\Lambda^k(\R^m)^*), u\mapsto \Lambda^k u^*$ et $\Lambda T^*\mathcal{M} = \oplus_{k\geq 0} \Lambda^k T^*\mathcal{M}$. \\
+Une \emph{k-forme differentielle} sur $\mathcal{M}$ est une section du fibré $\Lambda^k T^*\mathcal{M}$. On note alors $\Omega^k\mathcal{M} = \Gamma(\Lambda^k T^*\mathcal{M})$ et $\Omega \mathcal{M} = \Gamma(\Lambda T^*\mathcal{M})$. \\
+
+On dispose de l'application $\wedge : \Omega^p\mathcal{M} \times \Omega^q\mathcal{M} \to \Omega^{p+q}\mathcal{M}$ appelé produit extérieur qui est induit par le produit extérieur sur les espaces $\Lambda^k(\R^m)^*$. Ainsi, on muni l'espace $\Omega\mathcal{M}$ d'une structure d'algèbre. \\
+
+Soit $\tau: E \to \mathcal{M}$ un fibré vectoriel de fibre modèle $V$, une $k$-forme différentielle à valeur dans $V$ est une section du fibré $\Lambda^k T^*\mathcal{M}\otimes E$. On note alors $\Omega^k(\mathcal{M}, E) = \Gamma(\Lambda^k T^*\mathcal{M}\otimes E)$ et $\Omega(\mathcal{M}, E) = \Gamma(\Lambda T^*\mathcal{M}\otimes E)$. \\
+
+On dispose également d'un produit extérieur induit par celui entre les applications multilinéaires alternée $\wedge:\Lambda^p(\R^m)^* \otimes E \times \Lambda^q(\R^m)^* \otimes F \to \Lambda^{p+q}(\R^m)^* \otimes E \otimes F$  
+$$\wedge: \Omega^p(\mathcal{M}, E) \times \Omega^q(\mathcal{M}, F) \to \Omega^{p+q}(\mathcal{M}, E\otimes F)$$
+
+En particulier on dispose également d'un produit extérieur induit par celui entre les applications multilinéaires alternées à valeur dans une algèbre de Lie $\mathfrak{g}$.
+$$\wedge: \Omega^p(\mathcal{M}, \mathfrak{g}) \times \Omega^q(\mathcal{M}, \mathfrak{g}) \to \Omega^{p+q}(\mathcal{M}, \mathfrak{g})$$
+\end{defi}
+
+\begin{rem}
+L'identification entre $\Lambda^k(\R^m)^* \otimes E$ et les application $k$-linéaires alternées de $(\R^m)^k$ à valeur dans $E$ permet d'identifer les $k$-formes différentielles sur $\mathcal{M}$ à valeur dans $E$ avec la donnée sur chaque $T_x\mathcal{M}$ d'une application $k$-linéaire alternée de $T_x\mathcal{M}^k$ à valeur dans $E$. Et le produit extérieur ainsi définit correspond au produit extérieur d'applications multilinéaires alternées sur chaque $T_x\mathcal{M}$. 
+\end{rem}
+
+\begin{defi}
+Soient $\mathcal{M}, \mathcal{N}$ deux variétés lisse, $f:\mathcal{N} \to \mathcal{M}$ une application lisse et $\eta \in \Omega^k\mathcal{M}$. Alors $f^*\eta = \eta (Tf, ..., Tf) : T^{\diamond k}\mathcal{N} \to \R$ est une $k$-forme différentielle sur $\mathcal{N}$ appelée la forme tirée en arrière par $f$ de $\eta$. \\
+\end{defi}
+
+\begin{defi}[Différentielle extérieure]
+Soit $(U, \phi)$ une carte de $\mathcal{M}$ et soit $x\in U$ et notons $\phi = (x^1, ..., x^m)$ et notons $(\partial_1, ..., \partial_m)$ la base de $T_x\mathcal{M}$ image reciproque de la base canonique de $\R^m$ par $T_x\phi$ et notons $(dx^1, ..., dx^m)$ la base duale de $(\partial_1, ..., \partial_m)$ dans $(T_x\mathcal{M})^*$. Pour $f\in \Omega^0\mathcal{M} = \mathscr{C}^\infty(\mathcal{M})$ on définit l'application linéaire $d : \Omega^0\mathcal{M} \to \Omega^1\mathcal{M}$ par 
+$$df = \frac{\partial f \circ \phi^{-1}}{\partial x^1}dx^1 +...+ \frac{\partial f \circ \phi^{-1}}{\partial x^m}dx^m$$
+En particulier on a $d(x^k) = dx^k$. \\
+Puis pour $\omega \in \Omega^k\mathcal{M}$ une $k$-forme sur $\mathcal{M}$ s'écrivant $\omega = f dx^{i_1} \wedge ... \wedge dx^{i_k}$ alors on définit l'application linéaire $d: \Omega^k\mathcal{M} \to \Omega^{k+1}\mathcal{M}$ par 
+$$d\omega = df \wedge dx^{i_1} \wedge ... \wedge dx^{i_k}$$
+On appelle les application $d: \Omega^k\mathcal{M} \to \Omega^{k+1}\mathcal{M}$ la \emph{différentielle extérieure} sur $\mathcal{M}$.
+\end{defi}
+
+\begin{pro}
+La différentielle extérieure $d: \Omega^k\mathcal{M} \to \Omega^{k+1}\mathcal{M}$ vérifie les propriétés suivantes :
+\be
+	\item $d$ est linéaire
+	\item $d^2 = 0$ 
+	\item Pour $\omega_1 \in \Omega^p\mathcal{M}$ et $\omega_2 \in \Omega^q\mathcal{M}$, $\quad d(\omega_1 \wedge \omega_2) = d\omega_1 \wedge \omega_2 + (-1)^p\omega_1 \wedge d\omega_2$
+	\item Pour $f\in \Omega^0\mathcal{M}$ et pour tout champ de vecteurs $X$ sur $\mathcal{M}$ on a $df(X) = fX$
+	\item Pour $f:\mathcal{N} \to \mathcal{M}$ lisse et pour $\omega \in \Omega^k\mathcal{M}$ on a $f^*(d\omega) = d(f^*\omega)$
+	\item Pour tout champ de vecteurs $X,Y$ sur $\mathcal{M}$ et pour toute $1$-forme $\omega \in \Omega^1\mathcal{M}$ on a $d\omega(X,Y) = X(\omega(Y)) - Y(\omega(X)) - \omega([X, Y])$
+\ee
+\end{pro}
+
+\begin{defi}
+On dit qu'une $k$-forme $\omega$ est \emph{fermée} si $d\omega = 0$. \\
+On dit qu'elle est \emph{exacte} s'il existe une $k-1$-forme $\eta$ telle que $\omega = d\eta$. \\
+Puisque $d^2 = 0$ on a que toute forme exacte est fermée.
+\end{defi}
+
+\begin{pro}[Lemme de Poincaré]
+Localement toute forme différentielle fermée est exacte.
+\end{pro}
+
+\begin{defi}[Cohomologie de Rham]
+Soit $\mathcal{M}$ une variété lisse, pour $k\in \N^*$ on définit la \emph{k-ème cohomologie de Rham} l'espace quotient 
+$$H_{dr}^k\mathcal{M} = \frac{\Ker d_{k+1}}{\Ima d_k}$$
+où $d_k = d: \Omega^k\mathcal{M} \to \Omega^{k+1}\mathcal{M}$.
+\end{defi}
+
+\begin{exe}
+Soit $U$ est un ouvert de $\R^3$, on identifie $(\R^3)^*$ et $\R^3$. Alors pour $f \in \Omega^0U = \mathscr{C}^\infty(U)$ on a:
+$$df = \frac{\partial f}{\partial x} dx + \frac{\partial f}{\partial y} dy + \frac{\partial f}{\partial z} dz = \grad f$$
+Soit $\omega = f_x dx + f_y dy + f_z dz \in \Omega^1U$, alors on a
+$$d\omega = \left(\frac{\partial f_z}{\partial y} - \frac{\partial f_y}{\partial z}\right)dy\wedge dz + \left(\frac{\partial f_x}{\partial z} - \frac{\partial f_z}{\partial x}\right)dz\wedge dx + \left(\frac{\partial f_y}{\partial x} - \frac{\partial f_x}{\partial y}\right)dx\wedge dy$$
+or $\star (dy\wedge dz) = dx$, $\quad\star (dz\wedge dx) = dy$ et $\quad\star (dx\wedge dy) = dz$ et on a 
+$$\star d\omega = \rot f$$ 
+Soit $\omega = f_x dy\wedge dz + f_y dz\wedge dx + f_z dx \wedge dy \in \Omega^2U$, alors on a 
+$$d\omega = \left(\frac{\partial f_x}{\partial x} + \frac{\partial f_y}{\partial y} + \frac{\partial f_z}{\partial z}\right) dx\wedge dy\wedge dz$$
+or $\star (dx\wedge dy\wedge dz) = 1$ et
+$$\star d\omega = \Div f$$
+Finalement on a 
+$$\begin{matrix}
+\Omega^0 & \overset{d}{\longrightarrow} & \Omega^1 & \overset{d}{\longrightarrow} & \Omega^2 & \overset{d}{\longrightarrow} & \Omega^3\\
+\Big\updownarrow &  & \Big\updownarrow &  & \Big\updownarrow\star &  & \Big\updownarrow\star\\
+\R & \overset{\grad}{\longrightarrow} & \R^3 & \overset{\rot}{\longrightarrow} & \R^3 & \overset{\Div}{\longrightarrow} & \R
+\end{matrix}
+$$
+En utilisant $d^2 = 0$ on a immediatement 
+$$\rot(\grad f) = 0 $$
+et 
+$$\Div(\rot f) = 0$$
+\end{exe}
+
+\newpage
+\section{Flot local d'un champ de vecteurs}
+
+\begin{defi}[Flot local d'un champ de vecteurs]
+Soit $X$ un champ de vecteurs sur $\mathcal{M}$. Un \emph{flot local} de $X$ est une application $\phi : \Omega \to \mathcal{M}$ lisse notée $(t,x) \to \phi_t(x)$ où $\Omega$ est un voisinage ouvert de $\{0\}\times \mathcal{M}$ dans $\R \times \mathcal{M}$ tel que pour tout $x\in \mathcal{M}$, $\Omega \cap \R \times \{x\}$ soit connexe, et qui vérifie les deux propriétés suivantes: 
+$$\frac{d\phi_t(x)}{dt}_{|t=s} = X(\phi_s(x)) \quad \forall (s, x)\in \Omega$$
+$$\phi_0(x) = x \quad \forall x\in \mathcal{M}$$
+Il est dit \emph{complet} si $\Omega = \R \times \mathcal{M}$. \\
+Il est dit \emph{maximal} s'il n'existe pas de prolongement strict. Autrement dit tel que s'il existe $\phi' : \Omega' \to \mathcal{M}$ un flot local de $X$ tel que $\Omega \subset \Omega'$ et $\phi'|_{\Omega} = \phi$ alors $\Omega = \Omega'$ et $\phi = \phi'$. Dans ce cas il est alors unique.
+\end{defi}
+
+\begin{defi}[Courbe integrale]
+Soit $X$ un champ de vecteurs sur $\mathcal{M}$. Une \emph{courbe integrale} de $X$ est une application $\gamma : I \to \mathcal{M}$ telle que $\dot\gamma = X \circ \gamma$ sur $I$. \\
+Elle est dite \emph{maximale} s'il n'existe pas de prolongement strict. Autrement dit tel que s'il existe une autre courbe integrale $c: J \to \mathcal{M}$ tel que $I \subset J$ et $c|_I = \gamma$ alors $I = J$ et $c = \gamma$.
+\end{defi}
+
+\begin{pro}
+Notons $\supp(X) = \overline{\{x\in \mathcal{M} | X(x) \neq 0\}}$. Alors 
+\be
+	\item S'il existe $\varepsilon > 0$ tel que $]-2\varepsilon; 2\varepsilon[\times \mathcal{M} \subset \Omega$ alors $\phi_t^X$ est complet.
+	\item Si $\supp(X)$ est compact alors $\phi_t^X$ est complet.
+\ee
+\end{pro}
+
+\begin{pro}
+Un champ de vecteurs $X$ sur $\mathcal{M}$ admet un unique flot maximal $\phi_t^X : \Omega \to \mathcal{M}$ qui vérifie de plus les propriétés suivantes:
+\be
+	\item $\forall x_0\in \mathcal{M}$, l'unique courbe integrale maximale de $X$ passant par $x_0$ au temps $t=0$ est la courbe $I_{x_0} = \{t\in \R | (t, x_0) \in \Omega\} \to \mathcal{M}$ définie par
+	$$t \mapsto \phi_t^X(x_0)$$
+
+	\item $\forall (s, x)\in \Omega$, on a $(t, \phi_s^X(x)) \in \Omega \iff (t+s, x) \in \Omega$ et dans ce cas
+	$$\phi_t^X \circ \phi_s^X(x) = \phi_{t+s}^X(x)$$
+
+	\item $\forall t\in \R$ l'application $\phi_t^X : U_t = \{x\in \mathcal{M} | (t, x) \in \Omega \} \to \mathcal{M}$ est un $\mathscr{C}^\infty$-difféomorphisme local. Si de plus $X$ est complet alors $(\phi_t^X)_{t\in\R}$ est un groupe à un paramètre de $\mathscr{C}^\infty$-difféomorphismes de $\mathcal{M}$. 
+
+	\item $\forall (t,x) \in \Omega$, le flot local préserve le champ de vecteurs, c'est à dire 
+	$$T_x\phi_t^X(X(x)) = X(\phi_t^X(x))$$
+\ee
+\end{pro}
+
+\newpage
+\section{Dérivation de Lie}
+
+\begin{defi}[Dérivation]
+Une \emph{dérivation} de $\mathcal{M}$ est une application $\R$-linéaire $\delta : \mathscr{C}^\infty(\mathcal{M}) \to \mathscr{C}^\infty(\mathcal{M})$ telle que pour tout $f, g \in \mathscr{C}^\infty(\mathcal{M})$ on ait
+$$\delta(fg) = f\delta(g) + g\delta(f)$$
+On note $\mathscr{D}(\mathcal{M})$ l'ensemble des dérivations sur $\mathcal{M}$. C'est un $\R$-espace vectoriel et c'est aussi un $\mathscr{C}^\infty(\mathcal{M})$-module.
+\end{defi}
+
+\begin{defi}[Dérivation de Lie]
+Soit $X$ un champ de vecteurs sur $\mathcal{M}$ alors l'application $\mathscr{L}_X: \mathscr{C}^\infty(\mathcal{M}) \to \mathscr{C}^\infty(\mathcal{M})$, appelée la \emph{dérivation de Lie} associée à $X$ et notée parfois $X(f) = \mathscr{L}_X(f)$, est définie par 
+$$\mathscr{L}_X(f): x\to T_xf(X(x))$$
+Le théorème de dérivation des fonctions composées montre que si $\phi$ est un flot local sur $X$ alors
+$$\mathscr{L}_X(f) = \frac{d}{dt}_{|t = 0}f\circ\phi_t$$
+\end{defi}
+
+\begin{pro}
+L'application $X \in \Gamma(T\mathcal{M}) \to \mathscr{L}_X \in \mathscr{D}(\mathcal{M})$ est un isomorphisme de $\R$-espaces vectoriels ainsi que de $\mathscr{C}^\infty(\mathcal{M})$-modules.
+\end{pro}
+
+\begin{defi}[Crochet de champs de vecteurs]
+Soient $\delta, \delta'$ deux dérivations sur $\mathcal{M}$ alors
+$$[\delta, \delta'] = \delta \circ \delta' - \delta' \circ \delta$$
+est une dérivation sur $\mathcal{M}$. \\
+
+Si $X, Y$ sont deux champs de vecteurs sur $\mathcal{M}$ on note $[X, Y]$ le champ de vecteurs tel que 
+$$\mathscr{L}_{[X, Y]} = [\mathscr{L}_X, \mathscr{L}_Y]$$
+\end{defi}
+
+\begin{pro}
+Le crochet de champs de vecteurs $[X, Y]$ muni $\Gamma(T\mathcal{M})$ d'une structure d'algèbre de Lie telle que l'application $\mathscr{L}$ soit un isomorphisme d'algèbres de Lie.
+\end{pro}
+
+\newpage
+\section{Théorème de Frobenius}
+
+\subsubsection{Fibré grassmannien:}
+
+\begin{defi}[Grasmannienne]
+Soient $0\leq k \leq n$. On définie la \emph{grasmannienne} des $k$-espaces de $\R^n$ par 
+$$G(n,k) = \{ W \subset \R^n | \text{ tel que W est un sous-espace vectoriel de dimension k}\}$$ 
+On peut voir $G(n,k) = \GL(\R^n) / \Sigma$ où $\Sigma = \{f\in \GL(\R^n) | f(\R^k) = \R^k\}$. Ainsi, $G(n,k)$ est muni d'une structure de variété lisse. \\
+\end{defi} 
+
+Soit $\mathcal{M}$ une variété lisse et soit $t_{\beta\alpha} : U_\alpha \cap U_\beta \to \GL(\R^m)$ le cocycle de son fibré tangent où $\{(U_\alpha, \phi_\alpha), \alpha \in A\}$ désigne l'atlas lisse de $\mathcal{M}$. On définit alors les fonctions de transitions 
+$$\psi_{\beta\alpha} : \phi_\alpha(U_\alpha\cap U_\beta) \times G(n, k) \to \phi_\beta(U_\alpha \cap U_\beta) \times G(n,k)$$
+donné par 
+$$\psi_{\beta\alpha}(\phi_\alpha(x), V) = (\phi_\beta(x) , t_{\beta\alpha}(x)V)$$
+pour tout $x\in U_\alpha \cap U_\beta \subset \mathcal{M}$ et pour tout $V\in G(n,k)$. \\
+
+\begin{defi}[Fibré grassmannien]
+Cela définit un fibré $\pi : G(T\mathcal{M}, k) \to \mathcal{M}$ appelé \emph{le fibré grasmannien} de $k$-espace sur $\mathcal{M}$. \\
+Une section de $\pi : G(T\mathcal{M}, k) \to \mathcal{M}$ est appelée une distribution lisse de $k$-espaces sur $\mathcal{M}$.
+\end{defi}
+
+\begin{defi}
+Soit $\mathcal{M}$ une variété lisse, soit $W$ une distribution lisse de $k$-espaces sur $\mathcal{M}$ et soit $x_0\in \mathcal{M}$. On dit qu'une sous variété $\mathcal{N}$ de $\mathcal{M}$ de dimension $k$ intègre $W$ avec condition initiale $x_0$ si $x_0 \in \mathcal{N}$ et $T_x\mathcal{N} = W(x)$ pour tout $x\in \mathcal{N}$. \\
+On dit que $W$ est intégrable s'il existe une telle sous-variété $\mathcal{M}$ pour tout $x_0\in \mathcal{M}$.
+\end{defi}
+
+\subsubsection{Théorème de Frobénius:}
+
+\begin{defi}[Condition d'intégrabilité de Frobenius]
+Soit $W$ une distribution de $k$-espaces sur une variété lisse $\mathcal{M}$. On dit que $W$ satifait \emph{la condition d'intégrabilité de Frobenius} dans un ouvert $U\in \mathcal{M}$ si pour tout champ de vecteurs $X,Y$ définit sur $U$ tels que $X(x) \in W(x)$ et $Y(x) = W(x)$ pour tout $x\in U$ on a $[X, Y](x) \in W(x)$ pour tout $x\in \mathcal{M}$.
+\end{defi}
+
+\begin{pro}[Théorème d'intégrabilité de Frobenius]
+Soit $W$ une distribution de $k$-espaces sur une variété lisse $\mathcal{M}$. Alors $W$ est intégrable si et seulement si elle vérifie la condition d'intégrabilité de Frobenius.
+\end{pro}
+
+\newpage
+\section{Connexions}
+
+Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal de groupe structural $G$ sur $\mathcal{M}$. On dispose pour $p\in P$ de l'immersion
+$$i_p : G \to P, \quad g \mapsto p.g$$
+Et comme $i_p(e) = p$, on a
+$$T_e i_p: \mathfrak{g} \to T_pP$$
+
+\begin{defi}[Vecteur vertical]
+On dit qu'un vecteur tangent de $T_pP$ est \emph{vertical} s'il est dans l'image de $T_e i_p$. On note 
+$$\Verti(T_pP) = \Ima(T_e i_p) = T_e i_p(\mathfrak{g})$$
+De plus $p\in P \mapsto \Verti(T_pP)$ est une distribution de $(\dim G)$-espaces sur $P$. 
+\end{defi}
+
+\begin{pro}
+On a la suite exacte courte d'espaces vectoriels
+$$0 \to \mathfrak{g} \overset{T_e i_p}{\longrightarrow} T_p P \overset{T_p \pi}{\longrightarrow} T_x\mathcal{M} \to 0$$ 
+\end{pro}
+\begin{preu}
+$i_p$ est une immersion d'où l'exactitude à gauche, $\pi$ est une submersion d'où l'exactitude à droite. Montrons que $\Ima(T_e i_p) \subset \Ker(T_p \pi)$ ce qui suffit pour conclure puisque 
+$$\dim(\Ker(T_p \pi)) = \dim(T_p P) - \dim(T_x\mathcal{M}) = \dim(G) = \dim(\Ima(T_e i_p))$$
+Or $\forall g\in G$
+$$\pi(i_p(g)) = \pi(p.g) = \pi(p)$$ 
+donc $\pi\circ i_p$ est une fonction constante d'où $\Ima(T_e i_p) \subset \Ker(T_p \pi)$.
+\end{preu}
+
+\begin{defi}
+Pour $X\in \mathfrak{g}$ on pose $X^\sharp(p) = T_e i_p(X) \in \Verti(T_pP)$. Puis on définit 
+$$X^\sharp: P \to TP, \quad p \mapsto X^\sharp(p)$$
+On dit que $X^\sharp$ est le \emph{champ de vecteur fondamental} sur $P$ associé à $X$. \\
+De plus on a l'application $.^\sharp : \mathfrak{g} \to \Gamma(TP)$ est un morphisme d'algèbres de Lie.
+\end{defi}
+
+\subsubsection{Connection d'Ehresmann:}
+
+\begin{defi}[Connexion d'Ehresmann]
+Notons $R_g : p\in P \mapsto p.g \in P$ et soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal. Une \emph{connexion d'Ehresmann} sur $P$ est la donnée $p\in P \mapsto \Hor(T_pP)$ d'une distribution lisse de $m$-espaces sur $P$ telle que:
+\be
+	\item $\Verti(T_pP) \oplus \Hor(T_pP) = T_pP$
+	\item $T_pR_g(\Hor(T_pP)) = \Hor(T_{p.g}P)$ pour tout $g\in G$ et tout $p\in P$
+\ee 
+Ou de façon équivalente, c'est la donnée d'une 1-forme différentielle $\omega$ sur $\mathcal{M}$ à valeur dans $\mathfrak{g}$ telle que
+$$R_g^*\omega  = \Ad_{g^{-1}} \circ \omega \quad \forall g\in G$$
+ou autrement dit si elle vérifie la condition 
+$$\omega(X^\sharp) = X \quad \forall X \in \mathfrak{g}$$
+\end{defi}
+\begin{preu}
+Soit $p \in P \mapsto \Hor(T_pP)$ une connexion sur $P$. Cela fournit une application linéaire $v_p : T_pP \to \Verti(T_pP)$ qui est la projection sur la première composante de la somme directe. Alors pour chaque $p\in P$ on dispose d'une application linéaire 
+$$\omega_p : T_pP \overset{v_p}{\longrightarrow} \Verti(T_pP) \overset{(T_e i_p)^{-1}}{\longrightarrow} \mathfrak{g}$$
+Qui fourni une 1-forme différentielle sur $P$ à valeur dans $\mathfrak{g}$
+$$\omega : TP \to \mathfrak{g}$$
+\end{preu}
+
+\begin{pro}
+Notons $x = \pi(p)$ alors d'après la surjectivité de $T_p\pi$, on dispose d'un isomorphisme d'espaces vectoriels
+$$\Hor(T_pP) \to T_x\mathcal{M}$$
+\end{pro}
+
+\begin{pro}
+On a 
+\be
+	\item $R_g \circ i_p = i_{p.g} \circ \ad_{g^{-1}}$
+	\item $T_pR_g(\Verti(T_pP)) = \Verti(T_{p.g}P)$
+\ee
+\end{pro}
+\begin{preu}
+On a $R_g \circ i_p(h) = p.hg = p.gg^{-1}hg = i_{p.g}(ad_{g_{-1}}(h))$. D'où (i).\\
+(ii) s'obtient en considérant les applications tangentes dans (i).
+\end{preu}
+
+\begin{defi}
+Soient $\mathcal{M}, \mathcal{N}$ deux variétés lisse, $V$ un $\R$-espace vectoriel, $f:\mathcal{N} \to \mathcal{M}$ une application lisse et $\eta \in \Omega^1(\mathcal{M}, V)$. Alors $f^*\eta = \eta \circ Tf : T\mathcal{N} \to V$ est une $1$-forme différentielle sur $\mathcal{N}$ à valeur dans $V$ appelée la \emph{forme tirée en arrière} par $f$ de $\eta$. \\
+\end{defi}
+
+\begin{pro}
+Soient $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ et $G \hookrightarrow G \overset{\rho}{\to} \mathcal{N}$ des fibrés principaux de groupe structural $G$ et soit $F: P\to Q$ un morphisme de fibré principaux recouvrant l'application $f: \mathcal{M} \to \mathcal{N}$ et soit $\omega$ une connexion d'Ehresmann sur $Q$. Alors $F^*\omega$ est une connexion d'Ehresmann sur $P$.
+\end{pro}
+
+\subsubsection{Forme de Maurer-Cartan:}
+
+\begin{defi}[Forme de Maurer-Cartan]
+Soit $G$ un groupe de Lie. On appelle \emph{forme de Maurer-Cartan} sur $G$, la 1-forme à valeur dans $\mathfrak{g}$ notée $\Omega : TG \to \mathfrak{g}$, et définit par 
+$$\Omega_g = T_gL_{g^{-1}} : T_gG \to \mathfrak{g}$$
+pour tout $g\in G$.
+\end{defi}
+
+\begin{pro}
+Soit $G$ un groupe de Lie. Alors sa forme de Maurer-Cartan est l'unique connexion d'Ehresmann sur le fibré principal $G \hookrightarrow G \to \{x\}$.
+\end{pro}
+\begin{preu}
+Soit $\omega: TG \to \mathfrak{g}$ une connexion d'Ehresmann sur $G$. On a le diagramme commutatif pour tout $g\in G$
+$$\begin{matrix}
+T_eG  & \overset{T_gR_{g}}{\longrightarrow} & T_gG \\ \\
+\omega\big\downarrow &  & \big\downarrow\omega \\ \\
+\mathfrak{g} & \overset{\Ad_{g^{-1}}}{\longrightarrow} & \mathfrak{g}
+\end{matrix}
+$$
+Or les flèches horizontales sont des isomorphismes ce qui signifie que $\omega$ est complètement déterminée sur $T_gG$ par ses valeurs sur $T_eG = \mathfrak{g}$ et ce pour tout $g\in G$. \\
+Maintenant soit $A\in \mathfrak{g}$. alors on a
+$$A^\sharp(e) = T_ei_e(A) = A$$
+Ainsi, 
+$$\omega(A) = \omega(A^\sharp(e)) = A$$
+Finalement, $\omega$ vaut l'identité sur $T_eG$ et détermine completement ses valeurs sur $TG$. Donc elle est unique.
+\end{preu}
+
+
+\begin{pro}
+La forme de Maurer-Cartan d'un groupe $G$ fournit une trivialisation globale $\tilde{\Omega} : TG \to G\times \mathfrak{g}$ de $TG$ définie par
+$$\tilde{\Omega}(p) = (\tau_G(p), \Omega(p))$$
+\end{pro}
+
+\subsubsection{Courbure:} 
+
+\begin{defi}[Courbure]
+Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal muni d'une connexion d'Ehresmann $\omega$. La \emph{courbure} de $\omega$ est l'application $D\omega : T^{\diamond 2}P \to \mathfrak{g}$ définie par 
+$$D\omega(u,v) = d\omega(u^H, v^H) \quad \forall (u,v)\in T^{\diamond 2}P$$
+\end{defi}
+
+\begin{pro}[Equation de structure de Cartan]
+Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal muni d'une connexion d'Ehresmann $\omega$. Alors on a 
+$$D\omega = d\omega + \frac{1}{2}\omega\wedge\omega$$
+\end{pro}
+\begin{preu}
+On a pour $(u,v)\in T^{\diamond 2}P$
+$$(\omega \wedge \omega) (u, v) = [\omega(u), \omega(v)] - [\omega(v), \omega(u)] = 2[\omega(u), \omega(v)]$$
+Ainsi cela revient à prouver que 
+$$D\omega(u, v) = d\omega(u, v) + [\omega(u), \omega(v)]$$
+
+Premier cas: \\
+$u,v\in \Verti(T_pP)$, alors $u = u^H$ et $v = v^H$ d'une part et d'autre part $\omega(u) = 0$ et $\omega(v) = 0$. Ainsi, on a
+$$D\omega(u, v) = d\omega(u^H, v^H) = d\omega(u, v)$$
+
+Deuxième cas:\\
+$u, v \in \Hor(T_pP)$. On a $u^H = 0$ et $v^H = 0$, ainsi 
+$$D\omega(u,v) = d\omega(u^H, v^H) = 0$$ 
+Puisque $u$ et $v$ sont verticaux, il existe $A, B\in \mathfrak{g}$ tel que $A^\sharp(p) = u$ et $B^\sharp(p) = v$. Ainsi on a
+$$d\omega(u, v) = d\omega(A^\sharp(p), B^\sharp(p)) = d\omega(A^\sharp, B^\sharp)(p)$$
+Or on a 
+$$d\omega(A^\sharp, B^\sharp) = A^\sharp(\omega(B^\sharp)) - B^\sharp(\omega(A^\sharp)) - \omega([A^\sharp, B^\sharp])$$
+Mais $\omega(A^\sharp) = A$ et $\omega(B^\sharp) = B$ sont des fonctions constantes donc les deux premier termes sont nuls. Ainsi on a
+\begin{eqnarray*}
+d\omega(A^\sharp, B^\sharp) &=& -\omega([A^\sharp, B^\sharp]) \\
+ & = & -\omega([A, B]^\sharp) \\
+ & = & -[A,B] \\
+ & = & -[\omega(A^\sharp), \omega(B^\sharp)]
+\end{eqnarray*}
+d'où
+\begin{eqnarray*}
+d\omega(u, v) &=& -[\omega(A^\sharp), \omega(B^\sharp)](p) \\
+ & = & -[\omega(A^\sharp)(p), \omega(B^\sharp)(p)] \\
+ & = & -[\omega(u), \omega(v)]
+\end{eqnarray*}
+
+Troisième cas: \\
+$u\in \Hor(T_pP)$ et $v\in \Verti(T_pP)$. Alors on a $u^H = u$ et $v^H = 0$. Donc on a immediatement 
+$$D\omega(u,v) = d\omega(u^H, v^H) = d\omega(u, 0) = 0$$
+et 
+$$[\omega(u), \omega(v)] = [0, \omega(v)] = 0$$
+Ainsi il suffit de montrer que $d\omega(u, v) = 0$. Soit $A\in \mathfrak{g}$ tel que $A^\sharp(p) = v$ et soit $W$ un champ de vecteur horizontal tel que $W(p) = u$. Ainsi
+$$d\omega(u,v) = d\omega(W, A^\sharp)(p)$$
+et alors 
+$$d\omega(W, A^\sharp) = W(\omega(A^\sharp)) - A^\sharp(\omega(W)) - \omega([W, A^\sharp])$$
+or $\omega(W) = 0$ puisque $W$ est horizontal et $\omega(A^\sharp) = A$ est constante ainsi
+$$d\omega(W, A^\sharp) = - \omega([W, A^\sharp])$$
+Donc il suffit de montrer que $[W, A^\sharp] \in \Ker\omega = \Hor(TP)$. On a
+$$[A^\sharp, W](p) = \lim_{t\to 0} \frac{1}{t}\left(T_p\phi_t^{-1}W(\phi_t(p))-W(p)\right)$$
+où $\phi_t(p) = p.\exp(tA)$ est le flot associé au champ de vecteurs $A^\sharp$. Ainsi, par définition des espaces horizontaux d'une connexion, on a 
+$$T_p\phi_t^{-1}W(\phi_t(p)) = T_pR_{\exp(tA)^{-1}} W(\phi_t(p)) \in \Hor(T_pP)$$
+Ainsi, $[A^\sharp, W](p)$ est limite de vecteurs horizontaux, donc est horizontal.
+\end{preu}
+
+\begin{pro}[Identité de Bianchi]
+Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal muni d'une connexion d'Ehresmann $\omega$. Notons $\Theta = D\omega$ alors
+$$D\Theta = 0$$
+\end{pro}
+\begin{preu}
+On a par l'équation de structure de Cartan
+$$\Theta = D\omega = d\omega + \frac{1}{2}\omega \wedge \omega$$
+donc 
+$$d\Theta = d^2\omega + \frac{1}{2}d\omega \wedge \omega - \frac{1}{2}\omega \wedge d\omega$$
+Mais $d^2\omega = 0$ et on a 
+$$\frac{1}{2}(d\omega \wedge \omega)(u_1^H, u_2^H, u_3^H) = 0$$
+puisque $\omega$ est toujours évaluée sur des vecteurs horizontaux.
+Ainsi,
+$$D\Theta(u_1, u_2, u_3) = d\Theta(u_1^H, u_2^H, u_3^H) = 0$$
+d'où $D\Theta = 0$.
+\end{preu}
+
+\newpage
+\section{Théories de jauge}
+
+\subsubsection{En Géométrie:}
+
+\begin{pro}
+Soit $\pi_1 : P = \mathcal{M}\times G \to \mathcal{M}$ le fibré principal explicite avec $\sigma_1: \mathcal{M} \to P$ la section canonique. Soit $A: T\mathcal{M} \to \mathfrak{g}$ une $1$-forme à valeur dans $\mathfrak{g}$ sur $\mathcal{M}$. Alors il existe une unique connexion d'Ehresmann $\omega$ sur $P$ telle que $\sigma_1(\omega) = A$ qui est donnée par
+$$\omega = \Ad_{\pi_2^{-1}}\pi_1^*(A) + \pi_2^*(\Omega)$$
+où $\Omega$ est la forme de Maurer-Cartan sur $G$ et $\pi_2: P\to G$ est la projection sur la seconde composante de $P$.
+\end{pro}
+\begin{preu}
+Posons
+$$\omega_1 = \Ad_{\pi_2^{-1}}\pi_1^*(A)$$
+On a $\sigma_1^*\omega_1 = A$ puisque par construction $\omega_1$ est égale à $\pi_1^*A$ sur $\mathcal{M}\times \{e\}$
+Ensuite on a pour $h\in G$, $p\in P$ et $u\in T_pP$
+\begin{eqnarray*}
+R_h^*\omega_1(u) &=& \omega_1(TR_h u) \\
+&=& \Ad_{\pi_2^{-1}(p.h)}((\pi_1^*A)(TR_h u)) \\
+&=& \Ad_{h^{-1}\pi_2^{-1}(p)}(A(T\pi_1(TR_h u))) \\
+&=& \Ad_{h^{-1}}\Ad_{\pi_2^{-1}(p)}(A(T\pi_1 u)) \\
+&=& \Ad_{h^{-1}}\Ad_{\pi_2^{-1}(p)}(\pi_1^* A)(u) \\
+&=& \Ad_{h^{-1}}\omega_1(u)
+\end{eqnarray*}
+De plus, on a pour $B\in \mathfrak{g}$ 
+$$\omega_1(B^\sharp) = \Ad_{\pi_2^{-1}}(\pi_1^*A)(B^\sharp) = \Ad_{\pi_2^{-1}} A(T\pi_1 B^\sharp) = 0$$ 
+
+Soit $\eta$ une connexion d'Ehresmann verifiant $\sigma_1^*(\eta) = A$. Posons alors $\alpha = \eta - \omega_1$ qui est une connexion d'Ehresmann. Notons aussi $i_x: G\to P, h \mapsto (x, h)$ pour $x\in \mathcal{M}$. Alors $i_x^*\alpha: TG \to \mathfrak{g}$ est une connexion d'Ehresmann sur $G$ donc il s'agit de la forme de Maurer-Cartan par unicité de cette dernière. Donc on a $\Omega = i_x^*\alpha$. Ensuite on a 
+$$\pi_2^*\Omega = \pi_2^*i_x^*\alpha = (i_x\pi_2)^*\alpha$$
+Or pour $u\in T\mathcal{M}$ et $v\in TG$ on a
+$$(i_x\pi_2)^*\alpha(u,v) = \alpha(0, v) = \alpha(u, v)$$
+Finalement $\alpha = \pi_2^*\Omega$.
+\end{preu}
+
+\begin{thm}
+Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal, soit $\sigma: \mathcal{M} \to P$ une section du fibré et soit $A: T\mathcal{M} \to \mathfrak{g}$ une $1$-forme à valeur dans $\mathfrak{g}$ sur $\mathcal{M}$. Alors il existe une unique connexion d'Ehresmann $\omega: TP \to \mathfrak{g}$ telle que $A = \sigma^*\omega$. De plus, on a
+$$\omega = \Ad_{g_\sigma^{-1}}\pi^*(A)+g_\sigma^*(\Omega)$$
+où $\Omega$ est la forme de Maurer-Cartan de $G$ et où $g: P \to G$ est donné ci-après.
+\end{thm}
+\begin{preu}
+Notons $\phi_\sigma: P\to \mathcal{M}\times G$ la trivialisation associée à $\sigma$. Pour $p\in P$ notons $x = \pi(p)\in \mathcal{M}$. Alors $p$ et $\sigma(x)$ vivent dans la même fibre $P_x$ donc il existe un unique élément $g_\sigma(p)\in G$ tel que
+$$p = \sigma(x).g_\sigma(p)$$
+Ce qui définit une fonction $g: P\to G$ et alors la trivialisation associée $\phi_\sigma$ est donné par
+$$\phi_\sigma(p) = (\pi(p), g_\sigma(x))$$
+Soit alors $\omega_0 = \Ad_{\pi_2^{-1}}\pi_1^*(A) + \pi_2^*(\Omega)$ la connexion d'Ehresmann sur $\mathcal{M}\times G$ construite précédement. On pose alors,
+$$\omega = \phi_\sigma^*(\omega_0)$$
+Or comme $\pi_1\phi_\sigma = \pi$ et $\pi_2\phi_\sigma = g_\sigma$ on a immediatement 
+$$\omega = \Ad_{g_\sigma^{-1}}\pi^*(A)+g_\sigma^*(\Omega)$$
+\end{preu}
+
+\begin{thm}
+Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal, soit $\omega$ une connexion d'Ehresmann sur $P$, soient $\sigma_1, \sigma_2:\mathcal{M}\to P$ deux sections de $P$ et posons $A_1 = \sigma_1^*\omega$ et $A_2 = \sigma_2^*\omega$. $A_1$ et $A_2$ sont des 1-formes à valeur dans $\mathfrak{g}$ sur $\mathcal{M}$ et on a pour tout $x\in \mathcal{M}$ 
+$$\sigma_2(x) = \sigma_1(x).g(x)$$
+où $g:\mathcal{M} \to G$ est une transformation de jauge locale. \\
+Alors on dispose de la relation entre $A_1$ et $A_2$:
+$$A_2 = \Ad_{g^{-1}}A_1+g^*\Omega$$
+\end{thm}
+\begin{preu}
+Par unicité on a
+$$\omega = \Ad_{g_1^{-1}}\pi^*A_1+g_1^*(\Omega)$$
+où $g_i(p)$ est l'unique élément de $G$ tel que $p = \sigma_i(x).g_i(p)$.
+Alors $g_1\sigma_2 = g$ d'où le resultat.
+\end{preu}
+
+\begin{rem}
+Dans le cas de groupes de Lie matriciels cela devient
+$$A_2 = g^{-1}A_1g + g^{-1}dg$$
+\end{rem}
+
+\begin{thm}
+Soit $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ un fibré principal, soit $\{V_\alpha, \phi_\alpha\}$ une famille de trivialisations locales recouvrant $P$ et soient $A_\alpha$ des 1-formes à valeurs dans $\mathfrak{g}$ sur $V_\alpha$ pour chaque $\alpha$ et vérifiant 
+$$A_\beta = \Ad_{g_{\alpha\beta}^{-1}}A_\alpha + g_{\alpha\beta}^{-1}*\Omega$$ 
+où $g_{\alpha\beta}: V_\alpha\cap V_\beta \to G$ est le cocycle du fibré principal relatif aux $\{V_\alpha, \phi_\alpha\}$. \\
+Alors il existe une unique connexion d'Ehresmann $\omega$ sur $P$ tel que $A_\alpha = \sigma_\alpha^*(\omega)$ pour chaque $\alpha$.
+\end{thm}
+\begin{preu}
+On applique le premier théorème localement, puis on recolle ce qui est possible d'après le deuxième théorème.
+\end{preu}
+
+\begin{defi}[Théorie de jauge]
+Une \emph{théorie de jauge} est la donnée d'un fibré principal $G \hookrightarrow P \overset{\pi}{\to} \mathcal{M}$ et d'une connexion d'Ehresmann $\omega$. \\
+Dans ce cas on appelle \emph{champ de jauge} sur $P$ la connexion d'Ehresmann $\omega$ et \emph{forme de Yang-Mills} la courbure $D\omega$. \\
+Une transformation de jauge du fibré principal est un automorphisme de fibrés principaux $\psi: P \to P$ recouvrant l'identité sur $\mathcal{M}$ qui commute avec l'action à droite de $G$ sur $P$.
+\end{defi}
+
+\begin{pro}
+Soit $\sigma : V\to \pi^{-1}(V)$ une section du fibré principal. On note $A = \sigma^*(\omega)$ le \emph{champ de jauge local} et $F = \sigma^*(D\omega)$ la \emph{forme de Yang-Mills locale}. Alors on a
+$$F = dA + \frac{1}{2}A\wedge A$$
+et
+\begin{alignat*}{2}
+DF & = 0   && \quad\text{Identité de Bianchi} \\
+D\star F & = 0  && \quad\text{Équation de Yang-Mills}
+\end{alignat*}
+\end{pro}
+
+\subsubsection{En Physique:}
+
+Ainsi, grâce au théorème précédent on peut rassurer les physiciens qui ne travaillent que localement puisqu'il assure qu'il suffit de se donner une famille de champs de jauge locaux compatibles pour déterminer entièrement la connexion d'Ehresmann. \\
+
+Soient une variété lisse $\mathcal{M}$ de dimension $m$ dont $(V, x^\mu)$ est une carte locale, un groupe de Lie $G$ et un espace de Hilbert $\mathcal{H}$ muni d'une action de $G$ sur $\mathcal{H}$ qu'on notera $U\psi$ pour $U \in G$ et $\psi \in \mathcal{H}$. Soient enfin $A_\mu : V \to \mathfrak{g}$ des applications lisse qu'on appelera champ de jauge. Et soit $g\in \R$ une constante appelée constante de couplage de la théorie. \\
+
+Soit $U: V\to G$ une application lisse, une transformation de jauge locale du champ $\psi$ est donnée par:
+$$\psi \mapsto \tilde{\psi} = U^{-1}\psi$$
+On effectue alors les substitutions
+$$\frac{1}{i}\frac{\partial}{\partial x^\mu} \mapsto \frac{1}{i}\frac{\partial}{\partial x^\mu} + g A_\mu$$
+
+On impose ensuite l'invariance de jauge pour les opérateurs différentiels du premier ordre sous la transformation de jauge locale. On souhaite
+$$U\left(\frac{1}{i}\frac{\partial}{\partial x^\mu} + g A'_\mu\right)\tilde{\psi} = \left(\frac{1}{i}\frac{\partial}{\partial x^\mu} + g A_\mu\right)\psi$$
+On a 
+\begin{eqnarray*}
+U\left(\frac{1}{i}\frac{\partial}{\partial x^\mu} + g A'_\mu\right)\tilde{\psi} &=& U\left(\frac{1}{i}\frac{\partial}{\partial x^\mu} + g A'_\mu\right)U^{-1}\psi \\
+&=& \frac{1}{i}U\frac{\partial U^{-1}}{\partial x^\mu}\psi + \frac{1}{i}\frac{\partial \psi}{\partial x^\mu} + gUA'_\mu U^{-1}\psi
+\end{eqnarray*}
+Ainsi, on doit avoir
+$$\frac{1}{i}U\frac{\partial U^{-1}}{\partial x^\mu} + gUA'_\mu U^{-1} = gA_\mu$$
+autrement dit
+$$A'_\mu = U^{-1}A_\mu U - \frac{1}{ig}\frac{\partial U^{-1}}{\partial x^\mu}U$$
+Maintenant en différentiant $U^{-1}U = I$, on a 
+$$\frac{\partial U^{-1}}{\partial x^\mu}U + U^{-1}\frac{\partial U}{\partial x^\mu} = 0$$
+Ce qui donne 
+$$A'_\mu = U^{-1}A_\mu U + \frac{1}{ig}U^{-1}\frac{\partial U}{\partial x^\mu}$$ 
+
+\begin{defi}
+Soient $A_\mu$ et $A'_\mu$ deux champs de jauges. On dit que $A_\mu$ est $A'_\mu$ sont \emph{équivalent}, s'il existe une transformation de jauge locale $U: V\to G$ telle que 
+$$A'_\mu = U^{-1}A_\mu U + \frac{1}{ig}U^{-1}\frac{\partial U}{\partial x^\mu}$$
+On dit que le champ $A_\mu$ est un champ de jauge pur si 
+$$A_\mu = \frac{1}{ig}U^{-1}\frac{\partial U}{\partial x^\mu}$$
+\end{defi}
+Soit alors $F_{\mu\nu}$ le tenseur de force de la théorie donné par
+$$F_{\mu\nu} = \partial_\nu A_\mu - \partial_\mu A_\nu - ig[A_\mu, A_\nu]$$
+On a 
+\begin{eqnarray*}
+A'_\mu A'_\nu &=& \left(U^{-1}A_\mu U + \frac{1}{ig}U^{-1}\partial_\mu U\right)\left(U^{-1}A_\nu U + \frac{1}{ig}U^{-1}\partial_\nu U\right) \\
+&=& U^{-1}A_\mu A_\nu U + \frac{1}{ig}U^{-1}A_\mu (\partial_\nu U) \\
+&+& \frac{1}{ig}U^{-1} (\partial_\mu U) U^{-1}A_\nu U + \frac{1}{(ig)^2}U^{-1}(\partial_\mu U) U^{-1} (\partial_\nu U)
+\end{eqnarray*}
+Ainsi
+\begin{eqnarray*}
+[A'_\mu, A'_\nu] &=& U^{-1}[A_\mu, A_\nu]U \\
+&+& \frac{1}{ig}U^{-1}\left( (\partial_\mu U)U^{-1}A_\nu - (\partial_\nu U)U^{-1}A_\mu \right) U \\ 
+&+& \frac{1}{ig}U^{-1} A_\mu (\partial_\nu U) - \frac{1}{ig}U^{-1} A_\nu (\partial_\mu U) \\
+&+& \frac{1}{(ig)^2}U^{-1}(\partial_\mu U) U^{-1} (\partial_\nu U) - \frac{1}{(ig)^2}U^{-1}(\partial_\nu U) U^{-1} (\partial_\mu U)
+\end{eqnarray*}
+Or 
+\begin{eqnarray*}
+\partial_\nu A'_\mu &=& \partial_\nu \left(U^{-1}A_\mu U + \frac{1}{ig}U^{-1}\partial_\mu U\right) \\
+&=& U^{-1} (\partial_\nu U) U^{-1} A_\mu U + U^{-1} (\partial_\nu A_\mu)U + U^{-1}A_\mu (\partial_\nu U) \\
+&+& \frac{1}{ig}U^{-1}(\partial_\nu U)U^{-1}(\partial_\mu U) + \frac{1}{ig} U^{-1} (\partial_\nu \partial_\mu U)
+\end{eqnarray*}
+Ainsi, on a
+$$F'_{\mu\nu} = U^{-1} F_{\mu\nu} U$$
+Qui est donc bien invariant sous une transformation de jauge locale. \\
+
+On peut alors écrire le lagrangien de l'interaction dont on s'arrange pour qu'il soit invariant sous les transformations de jauge locale, pour obtenir des équations invariantes de jauge. Ainsi on pose
+$$\mathcal{L}_{\text{libre}} = \tr \left(-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}\right)$$
+Finalement on peut écrire les équations d'Euler-Lagrange dans ce cas et on obtient les équations de Yang-Mills
+$$\sum_\mu \partial_\mu F_{\mu\nu} + ig[A_\mu, F_{\mu\nu}] = 0$$
+
+\appendix
+
+\appendixchapter{Algèbre multilinéaire}
+
+\section{Produit tensoriel}
+
+\begin{defi}[Produit tensoriel]
+Soient $E$,$F$ des $\R$-espaces vectoriels de dimension finie, on appelle produit tensoriel de $E$ et $F$ est on note $E\otimes F$ l'unique (à isomorphisme près) espace vectoriel muni d'une application bilinéaire $(x,y) \in E\times F \mapsto x\otimes y \in E\otimes F$ vérifiant la propriété universelle: \\
+Pour toute application bilinéaire $f: E\times F \to G$, il existe une unique application linéaire $g: E\otimes F \to G$ telle que le diagramme suivant commute
+$$\begin{tikzcd}
+E \times F \arrow[r, "f"]  \arrow[d, ".\otimes ."] & G \\
+E\otimes F \arrow[ru, "g"']& 
+\end{tikzcd}$$
+On appelle l'élément $x\otimes y$ de $E\times F$ un tenseur pur. \\
+
+De plus, si $(e_\mu)_\mu$ est une base de $E$ et $(f_\nu)_\nu$ une base de $F$ alors $(e_\mu\otimes f_\nu)_{\mu,\nu}$ est une base de $E\otimes F$, ainsi $\dim E\otimes F = \dim E \dim F$.
+\end{defi}
+\begin{preu}
+Considérons $\R^{(E\times F)}$ le $\R$-espace vectoriel des suites presques nulles indexées par $E\times F$ dont on note $(e_{x,y})_{(x,y)\in E\times F}$ la base canonique. Soit $\mathcal{R}$ le sous espace vectoriel engendré par les éléments 
+$$e_{x+x', y}-e_{x,y}-e_{x',y}$$
+$$e_{x, y+y'}-e_{x,y}-e_{x, y'}$$
+$$e_{\lambda x, y}-\lambda e_{x, y}$$
+$$e_{x, \lambda y}-\lambda e_{x, y}$$
+pour $x\in E$, $y\in F$ et $\lambda \in \R$. \\
+
+Alors on note $H = \R^{(E\times F)}/\mathcal{R}$ l'espace vectoriel quotient. De plus l'application $.\otimes . : E\times F \to H$ qui envoie $(x,y)$ sur la classe d'équivalence de $e_{x,y}$ dans $H$ est bilinéaire par définition de $\mathcal{R}$. \\
+
+Soit alors $f:E\times F \to G$ une application bilinéaire. Soit alors l' unique application linéaire $u: \R^{(E\times F)} \to G, e_{x,y} \mapsto f(x,y)$ a un noyau qui contient $\mathcal{R}$ par bilinéarité de $f$, donc l'application $u$ induit une unique application linéaire $g : H\to G$ tel que le diagramme commute 
+$$\begin{tikzcd}
+E \times F \arrow[r, "f"]  \arrow[d, ".\otimes ."] & G \\
+H \arrow[ru, "g"']& 
+\end{tikzcd}$$
+Ainsi $H$ vérifie la propriété universelle du produit tensoriel donc est unique à isomorphisme près.
+\end{preu}
+
+\begin{pro}
+Soient $E$, $F$, $G$ et $H$ des $\R$-espaces vectoriels de dimension finie. Alors le produit tensoriel vérifie les propriétés suivantes:
+\be
+	\item (fonctorialité): Soient $f: E\to G$ et $g: F\to H$ des applications linéaires, alors il existe une unique application linéaire $f\otimes g: E\otimes F \to G \otimes H$ telle que 
+	$$f\otimes g(x\otimes y) = f(x) \otimes g(y)$$
+	\item $$E \otimes \R \simeq E$$
+	via l'isomorphisme qui envoie $e\otimes 1$ sur $e$.
+	\item (commutativité): $$E\otimes F \simeq F \otimes E$$
+	via l'isomorphisme qui envoie $e\otimes f$ sur $f\otimes e$.
+	\item (associativité): $$(E\otimes F)\otimes G \simeq E \otimes (F\otimes G)$$
+	via l'isomorphisme qui envoie $(e\otimes f)\otimes g$ sur $e\otimes (f\otimes g)$.
+	\item (distributivité): $$E \otimes (F \oplus G) \simeq (E \otimes F) \oplus (E \otimes G)$$
+	via l'isomorphisme qui envoie $e\otimes (f\oplus g)$ sur $(e\otimes f) \oplus (e \otimes g)$.
+	\item $$E^* \otimes F^* \simeq (E\otimes F)^*$$
+	via l'isomorphisme qui envoie $u\otimes v$ sur $x\otimes y \mapsto u(x)v(y)$.
+	\item $$E^*\otimes F \simeq \mathscr{L}(E, F)$$
+	via l'isomorphisme qui envoie $u\otimes x$ sur $x \mapsto u(x)y$
+\ee
+\end{pro}
+
+\begin{rem}
+Ces isomorphismes permettent d'identifier $E^*\otimes F^*$ avec les formes bilinéaires sur $E \times F$.
+\end{rem}
+
+\section{Algèbre extérieure}
+
+\begin{defi}[Algèbre tensorielle]
+Soit $V$ un $\R$-espace vectoriel. Alors l'ensemble $\oplus_{k\geq 0} \otimes^k V$ munie de l'application 
+$$\begin{array}{ccccc}
+	\otimes & : & \otimes^p V\times \otimes^q V & \to & \otimes^{p+q} V \\
+		& & (u_1\otimes ...\otimes u_p, v_1 \otimes ... \otimes v_q) & \mapsto & u_1 \otimes ... \otimes u_p \otimes v_1 \otimes ... \otimes v_q \\
+\end{array}$$
+est une algèbre, appelée algèbre tensorielle de $V$.
+\end{defi}
+
+\begin{defi}[Algèbre extérieure]
+Soit $V$ un $\R$-espace vectoriel et soit $k\in \N^*$, on appelle $k$-ème puissance extérieure de $V$, notée $\Lambda^k V$ le quotient de $\otimes^k V$ par l'espace vectoriel engendré par les éléments $v_1 \otimes ... \otimes v_k$ où il existe $i\neq j$ tels que $v_i = v_j$. Aussi on note $\Lambda^0 V = \R$.\\
+On note $v_1 \wedge ... \wedge v_k$ la classe dans ce quotient de l'élément $v_1 \otimes ... \otimes v_k$. \\
+
+De plus, si $V$ est de dimension finie et si $(e_1, ..., e_n)$ est une base de $V$ alors $e_{i_1} \wedge ... \wedge e_{i_k}$ pour tout $1 \leq i_1 < ... < i_k \leq n$ est une base de $\Lambda^k V$ qui est donc un espace vectoriel de dimension $\bino{k}{n}$. \\
+On note $\Lambda V = \oplus_{k\geq 0} \Lambda^k V$. Le produit $\otimes : \otimes^p V\times \otimes^q V \to \otimes^{p+q} V$ passe au quotient en une application $\wedge : \Lambda^p V \times \Lambda^q V \to \Lambda^{p+q} V$ qui munit $\Lambda V$ d'une structure d'algèbre qu'on appelle algèbre extérieure de $V$.
+\end{defi}
+
+\begin{pro}
+Soit $V$, $W$ et $F$ des $\R$-espaces vectoriels. On a les propriétés suivantes:
+\be
+	\item L'application $V^k \to \Lambda^k V, (v_1, ..., v_k) \mapsto v_1 \wedge ... \wedge v_k$ est $k$-linéaire alternée.
+	\item (propriété universelle): $\Lambda^k V$ vérifie la proprété universelle: pour toute application $k$-linéaire alternée $f: V^k \to F$ il existe une unique application linéaire $g : \Lambda^k V \to F$ telle que le diagramme commute
+	$$\begin{tikzcd}
+	V^k \arrow[r, "f"]  \arrow[d, ".\wedge ."] & F \\
+	\Lambda^kV \arrow[ru, "g"']& 
+	\end{tikzcd}$$
+	\item (fonctorialité):  Soit $f: V \to W$ une application linéaire, alors il existe une unique application linéaire $\Lambda^k f : \Lambda^k V \to \Lambda^k W$ définie par
+	$$\Lambda^k f (v_1\wedge ... \wedge v_k) = f(v_1) \wedge ... \wedge f(v_k)$$
+	et il existe une unique application linéaire $\Lambda f : \Lambda V \to \Lambda W$ définie par $\Lambda f = \oplus_{k\geq 0} \Lambda^k f$. \\
+	\item (anticommutativité): Si $u \in \Lambda^p V$ et $v \in \Lambda^q V$ alors $u\wedge v = (-1)^{pq} v\wedge u$
+	\item Si de plus $V$ est de dimension finie
+	$$\Lambda^k V^* \simeq (\Lambda^k V)^*$$ 
+	via l'isomorphisme $e_{i_1}^* \wedge ...\wedge e_{i_k}^* \mapsto (e_{i_1} \wedge ... \wedge e_{i_k})^*$ où $(e_i)_i$ est une base de $V$ et où $(e_i^*)_i$ désigne sa base duale dans $V^*$.
+\ee
+\end{pro}
+\begin{preu}
+(ii) Comme $f$ est $k$-linéaire par propriété universelle du produit tensoriel, il existe une unique $h: \otimes^k V \to F$ linéaire telle que $f(v_1, ..., v_k) = h(v_1 \otimes ... \otimes v_k)$. Puis comme $f$ est alternée, $h$ descend au quotient en une unique application $g: \Lambda^k V \to F$ linéaire telle que $f(v_1, ..., v_k) = g(v_1\wedge ...\wedge v_k)$.   
+\end{preu}
+
+De la même façon dont on identifie $E^*\otimes F^*$ avec les formes bilinéaires sur $E\times F$, on identifie $\otimes^k V^*$ avec les formes $k$-linéaires sur $V^k$ et on identifie $\Lambda^k V^*$ avec les formes $k$-linéaires alternées sur $V^k$. \\
+
+De plus, on identifie également $\otimes^k V^* \otimes F$ avec les applications $k$-linéaire $V^k \to F$ et $\Lambda^k V^* \otimes F$ avec les application $k$-linéaire alternées $V^k \to F$. \\
+
+On définit également le produit extérieur entre applications multilinéaires alternées en posant, 
+$$\begin{array}{ccccc}
+	\wedge & : & \Lambda^p V^* \otimes E \times \Lambda^q V^* \otimes F & \to & \Lambda^{p+q} V^* \otimes E \otimes F \\
+		& & (\omega \otimes u, \eta \otimes v) & \mapsto & (\omega \wedge \eta) \otimes u \otimes v \\
+\end{array}$$ \\
+
+En particulier, on définit le produit extérieur entre applications multilinéaires alternées à valeur dans une algèbre de Lie $\mathfrak{g}$ en précomposant par le crochet de Lie. C'est à dire
+$$\begin{array}{ccccc}
+	\wedge & : & \Lambda^p V^* \otimes \mathfrak{g} \times \Lambda^q V^* \otimes \mathfrak{g} & \to & \Lambda^{p+q} V^* \otimes \mathfrak{g} \\
+		& & (\omega \otimes u, \eta \otimes v) & \mapsto & (\omega \wedge \eta) \otimes [u, v] \\
+\end{array}$$ \\
+
+\section{Étoile de Hodge}
+
+Soit $V$ un $\R$-espace vectoriel orienté de dimension $n$ muni d'une forme bilinéaire symétrique non dégénérée $\eta$. Notons $(e_1, ..., e_n)$ une base orthonormée directe de $V$. On pose 
+$$\eta_k(u_1 \wedge ... \wedge u_k, v_1 \wedge ... \wedge v_k) = \det (\eta(u_i, v_j))$$
+c'est aussi une forme bilinéaire symétrique non dégénérée sur $\Lambda^k V$.\\
+Notons $\Vol = e_1 \wedge ... \wedge e_n$ appelé élément volume de $\Lambda^n V$. 
+
+\begin{defi}[Étoile de Hodge]
+Soit $V$ un $\R$-espace vectoriel orienté de dimension $n$ muni d'une forme bilinéaire symétrique non dégénérée $\eta$. Pour $0 \leq k \leq n$, il existe un unique isomorphisme linéaire $\star : \Lambda^k V \to \Lambda^{n-k} V$ appelée étoile de Hodge telle que 
+$$\omega \wedge \rho = \eta_{n-k}(\star w, \rho) \Vol, \quad \forall \omega \in \Lambda^k V, \quad \forall \rho \in \Lambda^{n-k} V$$
+\end{defi} 
+\begin{preu}
+Soit $\omega \in \Lambda^k V$ et on pose l'application linéaire $\rho \in \Lambda^{n-k} V \mapsto \omega \wedge \rho \in \Lambda^n V$. Comme $\Lambda^n V$ est de dimension 1, on a $\omega \wedge \rho = c(\rho)\Vol$. Alors $c : \Lambda^{n-k} V \to \R$ est une forme linéaire donc se représente par un unique $\star\omega \in \Lambda^{n-k} V$ via la forme bilinéaire symétrique non-dégénérée $\eta_{n-k}$.
+\end{preu}
+
+\begin{pro}
+Soit $\omega = e_{i_1}\wedge ... \wedge e_{i_k} \in \Lambda^kV$ où $i_1 < ... < i_k$, alors 
+$$\star \omega = \sigma e_{j_1} \wedge ... \wedge e_{j_{n-k}}$$
+où $j_1 < ... < j_{n-k}$ complète la suite $i_1 < ... < i_k$ dans $\ieff{1}{n}$ et où le signe $\sigma$ est choisit tel que 
+$$e_{i_1} \wedge ... \wedge e_{i_k} \wedge e_{j_1} \wedge ... \wedge e_{j_{n_k}} = \sigma \eta_{n-k}(e_{j_1} \wedge ... \wedge e_{j_{n_k}}, e_{j_1} \wedge ... \wedge e_{j_{n_k}})\Vol $$ 
+\end{pro}
+
+\appendixchapter{Équations de Maxwell en terme de formes}
+
+Habituellement on écrit les équations de Maxwell pour le champ electromagnétique $(E, B)$ sous forme de 4 équations vectorielles:
+\begin{alignat*}{2}
+\Div E & =  4\pi\rho  && \quad\text{Maxwell-Gauss} \\
+\rot E & = - \frac{\partial B}{\partial t}  && \quad\text{Maxwell-Farraday} \\
+\Div B & =  0 && \quad\text{Maxwell-Thomson} \\
+\rot B & =  4\pi j + \frac{\partial E}{\partial t}  &&\quad\text{Maxwell-Ampère}
+\end{alignat*}
+Et on rappelle que dans $\R^3$, on a
+$$\begin{matrix}
+\Omega^0 & \overset{d}{\longrightarrow} & \Omega^1 & \overset{d}{\longrightarrow} & \Omega^2 & \overset{d}{\longrightarrow} & \Omega^3\\
+\Big\updownarrow &  & \Big\updownarrow &  & \Big\updownarrow\star &  & \Big\updownarrow\star\\
+\R & \overset{\grad}{\longrightarrow} & \R^3 & \overset{\rot}{\longrightarrow} & \R^3 & \overset{\Div}{\longrightarrow} & \R
+\end{matrix}
+$$
+Ainsi on remplace le champ $E = (E_x, E_y, E_z)$ par une $1$-forme 
+$$\mathscr{E} = E_x dx + E_y dy + E_z dz$$ 
+le champ $B = (B_x, B_y, B_z)$ par une $2$-forme 
+$$\mathscr{B} = B_x dy\wedge dz + B_y dz \wedge dx + B_z dx\wedge dy$$
+avec $\rho$ une $0$-forme et $j$ une $1$-forme. Les équations de Maxwell deviennent alors
+\begin{alignat*}{2}
+\star d(\star\mathscr{E}) & =  4\pi\rho  && \quad\text{Maxwell-Gauss} \\
+d \mathscr{E} & = - \frac{\partial \mathscr{B}}{\partial t}  && \quad\text{Maxwell-Farraday} \\
+d \mathscr{B} & =  0 && \quad\text{Maxwell-Thomson} \\
+\star d(\star\mathscr{B}) & =  4\pi j + \frac{\partial \mathscr{E}}{\partial t}  &&\quad\text{Maxwell-Ampère}
+\end{alignat*}
+On se place alors dans l'espace de Minkowski $\R^{(1, 3)}$ muni de sa métrique usuelle $\eta_{\mu\nu}$ de signature $(-,+,+,+)$ et $d_{(1,3)} = d_3 + \frac{\partial}{\partial t}\wedge dt$. On pose alors $\mathscr{F} = \mathscr{E} \wedge dt + \mathscr{B}$ et $J = \rho dt + j$ la $1$-forme correspondant au quadrivecteur de courant. On a
+
+\begin{eqnarray*}
+d_{(1,3)}\mathscr{F} &=& d_{(1,3)}(\mathscr{E}\wedge dt) + d_{(1,3)}\mathscr{B} \\
+&=& d_{(1,3)}\mathscr{E} \wedge dt - \mathscr{E} \wedge d_{(1,3)}dt + d_{(1,3)}\mathscr{B} \\
+&=& d_3\mathscr{E} \wedge dt + d_{(1,3)}\mathscr{B} \\
+&=& -\frac{\partial \mathscr{B}}{\partial t}\wedge dt + \frac{\partial \mathscr{B}}{\partial t}\wedge dt \\
+&=& 0
+\end{eqnarray*}
+Dans $\R^{(1, 3)}$, l'étoile de Hodge donne 
+$$\star(dx\wedge dy) = - dt\wedge dz \quad \star(dy\wedge dz) = - dt\wedge dx \quad \star(dz\wedge dx) = - dt\wedge dy$$
+$$\star(dt\wedge dx) = dy\wedge dz \quad \star(dt\wedge dy) =  dz\wedge dx \quad \star(dt\wedge dz) = dx\wedge dy$$
+$$\star(dx\wedge dy\wedge dz) = - dt \quad \star(dt\wedge dx\wedge dy) = dz \quad \star(dt\wedge dy\wedge dz) = dx \quad \star(dt\wedge dz\wedge dx) = dy$$
+Ainsi on a 
+\begin{eqnarray*}
+\star \mathscr{F} &=& \star(\mathscr{E}\wedge dt) + \star \mathscr{B}  \\
+&=& - E_x dy \wedge dz - E_y dz \wedge dx - E_z dx \wedge dy \\
+& & -B_x dt \wedge dx - B_y dt \wedge dy - B_z dt \wedge dz
+\end{eqnarray*}
+donc
+\begin{eqnarray*}
+d\star \mathscr{F} &=& - d E_x \wedge dy \wedge dz - d E_y \wedge dz \wedge dx - d E_z \wedge dx \wedge dy \\
+& & -d B_x\wedge dt \wedge dx - d B_y\wedge dt \wedge dy - d B_z\wedge dt \wedge dz \\
+&=& -(\partial_t E_x dt + \partial_x E_x dx)\wedge dy \wedge dz \\
+& & -(\partial_t E_y dt + \partial_y E_y dy)\wedge dz \wedge dx \\
+& & -(\partial_t E_z dt + \partial_z E_z dz)\wedge dx \wedge dy \\
+& & -(\partial_y B_x dy + \partial_z B_x dz)\wedge dt \wedge dx \\
+& & -(\partial_x B_y dx + \partial_z B_y dz)\wedge dt \wedge dy \\
+& & -(\partial_x B_z dx + \partial_y B_z dy)\wedge dt \wedge dz \\
+&=& -(\partial_x E_x + \partial_y E_y + \partial_z E_z)dx \wedge dy \wedge dz \\
+& & +(-\partial_t E_z - \partial_y B_x + \partial_x B_y) dt \wedge dx \wedge dy \\
+& & +(-\partial_t E_x - \partial_z B_y + \partial_y B_z) dt \wedge dy \wedge dz \\
+& & +(-\partial_t E_y - \partial_x B_z + \partial_z B_x) dt \wedge dz \wedge dx 
+\end{eqnarray*}
+donc 
+\begin{eqnarray*}
+\star d\star \mathscr{F} &=& (\partial_x E_x + \partial_y E_y + \partial_z E_z)dt \\
+& & +(-\partial_t E_x - \partial_z B_y + \partial_y B_z) dx \\
+& & +(-\partial_t E_y - \partial_x B_z + \partial_z B_x) dy \\
+& & +(-\partial_t E_z - \partial_y B_x + \partial_x B_y) dz \\
+&=& 4\pi J
+\end{eqnarray*}
+d'après Maxwell-Gauss et Maxwell-Ampère. \\
+
+Ainsi les équations de Maxwell se résument en terme de formes différentielles où $\mathscr{F}$ est une $2$-forme et $J$ une $1$-forme sur $\R^{(1,3)}$ par 
+$$d\mathscr{F} = 0$$
+et
+$$\star d\star \mathscr{F} = 4\pi J$$
+
+\nocite{sontz2015principal}
+
+\bibliographystyle{plain}
+\bibliography{bibliographie}
+\addcontentsline{toc}{chapter}{Bibliographie}
 
 \end{document}
